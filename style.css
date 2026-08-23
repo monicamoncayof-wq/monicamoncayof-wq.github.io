@@ -1,20 +1,16 @@
 /* =========================================================
    JUDITH'S ILLUMINATED MEDIEVAL SHRINE
-   Palette: Sage Forest, Rose Wine, Gold & Textured Parchment
+   Palette: Deep Pink Accents & Textured Parchment
    ========================================================= */
 
 :root {
+    --deep-pink: #d81b60;   /* Vibrant deep pink borders */
+    --rose-pink: #e91e63;   /* Secondary accent pink */
+    --soft-pink: #f8bbd0;   /* Light pink hover/badges */
     --forest: #23372c;
     --deep-forest: #16241c;
-    --wine: #6e2d3e;
-    --rose: #b15b6c;
-    --soft-rose: #df9ba7;
-    --blush: #f4dcd3;
     --parchment: #f6ebd9;
     --warm-parchment: #fff7eb;
-    --dark-parchment: #e3d2b8;
-    --bright-gold: #d4a74e;
-    --deep-gold: #9e7529;
     --ink: #332025;
     
     --radius-large: 12px;
@@ -36,42 +32,36 @@ img {
 body {
     margin: 0;
     padding: 20px 10px;
-    background-image: url('a4787d5b75e37154c1bf46cddf1b93ae.jpg');
-    background-attachment: fixed; /* Keeps the background still while scrolling */
+    background-image: url('bg-main.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
     background-position: center;
+    background-color: var(--forest);
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
     line-height: 1.5;
 }
 
-/* MAIN CONTAINER */
+/* MAIN SHRINE CONTAINER (Deep Pink Border) */
 .shrine-wrapper {
     max-width: 1000px;
     margin: 0 auto;
     background-color: var(--parchment);
     background-image: url('panel-bg-parchment.jpg');
     background-size: cover;
-    border: 4px solid var(--bright-gold);
+    border: 4px solid var(--deep-pink);
     border-radius: var(--radius-large);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     padding: 20px;
     position: relative;
-    outline: 2px solid var(--wine);
+    outline: 2px solid var(--rose-pink);
     outline-offset: -8px;
 }
 
-/* OUTER CORNERS */
-.outer-corner {
-    position: absolute;
-    width: 36px;
-    height: auto;
-    z-index: 10;
-    pointer-events: none;
+/* FILIGREE CLEANUP (Permanently Hidden) */
+.outer-corner, .card-corner {
+    display: none !important;
 }
-.top-left-outer { top: -4px; left: -4px; }
-.top-right-outer { top: -4px; right: -4px; transform: rotate(90deg); }
-.bottom-left-outer { bottom: -4px; left: -4px; transform: rotate(-90deg); }
-.bottom-right-outer { bottom: -4px; right: -4px; transform: rotate(180deg); }
 
 /* HEADER & BANNER */
 .realm-header {
@@ -82,12 +72,12 @@ body {
 .banner-container {
     width: 100%;
     max-height: 180px; 
-    border: 2px solid var(--wine);
+    border: 2px solid var(--deep-pink);
     border-radius: var(--radius-medium);
     overflow: hidden;
     margin-bottom: 12px;
     position: relative;
-    background-color: var(--blush);
+    background-color: var(--soft-pink);
 }
 
 .banner-img {
@@ -118,10 +108,10 @@ body {
 .grand-title {
     font-family: "UnifrakturMaguntia", cursive;
     font-size: clamp(48px, 6vw, 68px);
-    color: var(--wine);
+    color: var(--deep-pink);
     margin: 0;
     line-height: 1;
-    text-shadow: 2px 2px 0 var(--bright-gold);
+    text-shadow: 2px 2px 0 var(--soft-pink);
 }
 
 .title-ornament {
@@ -131,7 +121,7 @@ body {
 
 .subtitle {
     font-family: "Cinzel Decorative", serif;
-    color: var(--forest);
+    color: var(--deep-pink);
     font-size: 13px;
     letter-spacing: 1px;
     margin-top: 4px;
@@ -149,26 +139,27 @@ body {
     flex-wrap: wrap;
     gap: 8px;
     padding-bottom: 14px;
-    border-bottom: 2px dashed var(--bright-gold);
+    border-bottom: 2px dashed var(--deep-pink);
 }
 
 .nav-tab {
     background-color: var(--warm-parchment);
     background-image: url('panel-bg-parchment.jpg');
-    border: 2px solid var(--bright-gold);
-    color: var(--wine);
+    border: 2px solid var(--deep-pink);
+    color: var(--deep-pink);
     padding: 6px 14px;
     border-radius: var(--radius-small);
     font-family: "MedievalSharp", cursive;
     text-decoration: none;
     font-size: 13px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .nav-tab:hover, .nav-tab.active {
-    background-color: var(--blush);
+    background-color: var(--soft-pink);
     background-image: url('panel-bg-blush.jpg');
-    border-color: var(--wine);
+    border-color: var(--deep-pink);
+    color: #880e4f;
     transform: translateY(-2px);
 }
 
@@ -187,7 +178,7 @@ body {
 }
 
 .panel {
-    border: 1px solid var(--bright-gold);
+    border: 1px solid var(--deep-pink);
     border-radius: var(--radius-medium);
     padding: 14px;
     position: relative;
@@ -202,7 +193,7 @@ body {
 }
 
 .bg-blush {
-    background-color: var(--blush);
+    background-color: var(--soft-pink);
     background-image: url('panel-bg-blush.jpg');
     background-size: cover;
 }
@@ -217,16 +208,16 @@ body {
 .panel-heading {
     font-family: "Cinzel Decorative", serif;
     font-size: 14px;
-    color: var(--wine);
-    border-bottom: 1px dotted var(--bright-gold);
+    color: var(--deep-pink);
+    border-bottom: 1px dotted var(--rose-pink);
     padding-bottom: 4px;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
 .light-heading {
-    color: var(--bright-gold);
-    border-bottom-color: var(--rose);
+    color: var(--soft-pink);
+    border-bottom-color: var(--rose-pink);
 }
 
 /* MANUSCRIPT DETAILS */
@@ -253,7 +244,7 @@ body {
 .medium-icon { width: 28px; height: auto; }
 .candle-icon { width: 24px; height: auto; }
 
-/* FLOATING ACCENTS (Preserves original GIF shapes) */
+/* FLOATING ACCENTS */
 .deco-float {
     position: absolute;
     z-index: 5;
@@ -271,22 +262,14 @@ body {
 .tiny-lute { width: 26px; }
 .tiny-rose-gif { width: 22px; }
 
-.card-corner {
-    position: absolute;
-    width: 18px;
-    height: auto;
-    pointer-events: none;
-}
-.card-corner.top-right { top: 2px; right: 2px; transform: rotate(90deg); }
-
 .dense-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(244, 220, 211, 0.6);
+    background-color: rgba(248, 187, 208, 0.5);
     padding: 6px 10px;
     border-radius: var(--radius-small);
-    border: 1px dashed var(--rose);
+    border: 1px dashed var(--deep-pink);
     margin-top: 10px;
 }
 .update-ticker { margin: 0; font-size: 12px; }
@@ -300,10 +283,10 @@ body {
 
 /* GALLERY & POLAROIDS */
 .framed-image {
-    border: 3px double var(--wine);
+    border: 2px double var(--deep-pink);
     border-radius: var(--radius-small);
     padding: 3px;
-    background: var(--blush);
+    background: var(--soft-pink);
     max-width: 180px;
     margin: 0 auto;
 }
@@ -329,7 +312,7 @@ body {
     padding: 6px;
     border-radius: var(--radius-small);
     box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
-    border: 1px solid var(--bright-gold);
+    border: 1px solid var(--deep-pink);
 }
 
 .polaroid img { 
@@ -351,12 +334,12 @@ body {
 }
 
 .cute-badge {
-    background-color: rgba(244, 220, 211, 0.7);
-    border: 1px solid var(--rose);
+    background-color: rgba(248, 187, 208, 0.6);
+    border: 1px solid var(--deep-pink);
     padding: 4px 8px;
     border-radius: var(--radius-small);
     font-size: 12px;
-    color: var(--wine);
+    color: var(--ink);
     display: inline-flex;
     align-items: center;
 }
@@ -369,7 +352,7 @@ body {
     background: rgba(22, 36, 28, 0.6);
     padding: 10px;
     border-radius: var(--radius-small);
-    border: 1px dashed var(--bright-gold);
+    border: 1px dashed var(--deep-pink);
 }
 
 .album-wrapper {
@@ -381,14 +364,14 @@ body {
     width: 52px; 
     height: 52px; 
     border-radius: 2px; 
-    border: 2px solid var(--bright-gold); 
+    border: 2px solid var(--deep-pink); 
     object-fit: cover; 
 }
 
-.track-info strong { display: block; color: var(--bright-gold); font-size: 13px; }
+.track-info strong { display: block; color: var(--soft-pink); font-size: 13px; }
 .track-info span { font-size: 12px; color: var(--parchment); }
 .audio-wave { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
-.music-text { font-size: 11px; font-style: italic; color: var(--soft-rose); }
+.music-text { font-size: 11px; font-style: italic; color: var(--soft-pink); }
 
 /* STATUS & NOTES */
 .status-indicator {
@@ -401,7 +384,7 @@ body {
 .status-indicator p { margin: 0; }
 
 .sticky-note {
-    border-color: var(--rose);
+    border-color: var(--deep-pink);
 }
 .handwritten { font-size: 13px; margin: 5px 0 0; color: var(--ink); }
 
@@ -410,7 +393,7 @@ body {
     text-align: center;
     margin-top: 20px;
     padding-top: 14px;
-    border-top: 2px dashed var(--bright-gold);
+    border-top: 2px dashed var(--deep-pink);
     position: relative;
 }
 
@@ -431,13 +414,13 @@ body {
 .stamps-row img {
     height: 31px;
     width: auto;
-    border: 1px solid var(--bright-gold);
+    border: 1px solid var(--deep-pink);
     border-radius: 2px;
 }
 
 .realm-footer p { 
     font-size: 12px; 
-    color: var(--wine); 
+    color: var(--deep-pink); 
     margin: 10px 0 0; 
     font-family: "MedievalSharp", cursive; 
 }
