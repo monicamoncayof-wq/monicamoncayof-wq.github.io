@@ -1,11 +1,10 @@
 /* =========================================================
-   JUDITH'S WHIMSICAL MEDIEVAL KINGDOM
-   Palette: Sage Forest, Rose Wine, Gold & Antique Parchment
+   JUDITH'S WHIMSICAL NEOCITIES / TUMBLR SHRINE
+   Palette: Vintage Floral, Sage Green, Rose Wine & Gold
    ========================================================= */
 
 :root {
     --forest: #23372c;
-    --deep-forest: #16241c;
     --wine: #6e2d3e;
     --rose: #b15b6c;
     --soft-rose: #df9ba7;
@@ -14,13 +13,8 @@
     --warm-parchment: #fff7eb;
     --dark-parchment: #e3d2b8;
     --bright-gold: #d4a74e;
-    --deep-gold: #9e7529;
     --ink: #332025;
 }
-
-/* =========================================================
-   BASE RESET & GIF BACKGROUND
-   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -32,568 +26,293 @@ html {
 
 body {
     margin: 0;
-    padding: 30px 15px;
+    padding: 20px 10px;
     min-height: 100vh;
-    
-    background-image:  
-        url('a4787d5b75e37154c1bf46cddf1b93ae.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    /* Matches your vintage floral wallpaper background */
+    background-color: var(--forest);
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
-    line-height: 1.6;
-}
-/* Floating Whimsical Background Stars */
-.star-float {
-    position: fixed;
-    color: var(--bright-gold);
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
-}
-.star-1 { top: 10%; left: 3%; font-size: 24px; animation: pulse 4s infinite; }
-.star-2 { top: 60%; right: 4%; font-size: 32px; animation: pulse 5s infinite 1s; }
-.star-3 { bottom: 15%; left: 4%; font-size: 20px; animation: pulse 3.5s infinite 0.5s; }
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.2; transform: scale(0.9) rotate(0deg); }
-    50% { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
+    line-height: 1.5;
 }
 
 /* =========================================================
-   CASTLE CONTAINER
+   MAIN SHRINE CONTAINER (The Board)
    ========================================================= */
 
-.castle {
-    max-width: 1080px;
+.shrine-container {
+    max-width: 1050px;
     margin: 0 auto;
     background-color: var(--parchment);
-    border: 8px double var(--bright-gold);
-    outline: 3px solid var(--wine);
-    box-shadow: 0 0 0 8px var(--forest), 0 25px 60px rgba(0,0,0,0.6);
-    padding: 40px 45px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Parchment Texture Border */
-.castle::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(158,117,41,0.35);
-    pointer-events: none;
+    border: 4px solid var(--rose);
+    outline: 3px double var(--bright-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 15px;
 }
 
 /* =========================================================
-   HEADER SECTION
+   TOP MARQUEE & BANNER
    ========================================================= */
 
-.header-banner {
-    text-align: center;
-    padding-bottom: 25px;
-    border-bottom: 2px dashed var(--bright-gold);
-    margin-bottom: 35px;
-}
-
-.header-symbol {
-    color: var(--bright-gold);
-    font-size: 32px;
-    margin-bottom: 5px;
-    letter-spacing: 4px;
-}
-
-.eyebrow {
-    font-family: "Cinzel Decorative", serif;
-    color: var(--wine);
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-h1 {
-    font-family: "UnifrakturMaguntia", cursive;
-    color: var(--wine);
-    font-size: clamp(65px, 9vw, 105px);
-    margin: 5px 0 10px;
-    font-weight: normal;
-    line-height: 1;
-    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 0 rgba(110,45,62,0.15);
-}
-
-.tagline {
-    font-style: italic;
-    color: var(--forest);
-    font-size: 20px;
-    margin: 0 0 25px;
-}
-
-/* Navigation Doors */
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.nav-door {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background-color: var(--warm-parchment);
-    border: 2px solid var(--bright-gold);
-    color: var(--wine);
-    text-decoration: none;
+.marquee-bar {
+    background-color: var(--blush);
+    border: 1px solid var(--soft-rose);
+    padding: 6px 10px;
     font-family: "MedievalSharp", cursive;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-}
-
-.nav-door:hover, .nav-door.active {
-    background-color: var(--blush);
+    font-size: 13px;
     color: var(--wine);
-    border-color: var(--wine);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(110,45,62,0.2);
-}
-
-.nav-door .door-icon {
-    font-size: 18px;
-}
-
-/* =========================================================
-   INTRO SECTION: PORTRAIT & WELCOME
-   ========================================================= */
-
-.intro-grid {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 30px;
-    margin-bottom: 45px;
-}
-
-/* Distinct Card Styles */
-.portrait-card {
-    background-color: var(--warm-parchment);
-    border: 3px double var(--bright-gold);
-    padding: 25px 20px;
     text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    position: relative;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
 }
 
-.portrait-frame {
-    width: 170px;
-    height: 200px;
-    margin: 15px auto;
-    border: 4px double var(--wine);
-    outline: 2px solid var(--bright-gold);
-    background-color: var(--blush);
+.banner-box {
+    width: 100%;
+    height: 180px;
+    border: 3px double var(--bright-gold);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 15px rgba(110,45,62,0.15);
+    margin-bottom: 12px;
+    background-color: var(--warm-parchment);
 }
 
-.portrait-frame img {
+.banner-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.photo-placeholder {
-    color: var(--wine);
-    text-align: center;
-}
-
-.photo-placeholder span {
-    font-size: 45px;
-    display: block;
-}
-
-.portrait-card h2 {
-    font-family: "MedievalSharp", cursive;
-    color: var(--wine);
-    font-size: 26px;
-    margin: 10px 0 2px;
-}
-
-.portrait-card p {
-    font-style: italic;
-    color: var(--forest);
-    margin: 0;
-    font-size: 15px;
-}
-
-/* Welcome Scroll Card */
-.welcome-card {
-    background-color: var(--warm-parchment);
-    border: 2px solid var(--bright-gold);
-    padding: 30px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    position: relative;
-}
-
-.card-heading {
-    font-family: "Cinzel Decorative", serif;
-    color: var(--wine);
-    font-size: 18px;
-    text-align: center;
-    border-bottom: 1px dotted var(--bright-gold);
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-
-.dropcap {
-    float: left;
-    font-family: "UnifrakturMaguntia", cursive;
-    font-size: 70px;
-    line-height: 0.75;
-    padding-right: 12px;
-    color: var(--rose);
-}
-
-.welcome-card p {
-    font-size: 18px;
-    color: var(--ink);
-    margin-bottom: 15px;
-}
-
-.manuscript-box {
-    margin-top: 25px;
+/* Navigation Menu Bar */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
     background-color: var(--blush);
-    border: 1px dashed var(--rose);
-    padding: 12px 18px;
-    text-align: center;
-    font-style: italic;
+    border: 1px solid var(--soft-rose);
+    padding: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background-color: var(--warm-parchment);
+    border: 1px solid var(--bright-gold);
     color: var(--wine);
-    font-size: 15px;
+    padding: 5px 12px;
+    font-family: "MedievalSharp", cursive;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--rose);
+    color: white;
+    border-color: var(--wine);
 }
 
 /* =========================================================
-   ROOMS OF THE KINGDOM (MAIN GRID)
+   DASHBOARD GRID LAYOUT (3 COLUMNS)
    ========================================================= */
 
-.section-title {
-    text-align: center;
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr 260px;
+    gap: 15px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Widget Box Styles */
+.widget-box {
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 0px rgba(110,45,62,0.1);
+}
+
+.widget-title {
+    background-color: var(--blush);
+    border-bottom: 2px dashed var(--rose);
     font-family: "Cinzel Decorative", serif;
     color: var(--wine);
-    font-size: 22px;
-    margin: 45px 0 25px;
-    letter-spacing: 2px;
-}
-
-.rooms-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-bottom: 45px;
-}
-
-.room-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-size: 13px;
     text-align: center;
-    padding: 28px 20px;
-    text-decoration: none;
-    border: 2px solid var(--bright-gold);
-    position: relative;
-    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 5px;
+    margin: -12px -12px 10px -12px;
+    letter-spacing: 1px;
 }
 
-/* Unique Distinguishable Colors for Each Room */
-.room-art { background-color: #fbedec; }
-.room-music { background-color: #eaf1e7; }
-.room-blog { background-color: #f7eedf; }
-.room-treasury { background-color: #f8e5e8; }
-.room-playroom { background-color: #e5ece6; }
-.room-scrapbook { background-color: #f5eae0; }
+/* =========================================================
+   LEFT COLUMN: PROFILE & STATS
+   ========================================================= */
 
-.room-card::before {
-    content: "❦";
-    position: absolute;
-    top: 6px;
-    left: 10px;
-    color: var(--bright-gold);
-    font-size: 14px;
+.profile-avatar {
+    width: 100%;
+    height: 180px;
+    border: 2px solid var(--wine);
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-.room-card::after {
-    content: "❦";
-    position: absolute;
-    bottom: 6px;
-    right: 10px;
-    color: var(--bright-gold);
-    font-size: 14px;
-}
-
-.room-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--wine);
-    box-shadow: 0 15px 30px rgba(110,45,62,0.18);
-}
-
-.room-icon {
-    font-size: 45px;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease;
-}
-
-.room-card:hover .room-icon {
-    transform: scale(1.2) rotate(6deg);
-}
-
-.room-card h3 {
-    font-family: "MedievalSharp", cursive;
-    color: var(--wine);
-    font-size: 22px;
-    margin: 0 0 8px;
-    font-weight: normal;
-}
-
-.room-card p {
-    font-size: 15px;
-    color: #523f44;
-    margin: 0 0 15px;
+.profile-info {
+    font-size: 13px;
     line-height: 1.4;
 }
 
-.enter-btn {
-    font-size: 13px;
-    color: var(--rose);
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.profile-info p {
+    margin: 4px 0;
 }
 
-/* =========================================================
-   BOTTOM INTERACTIVE & GIF DISPLAY SECTION
-   ========================================================= */
-
-.interactive-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-bottom: 30px;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.interactive-card {
-    background-color: var(--warm-parchment);
-    border: 2px solid var(--bright-gold);
-    padding: 22px 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* GIF Treasures Section */
-.gif-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.gif-box {
+.social-icon-btn {
     background-color: var(--parchment);
-    border: 2px double var(--bright-gold);
-    padding: 12px 8px;
-    text-align: center;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.gif-box:hover {
-    transform: translateY(-4px) rotate(2deg);
-    background-color: var(--blush);
-    border-color: var(--wine);
-}
-
-.gif-box img {
-    max-width: 100%;
-    height: 48px;
-    object-fit: contain;
-}
-
-.gif-emoji {
-    font-size: 30px;
-    display: block;
-}
-
-.gif-box span {
-    display: block;
+    border: 1px solid var(--bright-gold);
+    padding: 4px 8px;
     font-size: 12px;
     color: var(--wine);
-    margin-top: 4px;
+    text-decoration: none;
     font-family: "MedievalSharp", cursive;
 }
 
-/* Currently List */
-.status-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0;
+.social-icon-btn:hover {
+    background-color: var(--blush);
 }
 
-.status-item {
+/* =========================================================
+   MIDDLE COLUMN: WELCOME, UPDATES & GALLERY
+   ========================================================= */
+
+.welcome-text {
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.dropcap-custom {
+    float: left;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 55px;
+    line-height: 0.8;
+    padding-right: 8px;
+    color: var(--rose);
+}
+
+.update-entry {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 0;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    padding: 6px 0;
     border-bottom: 1px dotted var(--dark-parchment);
 }
 
-.status-item:last-child {
-    border-bottom: none;
+.update-date {
+    font-size: 11px;
+    color: var(--rose);
+    font-family: monospace;
+    white-space: nowrap;
 }
 
-.status-item .icon {
-    font-size: 22px;
-    color: var(--bright-gold);
+/* Mini Gallery Grid */
+.mini-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.status-item div {
-    font-size: 15px;
-}
-
-.status-item strong {
-    color: var(--wine);
-    font-family: "MedievalSharp", cursive;
-    font-weight: normal;
-}
-
-/* Interactive Favorites List */
-.fav-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0;
-}
-
-.fav-list li {
-    padding: 8px 12px;
-    margin-bottom: 6px;
+.gallery-img-box {
+    height: 110px;
+    border: 1px solid var(--bright-gold);
     background-color: var(--parchment);
-    border: 1px solid var(--dark-parchment);
-    font-size: 15px;
-    color: var(--ink);
-    transition: all 0.25s ease;
-    cursor: default;
+    overflow: hidden;
 }
 
-.fav-list li::before {
-    content: "✦ ";
-    color: var(--bright-gold);
-}
-
-.fav-list li:hover {
-    padding-left: 20px;
-    background-color: var(--blush);
-    color: var(--wine);
-    border-color: var(--rose);
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    text-align: center;
-    border-top: 2px dashed var(--bright-gold);
-    padding-top: 25px;
-    margin-top: 20px;
-}
-
-.footer-ornament {
-    color: var(--bright-gold);
-    font-size: 20px;
-    letter-spacing: 6px;
-}
-
-footer p {
-    font-family: "MedievalSharp", cursive;
-    color: var(--wine);
-    font-size: 16px;
-    margin: 8px 0 4px;
-}
-
-footer small {
-    color: var(--forest);
-    font-size: 13px;
-    font-style: italic;
-}
-
-/* =========================================================
-   RESPONSIVE DESIGN (FOR MOBILE & TABLETS)
-   ========================================================= */
-
-@media (max-width: 900px) {
-    .intro-grid { grid-template-columns: 1fr; }
-    .rooms-grid { grid-template-columns: repeat(2, 1fr); }
-    .interactive-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 600px) {
-    .castle { padding: 20px 15px; }
-    .rooms-grid { grid-template-columns: 1fr; }
-    h1 { font-size: 55px; }
-    .nav-door { padding: 8px 12px; font-size: 14px; }
-}
-/* =========================================================
-   INTERACTIVE PHOTO LETTER J HEADER
-   ========================================================= */
-
-.interactive-j-container {
-    display: inline-flex;
-    align-items: baseline;
-    text-decoration: none;
-    font-family: "UnifrakturMaguntia", cursive;
-    border: 3px double var(--bright-gold);
-    outline: 2px solid var(--wine);
-    margin-right: 2px;
-
-    font-size: clamp(65px, 9vw, 105px);
-    line-height: 1;
-    margin: 5px 0 10px;
+.gallery-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.j-photo {
-    width: 0.8em; /* Scales perfectly with the font size */
-    height: 0.85em;
-    object-fit: cover;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+.gallery-img-box img:hover {
+    transform: scale(1.08);
 }
 
-.rest-of-name {
+/* =========================================================
+   RIGHT COLUMN: MUSIC, STATUS & GUESTBOOK
+   ========================================================= */
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.status-row img {
+    width: 24px;
+    height: 24px;
+}
+
+.guestbook-box {
+    background-color: var(--parchment);
+    border: 1px dashed var(--rose);
+    padding: 8px;
+    font-size: 12px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.guestbook-msg {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dotted var(--dark-parchment);
+}
+
+.guestbook-msg strong {
     color: var(--wine);
-    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 0 rgba(110,45,62,0.15);
-    transition: color 0.3s ease;
 }
 
-/* Hover effect when you mouse over it */
-.interactive-j-container:hover {
-    transform: translateY(-5px);
+/* =========================================================
+   BOTTOM STAMPS & FOOTER ROW
+   ========================================================= */
+
+.stamps-footer-section {
+    margin-top: 15px;
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
+    padding: 12px;
+    text-align: center;
 }
 
-.interactive-j-container:hover .j-photo {
-    border-color: var(--wine);
-    box-shadow: 0 6px 15px rgba(110,45,62,0.4);
-    filter: brightness(1.1);
+.stamps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
-.interactive-j-container:hover .rest-of-name {
-    color: var(--rose);
+.stamps-container img {
+    height: 31px; /* Standard 88x31 pixel button height */
+    border: 1px solid var(--dark-parchment);
+}
+
+.footer-credits {
+    font-size: 12px;
+    color: var(--wine);
+    font-family: "MedievalSharp", cursive;
+    margin: 0;
 }
