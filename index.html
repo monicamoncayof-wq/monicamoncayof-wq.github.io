@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monica's Little Kingdom</title>
+    <title>The Whimsical Kingdom of Judith</title>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts for Medieval & Whimsical Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
@@ -17,146 +17,191 @@
 
 <body>
 
+    <!-- Floating Background Stars -->
+    <div class="star-float star-1">✦</div>
+    <div class="star-float star-2">✧</div>
+    <div class="star-float star-3">✦</div>
+
+    <!-- MAIN CASTLE FRAME -->
     <div class="castle">
 
-        <!-- HEADER SECTION -->
-        <header class="castle-header">
-            <div class="crown">♕</div>
-            <h1>Monica</h1>
-            <p class="subtitle">a tiny medieval-modern kingdom — zero scrolling required</p>
+        <!-- HEADER -->
+        <header class="header-banner">
+            <div class="header-symbol">❦ ──── ✦ ──── ❦</div>
+            <p class="eyebrow">Welcome to the digital realm of</p>
+            <h1>Judith</h1>
+            <p class="tagline">a whimsical medieval-modern sanctuary for art, music & stories</p>
 
-            <!-- NAVIGATION -->
+            <!-- NAVIGATION DOORS -->
             <nav class="main-nav">
                 <a href="index.html" class="nav-door active">
-                    <span>♜</span><b>Home</b>
+                    <span class="door-icon">♜</span> Home
                 </a>
                 <a href="art.html" class="nav-door">
-                    <span>🎨</span><b>Art</b>
+                    <span class="door-icon">🎨</span> Gallery
                 </a>
                 <a href="music.html" class="nav-door">
-                    <span>♫</span><b>Music</b>
+                    <span class="door-icon">♫</span> Music Room
                 </a>
                 <a href="blog.html" class="nav-door">
-                    <span>📜</span><b>Chronicles</b>
+                    <span class="door-icon">📜</span> Chronicles
                 </a>
                 <a href="fun.html" class="nav-door">
-                    <span>♞</span><b>Playroom</b>
+                    <span class="door-icon">♞</span> Playroom
                 </a>
             </nav>
         </header>
 
-        <!-- MAIN NO-SCROLL VIEWPORT GRID -->
-        <div class="main-viewport">
+        <!-- MAIN CONTENT AREA -->
+        <main>
 
-            <!-- LEFT SIDEBAR: PORTRAIT & STATUS -->
-            <div class="left-sidebar">
-                <article class="room portrait-box">
-                    <div class="room-title">THE LADY</div>
+            <!-- INTRO SECTION: PORTRAIT & WELCOME -->
+            <section class="intro-grid">
+
+                <!-- PORTRAIT CARD -->
+                <article class="portrait-card">
+                    <div class="card-heading">THE LADY</div>
                     <div class="portrait-frame">
-                        <!-- REPLACE WITH YOUR PHOTO: <img src="images/monica.jpg" alt="Monica"> -->
+                        <!-- REPLACE WITH YOUR PHOTO OR GIF:
+                             <img src="your-photo.jpg" alt="Judith"> -->
                         <div class="photo-placeholder">
-                            <span>♡</span>
-                            <small>portrait</small>
+                            <span>👑</span>
+                            <p>your picture here</p>
                         </div>
                     </div>
-                    <h2>Monica</h2>
-                    <p class="tiny-text">castle keeper</p>
+                    <h2>Judith</h2>
+                    <p>keeper of this little kingdom</p>
                 </article>
 
-                <article class="room status-box">
-                    <div class="room-title">CURRENTLY</div>
-                    <div class="status-list">
-                        <div class="status-item">
-                            <span>♫</span>
-                            <div><strong>listening</strong></div>
-                        </div>
-                        <div class="status-item">
-                            <span>✎</span>
-                            <div><strong>creating</strong></div>
-                        </div>
-                        <div class="status-item">
-                            <span>♡</span>
-                            <div><strong>loving cozy vibes</strong></div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- CENTER PANEL: ROOM CARDS & BANNER -->
-            <div class="center-panel">
-                <div class="rooms-mini-grid">
-                    <a href="art.html" class="castle-room">
-                        <div class="room-icon">🎨</div>
-                        <h3>Art Gallery</h3>
-                        <p>paintings & digital pieces</p>
-                    </a>
-
-                    <a href="music.html" class="castle-room">
-                        <div class="room-icon">♫</div>
-                        <h3>Music Room</h3>
-                        <p>favorite songs & sounds</p>
-                    </a>
-
-                    <a href="blog.html" class="castle-room">
-                        <div class="room-icon">📜</div>
-                        <h3>Chronicles</h3>
-                        <p>personal thoughts & stories</p>
-                    </a>
-
-                    <a href="favorites.html" class="castle-room">
-                        <div class="room-icon">♡</div>
-                        <h3>Treasury</h3>
-                        <p>things I adore & collect</p>
-                    </a>
-
-                    <a href="fun.html" class="castle-room">
-                        <div class="room-icon">♞</div>
-                        <h3>Playroom</h3>
-                        <p>mini experiments & fun</p>
-                    </a>
-
-                    <a href="scrapbook.html" class="castle-room">
-                        <div class="room-icon">🌹</div>
-                        <h3>Scrapbook</h3>
-                        <p>pixel stamps & snapshots</p>
-                    </a>
-                </div>
-
-                <article class="room welcome-banner">
-                    <div class="room-title">✦ WELCOME TRAVELER ✦</div>
-                    <p>Step into my digital sanctuary where old-world charm meets cozy modern creativity. Grab a cup of tea and enjoy!</p>
-                </article>
-            </div>
-
-            <!-- RIGHT SIDEBAR: GIFS & QUICK FAVORITES -->
-            <div class="right-sidebar">
-                <article class="room treasures-box">
-                    <div class="room-title">PIXEL GIFS</div>
-                    <div class="mini-gif-grid">
-                        <!-- REPLACE WITH YOUR GIFS: <img src="rose.gif" alt="rose"> -->
-                        <div class="gif-slot">🌹</div>
-                        <div class="gif-slot">🦋</div>
-                        <div class="gif-slot">🕯</div>
-                        <div class="gif-slot">✨</div>
+                <!-- WELCOME SCROLL -->
+                <article class="welcome-card">
+                    <h2 class="card-heading">✦ WELCOME, TRAVELER ✦</h2>
+                    <p><span class="dropcap">G</span>reetings and warm welcome! You have arrived at my personal corner of the web. This kingdom was built to capture everything I love—from fine paintings and vintage notes to quiet melodies and cozy code experiments.</p>
+                    <p>Take your time wandering through the rooms below. Every door leads to a different piece of my world!</p>
+                    <div class="manuscript-box">
+                        ✨ "Every knight and wanderer is welcome by this hearth." ✨
                     </div>
                 </article>
 
-                <article class="room quick-favorites">
-                    <div class="room-title">QUICK FAVORITES</div>
-                    <ul>
-                        <li>Fine arts & painting</li>
-                        <li>Playing instruments</li>
-                        <li>Warm vintage lights</li>
-                        <li>Cozy aesthetic details</li>
+            </section>
+
+            <!-- ROOMS OF THE KINGDOM -->
+            <h2 class="section-title">❧ THE ROOMS OF THE CASTLE ❧</h2>
+
+            <section class="rooms-grid">
+
+                <a href="art.html" class="room-card room-art">
+                    <div class="room-icon">🎨</div>
+                    <h3>The Art Gallery</h3>
+                    <p>Acrylic canvases, sketches, digital drawings & creative pieces.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+                <a href="music.html" class="room-card room-music">
+                    <div class="room-icon">♫</div>
+                    <h3>The Music Room</h3>
+                    <p>Piano, guitar melodies, vinyl playlists & favorite tracks.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+                <a href="blog.html" class="room-card room-blog">
+                    <div class="room-icon">📜</div>
+                    <h3>The Chronicles</h3>
+                    <p>Personal essays, thoughts, science notes & cozy stories.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+                <a href="favorites.html" class="room-card room-treasury">
+                    <div class="room-icon">👑</div>
+                    <h3>The Treasury</h3>
+                    <p>A curated collection of things I adore, collect & hold close.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+                <a href="fun.html" class="room-card room-playroom">
+                    <div class="room-icon">♞</div>
+                    <h3>The Playroom</h3>
+                    <p>Interactive mini projects, experiments & fun discoveries.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+                <a href="scrapbook.html" class="room-card room-scrapbook">
+                    <div class="room-icon">🌹</div>
+                    <h3>The Scrapbook</h3>
+                    <p>Pixel stamps, nostalgic photos & aesthetic snapshots.</p>
+                    <span class="enter-btn">enter room →</span>
+                </a>
+
+            </section>
+
+            <!-- INTERACTIVE & GIF DISPLAY SECTION -->
+            <section class="interactive-grid">
+
+                <!-- GIF TREASURES CARD -->
+                <article class="interactive-card">
+                    <h3 class="card-heading">PIXEL TREASURES</h3>
+                    <div class="gif-grid">
+                        <!-- REPLACE WITH YOUR ACTUAL GIF IMAGES LIKE:
+                             <div class="gif-box"><img src="rose.gif" alt="Rose"><span>rose.gif</span></div> -->
+                        <div class="gif-box">
+                            <span class="gif-emoji">🌹</span>
+                            <span>rose.gif</span>
+                        </div>
+                        <div class="gif-box">
+                            <span class="gif-emoji">🦋</span>
+                            <span>butter.gif</span>
+                        </div>
+                        <div class="gif-box">
+                            <span class="gif-emoji">🕯️</span>
+                            <span>candle.gif</span>
+                        </div>
+                        <div class="gif-box">
+                            <span class="gif-emoji">✨</span>
+                            <span>sparkle.gif</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CURRENT STATUS CARD -->
+                <article class="interactive-card">
+                    <h3 class="card-heading">CURRENTLY</h3>
+                    <ul class="status-list">
+                        <li class="status-item">
+                            <span class="icon">🎧</span>
+                            <div><strong>listening to</strong><br>favorite playlists</div>
+                        </li>
+                        <li class="status-item">
+                            <span class="icon">🖌️</span>
+                            <div><strong>creating</strong><br>paintings & coding</div>
+                        </li>
+                        <li class="status-item">
+                            <span class="icon">📖</span>
+                            <div><strong>learning</strong><br>science & biology</div>
+                        </li>
                     </ul>
                 </article>
-            </div>
 
-        </div>
+                <!-- INTERACTIVE FAVORITES CARD -->
+                <article class="interactive-card">
+                    <h3 class="card-heading">FAVORITE THINGS</h3>
+                    <ul class="fav-list">
+                        <li>Fine arts & acrylic painting</li>
+                        <li>Playing piano & guitar</li>
+                        <li>Cats & cozy aesthetic mornings</li>
+                        <li>Warm yellow candlelight</li>
+                        <li>Creative web projects</li>
+                    </ul>
+                </article>
+
+            </section>
+
+        </main>
 
         <!-- FOOTER -->
         <footer>
-            <p>Built with magic and love by Monica ❦ Welcome to your single-screen kingdom</p>
+            <div class="footer-ornament">❦ ─── ✦ ─── ❦</div>
+            <p>Built with magic, code, and care by Judith</p>
+            <small>Thank you for visiting my digital castle</small>
         </footer>
 
     </div>
