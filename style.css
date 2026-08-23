@@ -35,15 +35,15 @@ body {
     padding: 30px 15px;
     min-height: 100vh;
     
-    /* ADD YOUR GIF BACKGROUND HERE */
+    /* This puts your photo in the background with a soft green tint over it so your text is easy to read */
     background-image: 
-        linear-gradient(rgba(35, 55, 44, 0.82), rgba(22, 36, 28, 0.88)), 
-        url('a4787d5b75e37154c1bf46cddf1b93ae.jpg'); /* Replace with your actual gif file name or link */
+        linear-gradient(rgba(35, 55, 44, 0.78), rgba(22, 36, 28, 0.85)), 
+        url('a4787d5b75e37154c1bf46cddf1b93ae.jpg'); 
     
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the GIF still as you scroll through the castle */
+    background-attachment: fixed;
 
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
