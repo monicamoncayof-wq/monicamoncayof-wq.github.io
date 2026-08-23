@@ -1,198 +1,204 @@
 /* =========================================================
-   MONICA'S LITTLE KINGDOM - ONE-PAGE NO-SCROLL THEME
+   JUDITH'S WHIMSICAL MEDIEVAL KINGDOM
+   Palette: Sage Forest, Rose Wine, Gold & Antique Parchment
    ========================================================= */
 
 :root {
-    --midnight: #100b12;
-    --deep-wine: #2d131f;
-    --cardinal: #6b2238;
-    --soft-rose: #a85871;
-    --pale-blush: #e3bdc6;
-    --cream: #f4eae1;
-    --bright-gold: #e2b761;
-    --dark-gold: #9e7b34;
-    --ink: #2b1820;
+    --forest: #23372c;
+    --deep-forest: #16241c;
+    --wine: #6e2d3e;
+    --rose: #b15b6c;
+    --soft-rose: #df9ba7;
+    --blush: #f4dcd3;
+    --parchment: #f6ebd9;
+    --warm-parchment: #fff7eb;
+    --dark-parchment: #e3d2b8;
+    --bright-gold: #d4a74e;
+    --deep-gold: #9e7529;
+    --ink: #332025;
 }
 
 /* =========================================================
-   RESET & ABSOLUTE NO-SCROLL VIEWPORT FIX
+   BASE RESET & BACKGROUND
    ========================================================= */
 
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Locks page to prevent any scrolling */
-    background-color: var(--midnight);
+    padding: 30px 15px;
+    min-height: 100vh;
+    background-color: var(--forest);
     background-image: 
-        radial-gradient(ellipse at 20% 20%, rgba(107,34,56,.15), transparent 40%),
-        radial-gradient(ellipse at 80% 80%, rgba(226,183,97,.08), transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(212,167,78,0.12), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(110,45,62,0.25), transparent 50%);
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
+    line-height: 1.6;
+}
+
+/* Floating Whimsical Background Stars */
+.star-float {
+    position: fixed;
+    color: var(--bright-gold);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+.star-1 { top: 10%; left: 3%; font-size: 24px; animation: pulse 4s infinite; }
+.star-2 { top: 60%; right: 4%; font-size: 32px; animation: pulse 5s infinite 1s; }
+.star-3 { bottom: 15%; left: 4%; font-size: 20px; animation: pulse 3.5s infinite 0.5s; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(0.9) rotate(0deg); }
+    50% { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
 }
 
 /* =========================================================
-   COMPACT CASTLE FRAME (FITS ENTIRE SCREEN)
+   CASTLE CONTAINER
    ========================================================= */
 
 .castle {
-    position: absolute;
-    inset: 12px;
-    padding: 12px 20px;
-    background-color: var(--cream);
-    border: 6px double var(--bright-gold);
-    outline: 2px solid var(--cardinal);
-    box-shadow: 0 0 0 4px var(--midnight), 0 10px 30px rgba(0,0,0,.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: var(--parchment);
+    border: 8px double var(--bright-gold);
+    outline: 3px solid var(--wine);
+    box-shadow: 0 0 0 8px var(--forest), 0 25px 60px rgba(0,0,0,0.6);
+    padding: 40px 45px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Paper Texture Effect */
+/* Parchment Texture Border */
 .castle::before {
     content: "";
     position: absolute;
-    inset: 6px;
+    inset: 8px;
+    border: 1px solid rgba(158,117,41,0.35);
     pointer-events: none;
-    border: 1px solid rgba(158,123,52,.4);
-    background-image: radial-gradient(rgba(107,34,56,.05) 1px, transparent 1px);
-    background-size: 12px 12px;
-    opacity: .6;
 }
 
 /* =========================================================
-   HEADER (COMPACT)
+   HEADER SECTION
    ========================================================= */
 
-.castle-header {
+.header-banner {
     text-align: center;
-    position: relative;
-    z-index: 3;
-    padding-bottom: 4px;
-    border-bottom: 1px dashed rgba(158,123,52,.5);
+    padding-bottom: 25px;
+    border-bottom: 2px dashed var(--bright-gold);
+    margin-bottom: 35px;
 }
 
-.crown {
+.header-symbol {
     color: var(--bright-gold);
-    font-size: 22px;
+    font-size: 32px;
+    margin-bottom: 5px;
+    letter-spacing: 4px;
+}
+
+.eyebrow {
+    font-family: "Cinzel Decorative", serif;
+    color: var(--wine);
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     margin: 0;
-    animation: crownGlow 4s ease-in-out infinite;
 }
 
 h1 {
-    margin: 2px 0;
-    color: var(--cardinal);
-    font-family: "UnifrakturMaguntia", serif;
-    font-size: clamp(38px, 5vw, 55px);
+    font-family: "UnifrakturMaguntia", cursive;
+    color: var(--wine);
+    font-size: clamp(65px, 9vw, 105px);
+    margin: 5px 0 10px;
     font-weight: normal;
     line-height: 1;
-    text-shadow: 1px 1px 0 var(--bright-gold);
+    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 0 rgba(110,45,62,0.15);
 }
 
-.subtitle {
-    margin: 0 0 6px;
-    color: var(--soft-rose);
-    font-size: 12px;
+.tagline {
     font-style: italic;
-    letter-spacing: 1px;
+    color: var(--forest);
+    font-size: 20px;
+    margin: 0 0 25px;
 }
 
-/* Micro Navigation Doors */
+/* Navigation Doors */
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .nav-door {
-    padding: 3px 12px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
+    color: var(--wine);
     text-decoration: none;
-    color: var(--cardinal);
-    background-color: #fff9f5;
-    border: 1px solid var(--dark-gold);
-    font-size: 11px;
-    transition: all 0.2s ease;
-}
-
-.nav-door span {
-    font-size: 12px;
-}
-
-.nav-door b {
-    font-family: "MedievalSharp", serif;
-    font-weight: normal;
+    font-family: "MedievalSharp", cursive;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
 }
 
 .nav-door:hover, .nav-door.active {
-    background-color: var(--pale-blush);
-    transform: translateY(-2px);
-    border-color: var(--cardinal);
+    background-color: var(--blush);
+    color: var(--wine);
+    border-color: var(--wine);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(110,45,62,0.2);
+}
+
+.nav-door .door-icon {
+    font-size: 18px;
 }
 
 /* =========================================================
-   MAIN VIEWPORT GRID SYSTEM
+   INTRO SECTION: PORTRAIT & WELCOME
    ========================================================= */
 
-.main-viewport {
+.intro-grid {
     display: grid;
-    grid-template-columns: 210px 1fr 210px;
-    gap: 12px;
-    flex-grow: 1;
-    align-items: center;
-    z-index: 2;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    margin-bottom: 45px;
 }
 
-.room {
-    background-color: #fffaf5;
-    border: 1px solid var(--dark-gold);
-    padding: 10px 12px;
+/* Distinct Card Styles */
+.portrait-card {
+    background-color: var(--warm-parchment);
+    border: 3px double var(--bright-gold);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     position: relative;
-    box-shadow: 0 3px 10px rgba(43,24,32,.05);
-}
-
-.room-title {
-    text-align: center;
-    color: var(--cardinal);
-    font-family: "Cinzel Decorative", serif;
-    font-size: 10px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    padding-bottom: 3px;
-    border-bottom: 1px dotted var(--dark-gold);
-}
-
-/* =========================================================
-   SIDEBAR 1: PORTRAIT & STATUS
-   ========================================================= */
-
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 100%;
-    justify-content: center;
-}
-
-.portrait-box {
-    text-align: center;
-    background-color: var(--pale-blush);
 }
 
 .portrait-frame {
-    width: 75px;
-    height: 90px;
-    margin: 4px auto;
-    background-color: #fff;
-    border: 2px double var(--dark-gold);
+    width: 170px;
+    height: 200px;
+    margin: 15px auto;
+    border: 4px double var(--wine);
+    outline: 2px solid var(--bright-gold);
+    background-color: var(--blush);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 15px rgba(110,45,62,0.15);
 }
 
 .portrait-frame img {
@@ -202,223 +208,342 @@ h1 {
 }
 
 .photo-placeholder {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--cardinal);
-    font-size: 10px;
+    color: var(--wine);
+    text-align: center;
 }
 
 .photo-placeholder span {
-    font-size: 20px;
+    font-size: 45px;
+    display: block;
 }
 
-.portrait-box h2 {
-    margin: 2px 0 0;
-    font-family: "MedievalSharp", serif;
+.portrait-card h2 {
+    font-family: "MedievalSharp", cursive;
+    color: var(--wine);
+    font-size: 26px;
+    margin: 10px 0 2px;
+}
+
+.portrait-card p {
+    font-style: italic;
+    color: var(--forest);
+    margin: 0;
     font-size: 15px;
-    color: var(--cardinal);
+}
+
+/* Welcome Scroll Card */
+.welcome-card {
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    position: relative;
+}
+
+.card-heading {
+    font-family: "Cinzel Decorative", serif;
+    color: var(--wine);
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px dotted var(--bright-gold);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.dropcap {
+    float: left;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 70px;
+    line-height: 0.75;
+    padding-right: 12px;
+    color: var(--rose);
+}
+
+.welcome-card p {
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 15px;
+}
+
+.manuscript-box {
+    margin-top: 25px;
+    background-color: var(--blush);
+    border: 1px dashed var(--rose);
+    padding: 12px 18px;
+    text-align: center;
+    font-style: italic;
+    color: var(--wine);
+    font-size: 15px;
+}
+
+/* =========================================================
+   ROOMS OF THE KINGDOM (MAIN GRID)
+   ========================================================= */
+
+.section-title {
+    text-align: center;
+    font-family: "Cinzel Decorative", serif;
+    color: var(--wine);
+    font-size: 22px;
+    margin: 45px 0 25px;
+    letter-spacing: 2px;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.room-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px 20px;
+    text-decoration: none;
+    border: 2px solid var(--bright-gold);
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Unique Distinguishable Colors for Each Room */
+.room-art { background-color: #fbedec; }
+.room-music { background-color: #eaf1e7; }
+.room-blog { background-color: #f7eedf; }
+.room-treasury { background-color: #f8e5e8; }
+.room-playroom { background-color: #e5ece6; }
+.room-scrapbook { background-color: #f5eae0; }
+
+.room-card::before {
+    content: "❦";
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: var(--bright-gold);
+    font-size: 14px;
+}
+
+.room-card::after {
+    content: "❦";
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    color: var(--bright-gold);
+    font-size: 14px;
+}
+
+.room-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--wine);
+    box-shadow: 0 15px 30px rgba(110,45,62,0.18);
+}
+
+.room-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover .room-icon {
+    transform: scale(1.2) rotate(6deg);
+}
+
+.room-card h3 {
+    font-family: "MedievalSharp", cursive;
+    color: var(--wine);
+    font-size: 22px;
+    margin: 0 0 8px;
     font-weight: normal;
 }
 
-.tiny-text {
-    margin: 0;
-    font-size: 9px;
-    color: var(--soft-rose);
-    font-style: italic;
+.room-card p {
+    font-size: 15px;
+    color: #523f44;
+    margin: 0 0 15px;
+    line-height: 1.4;
 }
 
-.status-box {
-    background-color: #f7ecde;
+.enter-btn {
+    font-size: 13px;
+    color: var(--rose);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+/* =========================================================
+   BOTTOM INTERACTIVE & GIF DISPLAY SECTION
+   ========================================================= */
+
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.interactive-card {
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
+    padding: 22px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* GIF Treasures Section */
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gif-box {
+    background-color: var(--parchment);
+    border: 2px double var(--bright-gold);
+    padding: 12px 8px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.gif-box:hover {
+    transform: translateY(-4px) rotate(2deg);
+    background-color: var(--blush);
+    border-color: var(--wine);
+}
+
+.gif-box img {
+    max-width: 100%;
+    height: 48px;
+    object-fit: contain;
+}
+
+.gif-emoji {
+    font-size: 30px;
+    display: block;
+}
+
+.gif-box span {
+    display: block;
+    font-size: 12px;
+    color: var(--wine);
+    margin-top: 4px;
+    font-family: "MedievalSharp", cursive;
+}
+
+/* Currently List */
 .status-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
 }
 
 .status-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--dark-parchment);
 }
 
-.status-item span {
-    color: var(--dark-gold);
-    font-size: 12px;
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.status-item .icon {
+    font-size: 22px;
+    color: var(--bright-gold);
+}
+
+.status-item div {
+    font-size: 15px;
 }
 
 .status-item strong {
-    font-family: "MedievalSharp", serif;
-    color: var(--cardinal);
+    color: var(--wine);
+    font-family: "MedievalSharp", cursive;
     font-weight: normal;
 }
 
-/* =========================================================
-   CENTER PANEL: KINGDOM ROOM CARDS (COMPACT GRID)
-   ========================================================= */
-
-.center-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 100%;
-    justify-content: center;
+/* Interactive Favorites List */
+.fav-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
 }
 
-.rooms-mini-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.castle-room {
-    padding: 10px 8px;
-    background-color: #fff9f5;
-    border: 1px solid var(--dark-gold);
-    text-align: center;
-    text-decoration: none;
-    color: var(--ink);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.castle-room:hover {
-    transform: translateY(-3px);
-    background-color: var(--pale-blush);
-    box-shadow: 0 4px 12px rgba(107,34,56,.15);
-}
-
-.room-icon {
-    font-size: 20px;
-    margin-bottom: 2px;
-}
-
-.castle-room h3 {
-    margin: 2px 0;
-    font-family: "MedievalSharp", serif;
-    font-size: 12px;
-    font-weight: normal;
-    color: var(--cardinal);
-}
-
-.castle-room p {
-    margin: 0;
-    font-size: 9px;
-    color: #6b515a;
-    line-height: 1.15;
-}
-
-.welcome-banner {
-    background-color: var(--pale-blush);
-    text-align: center;
+.fav-list li {
     padding: 8px 12px;
+    margin-bottom: 6px;
+    background-color: var(--parchment);
+    border: 1px solid var(--dark-parchment);
+    font-size: 15px;
+    color: var(--ink);
+    transition: all 0.25s ease;
+    cursor: default;
 }
 
-.welcome-banner p {
-    margin: 0;
-    font-size: 11px;
-    color: var(--cardinal);
-    line-height: 1.3;
+.fav-list li::before {
+    content: "✦ ";
+    color: var(--bright-gold);
 }
 
-/* =========================================================
-   SIDEBAR 2: GIF TREASURES & QUICK LIST
-   ========================================================= */
-
-.right-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 100%;
-    justify-content: center;
-}
-
-.treasures-box {
-    background-color: #f5e3d7;
-}
-
-.mini-gif-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-}
-
-.gif-slot {
-    background-color: #fff9f5;
-    border: 1px solid var(--dark-gold);
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    transition: transform 0.2s ease;
-}
-
-.gif-slot:hover {
-    transform: scale(1.08);
-}
-
-.gif-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.quick-favorites {
-    background-color: #fffaf5;
-}
-
-.quick-favorites ul {
-    margin: 0;
-    padding-left: 14px;
-    font-size: 10px;
-    color: var(--cardinal);
-}
-
-.quick-favorites li {
-    margin-bottom: 2px;
+.fav-list li:hover {
+    padding-left: 20px;
+    background-color: var(--blush);
+    color: var(--wine);
+    border-color: var(--rose);
 }
 
 /* =========================================================
-   FOOTER (MICRO)
+   FOOTER
    ========================================================= */
 
 footer {
     text-align: center;
-    border-top: 1px solid rgba(158,123,52,.4);
-    padding-top: 3px;
-    z-index: 3;
+    border-top: 2px dashed var(--bright-gold);
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.footer-ornament {
+    color: var(--bright-gold);
+    font-size: 20px;
+    letter-spacing: 6px;
 }
 
 footer p {
-    margin: 0;
-    font-size: 10px;
-    color: var(--cardinal);
+    font-family: "MedievalSharp", cursive;
+    color: var(--wine);
+    font-size: 16px;
+    margin: 8px 0 4px;
+}
+
+footer small {
+    color: var(--forest);
+    font-size: 13px;
+    font-style: italic;
 }
 
 /* =========================================================
-   ANIMATIONS
+   RESPONSIVE DESIGN (FOR MOBILE & TABLETS)
    ========================================================= */
 
-@keyframes crownGlow {
-    0%, 100% { text-shadow: 0 0 0 transparent; }
-    50% { text-shadow: 0 0 8px rgba(226,183,97,.7); }
+@media (max-width: 900px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+    .interactive-grid { grid-template-columns: 1fr; }
 }
 
-/* =========================================================
-   RESPONSIVE OVERRIDES FOR SMALL SCREENS
-   ========================================================= */
-
-@media (max-width: 850px) {
-    html, body { overflow: auto; height: auto; }
-    .castle { position: relative; inset: auto; width: 95%; margin: 10px auto; }
-    .main-viewport { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+    .castle { padding: 20px 15px; }
+    .rooms-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 55px; }
+    .nav-door { padding: 8px 12px; font-size: 14px; }
 }
