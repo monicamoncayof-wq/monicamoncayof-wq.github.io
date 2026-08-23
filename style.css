@@ -559,6 +559,10 @@ footer small {
     align-items: baseline;
     text-decoration: none;
     font-family: "UnifrakturMaguntia", cursive;
+    border: 3px double var(--bright-gold);
+    outline: 2px solid var(--wine);
+    margin-right: 2px;
+
     font-size: clamp(65px, 9vw, 105px);
     line-height: 1;
     margin: 5px 0 10px;
