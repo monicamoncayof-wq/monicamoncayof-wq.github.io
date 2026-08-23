@@ -1,159 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judith's Whimsical Shrine</title>
-
-    <!-- Stylesheet -->
+    <title>Judith's Realm</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts -->
+    
+    <!-- Medieval & Antique Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <div class="shrine-container">
+    <!-- Sparkle Container for JS Effects -->
+    <div id="sparkle-container"></div>
 
-        <!-- TOP MARQUEE -->
-        <div class="marquee-bar">
-            ✦ Welcome to Judith's retro digital sanctuary! Grab a cup of tea and stay awhile ✦
-        </div>
-
-        <!-- BANNER IMAGE -->
-        <div class="banner-box">
-            <img src="banner.gif" alt="Aesthetic Shrine Banner">
-        </div>
-
-        <!-- NAVIGATION BAR -->
-        <nav class="nav-bar">
-            <a href="#home" class="nav-btn">♜ Home</a>
-            <a href="#about" class="nav-btn">👑 About</a>
-            <a href="#gallery" class="nav-btn">🎨 Gallery</a>
-            <a href="#music" class="nav-btn">♫ Music</a>
-            <a href="#guestbook" class="nav-btn">📜 Guestbook</a>
-        </nav>
-
-        <!-- DASHBOARD 3-COLUMN GRID -->
-        <div class="dashboard-grid">
-
-            <!-- LEFT COLUMN: PROFILE & STATS -->
-            <aside>
-                <div class="widget-box">
-                    <div class="widget-title">THE LADY</div>
-                    <img src="avatar.jpg" alt="Judith" class="profile-avatar">
-                    <div class="profile-info">
-                        <p><strong>Name:</strong> Judith</p>
-                        <p><strong>Realm:</strong> Ecuador</p>
-                        <p><strong>Vibe:</strong> Medieval, Art & Code</p>
-                        <p><strong>Hobby:</strong> Painting & Music</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-icon-btn">Tumblr</a>
-                        <a href="#" class="social-icon-btn">GitHub</a>
-                        <a href="#" class="social-icon-btn">Mail</a>
-                    </div>
-                </div>
-
-                <div class="widget-box">
-                    <div class="widget-title">WIDGETS</div>
-                    <p style="font-size: 12px; margin: 0; text-align: center;">
-                        ✨ Visitor Count: <strong>01947</strong> ✨
-                    </p>
-                </div>
-            </aside>
-
-            <!-- MIDDLE COLUMN: MAIN WELCOME & UPDATES -->
-            <main>
-                <div class="widget-box" id="home">
-                    <div class="widget-title">✦ WELCOME TO MY SHRINE ✦</div>
-                    <p class="welcome-text">
-                        <span class="dropcap-custom">G</span>reetings, traveler! I created this cozy space to gather everything I love—from fine art and acoustic melodies to cozy web tinkering and vintage aesthetics. Look around, sign the guestbook, and enjoy the calm atmosphere!
-                    </p>
-                </div>
-
-                <div class="widget-box">
-                    <div class="widget-title">📜 NOTICES & UPDATES</div>
-                    <div class="update-entry">
-                        <span class="update-date">26/08/2026</span>
-                        <span>Added new acrylic painting gallery pieces & playlists!</span>
-                    </div>
-                    <div class="update-entry">
-                        <span class="update-date">20/08/2026</span>
-                        <span>Refurbished the single-page Neocities layout with custom CSS.</span>
-                    </div>
-                </div>
-
-                <div class="widget-box" id="gallery">
-                    <div class="widget-title">🎨 GALLERY SHOWCASE</div>
-                    <div class="mini-gallery">
-                        <div class="gallery-img-box">
-                            <img src="gallery-1.jpg" alt="Art 1">
-                        </div>
-                        <div class="gallery-img-box">
-                            <img src="gallery-2.jpg" alt="Art 2">
-                        </div>
-                        <div class="gallery-img-box">
-                            <img src="gallery-3.jpg" alt="Art 3">
-                        </div>
-                        <div class="gallery-img-box">
-                            <img src="gallery-4.jpg" alt="Art 4">
-                        </div>
-                    </div>
-                </div>
-            </main>
-
-            <!-- RIGHT COLUMN: MUSIC & GUESTBOOK -->
-            <aside>
-                <div class="widget-box" id="music">
-                    <div class="widget-title">♫ CURRENTLY PLAYING</div>
-                    <div class="status-row">
-                        <img src="cat-sticker.gif" alt="Cat Sticker">
-                        <div>
-                            <strong style="color: var(--wine);">Fleetwood Mac</strong><br>
-                            <span style="font-size: 11px; font-style: italic;">Say You Love Me</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 12px; margin: 5px 0 0; text-align: center;">
-                        🎧 <i>Looping vinyl classics & rainy day tunes.</i>
-                    </p>
-                </div>
-
-                <div class="widget-box" id="guestbook">
-                    <div class="widget-title">📖 GUESTBOOK</div>
-                    <div class="guestbook-box">
-                        <div class="guestbook-msg">
-                            <strong>Astra:</strong> Omg your site is so kyuuute!! ✨
-                        </div>
-                        <div class="guestbook-msg">
-                            <strong>Julian:</strong> Loving the medieval parchment aesthetic!
-                        </div>
-                        <div class="guestbook-msg">
-                            <strong>Mabel:</strong> Greetings from across the realm! 🌹
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-        </div>
-
-        <!-- STAMPS & FOOTER SECTION -->
-        <footer class="stamps-footer-section">
-            <div class="stamps-container">
-                <img src="stamp-music.gif" alt="Music Stamp">
-                <img src="stamp-art.gif" alt="Art Stamp">
-                <img src="stamp-kitty.gif" alt="Kitty Stamp">
-                <img src="stamp-retro.gif" alt="Retro Stamp">
-                <img src="stamp-tumblr.gif" alt="Tumblr Stamp">
+    <div class="shrine-wrapper">
+        
+        <!-- WIDE, SHORT BANNER -->
+        <header class="realm-header">
+            <div class="banner-container">
+                <!-- Upload a wide, short medieval landscape or floral banner here -->
+                <img src="images/banner-wide.gif" alt="Realm Banner" class="banner-img">
             </div>
-            <p class="footer-credits">© 2026 Judith • Built with magic, code, and love.</p>
+            
+            <div class="title-section">
+                <img src="images/gifs/decoration-star.gif" alt="star" class="title-ornament">
+                <h1 class="grand-title">Judith</h1>
+                <img src="images/gifs/decoration-star.gif" alt="star" class="title-ornament">
+            </div>
+            <p class="subtitle">A digital manuscript of art, melodies & curiosities</p>
+
+            <!-- MEDIEVAL NAVIGATION TABS -->
+            <nav class="medieval-nav">
+                <a href="index.html" class="nav-tab active">♜ Home</a>
+                <a href="about.html" class="nav-tab">👑 About</a>
+                <a href="art.html" class="nav-tab">🎨 Art</a>
+                <a href="music.html" class="nav-tab">♫ Music</a>
+                <a href="blog.html" class="nav-tab">📜 Blog</a>
+                <a href="scrapbook.html" class="nav-tab">🌹 Scrapbook</a>
+                <a href="fun.html" class="nav-tab">♞ Fun</a>
+                <!-- The obvious secret link -->
+                <a href="secret.html" class="nav-tab cryptic-tab">👁️‍🗨️ Secret</a>
+            </nav>
+        </header>
+
+        <!-- DENSE SCRAPBOOK GRID (Information Rich!) -->
+        <main class="scrapbook-grid">
+
+            <!-- Welcome Scroll -->
+            <section class="panel panel-large welcome-panel">
+                <h2 class="panel-heading">✦ Greetings, Traveler ✦</h2>
+                <p><span class="dropcap">W</span>elcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
+                <div class="ornamental-divider"></div>
+                <p class="update-ticker"><strong>Latest Scroll:</strong> <i>Finished the golden layers on The Kiss replica.</i></p>
+            </section>
+
+            <!-- Mini Profile -->
+            <section class="panel panel-small tilt-1">
+                <h2 class="panel-heading">The Lady</h2>
+                <div class="framed-image">
+                    <img src="images/portrait.jpg" alt="Judith Portrait">
+                </div>
+                <ul class="trait-list">
+                    <li><strong>Realm:</strong> Ecuador</li>
+                    <li><strong>Class:</strong> Student & Artist</li>
+                    <li><strong>Companions:</strong> 3 Felines (Black, Orange, White)</li>
+                </ul>
+            </section>
+
+            <!-- Currently Playing -->
+            <section class="panel panel-medium music-panel">
+                <h2 class="panel-heading">♫ Now Playing</h2>
+                <div class="music-widget">
+                    <img src="images/music/fleetwood-mac.jpg" alt="Album Cover" class="album-art tilt-2">
+                    <div class="track-info">
+                        <strong>Say You Love Me</strong>
+                        <span>Fleetwood Mac</span>
+                        <div class="audio-wave">
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Art Piece -->
+            <section class="panel panel-medium art-panel">
+                <h2 class="panel-heading">🎨 On the Easel</h2>
+                <div class="polaroid tilt-1">
+                    <img src="images/art/klimt-kiss.jpg" alt="The Kiss Acrylics">
+                    <div class="polaroid-caption">Burnt sienna & mustard yellow.</div>
+                </div>
+            </section>
+
+            <!-- Scrapbook Notes -->
+            <section class="panel panel-small sticky-note tilt-2">
+                <h2 class="panel-heading" style="border: none;">Pinned Note 📌</h2>
+                <p class="handwritten">Don't forget to review the biology notes on follicular selection for the new animated script!</p>
+                <img src="images/gifs/butterfly.gif" alt="butterfly" class="floating-gif float-bottom-right">
+            </section>
+
+            <!-- Favorites & Obsessions -->
+            <section class="panel panel-medium favorites-panel">
+                <h2 class="panel-heading">Current Obsessions</h2>
+                <div class="badge-grid">
+                    <span class="cute-badge">🧶 Knitting</span>
+                    <span class="cute-badge">🎹 Piano</span>
+                    <span class="cute-badge">🍓 Fruit Salad</span>
+                    <span class="cute-badge">🧪 Chemistry</span>
+                    <span class="cute-badge">💛 Yellow</span>
+                </div>
+            </section>
+
+            <!-- Status / Mood -->
+            <section class="panel panel-small mood-panel">
+                <h2 class="panel-heading">Atmosphere</h2>
+                <div class="status-indicator">
+                    <img src="images/gifs/candle.gif" alt="candle">
+                    <p>Cozy, studying, and brewing tea.</p>
+                </div>
+            </section>
+            
+        </main>
+
+        <!-- FOOTER & HIDDEN SECRET -->
+        <footer class="realm-footer">
+            <img src="images/gifs/ornamental-divider.gif" alt="divider" class="footer-divider">
+            <div class="stamps-row">
+                <img src="images/gifs/stamp-art.gif" alt="Art Stamp">
+                <img src="images/gifs/stamp-cat.gif" alt="Cat Stamp">
+                <img src="images/gifs/stamp-html.gif" alt="Made with HTML">
+            </div>
+            <p>Handcrafted by Judith in the year 2026.</p>
+            <!-- EASTER EGG HIDDEN LINK -->
+            <a href="secret.html" class="hidden-star-link" title="A secret passage...">✨</a>
         </footer>
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
