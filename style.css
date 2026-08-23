@@ -35,9 +35,7 @@ body {
     padding: 30px 15px;
     min-height: 100vh;
     
-    /* This puts your photo in the background with a soft green tint over it so your text is easy to read */
-    background-image: 
-        linear-gradient(rgba(35, 55, 44, 0.78), rgba(22, 36, 28, 0.85)), 
+    background-image:  
         url('a4787d5b75e37154c1bf46cddf1b93ae.jpg'); 
     
     background-size: cover;
