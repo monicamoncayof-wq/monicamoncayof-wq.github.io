@@ -550,3 +550,50 @@ footer small {
     h1 { font-size: 55px; }
     .nav-door { padding: 8px 12px; font-size: 14px; }
 }
+/* =========================================================
+   INTERACTIVE PHOTO LETTER J HEADER
+   ========================================================= */
+
+.interactive-j-container {
+    display: inline-flex;
+    align-items: baseline;
+    text-decoration: none;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: clamp(65px, 9vw, 105px);
+    line-height: 1;
+    margin: 5px 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.j-photo {
+    width: 0.8em; /* Scales perfectly with the font size */
+    height: 0.85em;
+    object-fit: cover;
+    border: 3px double var(--bright-gold);
+    outline: 2px solid var(--wine);
+    border-radius: 4px;
+    margin-right: 2px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.rest-of-name {
+    color: var(--wine);
+    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 0 rgba(110,45,62,0.15);
+    transition: color 0.3s ease;
+}
+
+/* Hover effect when you mouse over it */
+.interactive-j-container:hover {
+    transform: translateY(-5px);
+}
+
+.interactive-j-container:hover .j-photo {
+    border-color: var(--wine);
+    box-shadow: 0 6px 15px rgba(110,45,62,0.4);
+    filter: brightness(1.1);
+}
+
+.interactive-j-container:hover .rest-of-name {
+    color: var(--rose);
+}
