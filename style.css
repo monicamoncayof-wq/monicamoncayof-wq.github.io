@@ -1,19 +1,23 @@
 /* =========================================================
-   JUDITH'S MEDIEVAL SHRINE
-   Palette: Dusty Rose, Antique Gold, Parchment, Wine
+   JUDITH'S WHIMSICAL MEDIEVAL KINGDOM
+   Palette: Sage Forest, Rose Wine, Gold & Antique Parchment
    ========================================================= */
 
 :root {
-    --parchment: #f4ebd8;
-    --dark-parchment: #e3d3b6;
-    --wine: #5e2129;
-    --dusty-rose: #b47a82;
-    --soft-pink: #e8d3d6;
-    --antique-gold: #c5a059;
-    --bright-gold: #dfba6b;
-    --dark-brown: #2c1e16;
+    --forest: #23372c;
+    --deep-forest: #16241c;
+    --wine: #6e2d3e;
+    --rose: #b15b6c;
+    --soft-rose: #df9ba7;
+    --blush: #f4dcd3;
+    --parchment: #f6ebd9;
+    --warm-parchment: #fff7eb;
+    --dark-parchment: #e3d2b8;
+    --bright-gold: #d4a74e;
+    --deep-gold: #9e7529;
+    --ink: #332025;
     
-    --radius-large: 14px;
+    --radius-large: 12px;
     --radius-medium: 8px;
     --radius-small: 4px;
 }
@@ -24,312 +28,330 @@
 
 body {
     margin: 0;
-    padding: 40px 20px;
-    background-color: var(--dark-brown);
+    padding: 20px 10px;
+    background-color: var(--forest);
     background-image: 
-        radial-gradient(circle at center, rgba(180, 122, 130, 0.1) 0%, transparent 70%),
-        url('images/background-texture.jpg'); /* Upload a subtle old paper or floral pattern */
-    background-blend-mode: multiply;
+        radial-gradient(circle at 15% 15%, rgba(212,167,78,0.12), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(110,45,62,0.25), transparent 50%);
     font-family: "IM Fell English", Georgia, serif;
-    color: var(--dark-brown);
-    line-height: 1.6;
+    color: var(--ink);
+    line-height: 1.5;
 }
 
 /* =========================================================
-   MAIN CONTAINER (Wide, Horizontal, Soft Corners)
+   MAIN CONTAINER (Packed & Horizontal)
    ========================================================= */
 .shrine-wrapper {
-    max-width: 1150px;
+    max-width: 1100px;
     margin: 0 auto;
     background-color: var(--parchment);
-    border: 3px solid var(--antique-gold);
+    border: 4px solid var(--bright-gold);
     border-radius: var(--radius-large);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(197, 160, 89, 0.15);
-    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(158,117,41,0.15);
+    padding: 20px; /* Reduced padding so it feels tighter */
     position: relative;
+    outline: 2px solid var(--wine);
+    outline-offset: -8px;
 }
 
 /* =========================================================
-   HEADER & BANNER (Wide, Short, Impactful)
+   HEADER & BANNER 
    ========================================================= */
 .realm-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Tighter */
 }
 
 .banner-container {
     width: 100%;
-    height: 160px; /* Shorter, wider */
+    height: 140px; 
     border: 2px solid var(--wine);
     border-radius: var(--radius-medium);
     overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
+    position: relative;
+    background-color: var(--blush);
 }
 
 .banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%; /* Adjust to keep faces visible */
+    object-position: center 30%;
 }
 
-/* BIG NAME TYPOGRAPHY */
 .title-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .grand-title {
     font-family: "UnifrakturMaguntia", cursive;
-    font-size: clamp(55px, 8vw, 85px);
+    font-size: clamp(55px, 7vw, 75px);
     color: var(--wine);
     margin: 0;
     line-height: 1;
-    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 5px rgba(94, 33, 41, 0.2);
+    text-shadow: 2px 2px 0 var(--bright-gold), 3px 3px 4px rgba(110,45,62,0.3);
 }
 
 .title-ornament {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 .subtitle {
     font-family: "Cinzel Decorative", serif;
-    color: var(--dusty-rose);
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-top: 5px;
+    color: var(--forest);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 /* =========================================================
-   NAVIGATION (Medieval Tabs, Interactive)
+   NAVIGATION (Tightly Packed)
    ========================================================= */
 .medieval-nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 25px;
-    padding-bottom: 20px;
-    border-bottom: 2px dashed var(--antique-gold);
+    gap: 6px; /* Very close together */
+    margin-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--bright-gold);
 }
 
 .nav-tab {
-    background-color: var(--soft-pink);
-    border: 2px solid var(--dusty-rose);
+    background-color: var(--warm-parchment);
+    border: 2px solid var(--bright-gold);
     color: var(--wine);
-    padding: 8px 16px;
-    border-radius: var(--radius-medium);
+    padding: 6px 12px;
+    border-radius: var(--radius-small);
     font-family: "MedievalSharp", cursive;
     text-decoration: none;
-    font-size: 15px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
 .nav-tab:hover, .nav-tab.active {
-    background-color: var(--wine);
-    color: var(--parchment);
-    border-color: var(--antique-gold);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(94, 33, 41, 0.25);
-}
-
-.cryptic-tab {
-    opacity: 0.7;
-    border-style: dotted;
+    background-color: var(--blush);
+    border-color: var(--wine);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(110,45,62,0.25);
 }
 
 /* =========================================================
-   DENSE SCRAPBOOK GRID (Information Rich)
+   VERY DENSE SCRAPBOOK GRID
    ========================================================= */
 .scrapbook-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-auto-rows: auto;
-    gap: 20px; /* Moderate spacing, not cramped, not floating away */
+    gap: 12px; /* Super tight spacing! No huge blank gaps */
     align-items: start;
 }
 
-/* Panel Sizing overrides for Masonry feel */
 .panel-large { grid-column: span 2; }
 @media (max-width: 800px) {
     .panel-large { grid-column: span 1; }
 }
 
-/* Panel Base Styles */
 .panel {
-    background-color: var(--soft-pink);
-    border: 1px solid var(--antique-gold);
+    background-color: var(--warm-parchment);
+    border: 1px solid var(--bright-gold);
     border-radius: var(--radius-medium);
-    padding: 20px;
+    padding: 12px; /* Very packed padding */
     position: relative;
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .panel:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(94, 33, 41, 0.12);
+    transform: translateY(-1px);
     border-color: var(--wine);
+    box-shadow: 0 6px 15px rgba(110,45,62,0.12);
 }
 
 .panel-heading {
     font-family: "Cinzel Decorative", serif;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--wine);
-    border-bottom: 1px solid var(--antique-gold);
-    padding-bottom: 5px;
+    border-bottom: 1px dotted var(--bright-gold);
+    padding-bottom: 4px;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* =========================================================
-   CUSTOM COMPONENT STYLES
+   DECORATIVE GIFS & POSITIONING (Fills blank space)
    ========================================================= */
+.tiny-icon { width: 16px; height: 16px; vertical-align: middle; }
+.tiny-inline { width: 14px; height: 14px; vertical-align: baseline; margin-right: 3px; }
+.medium-icon { width: 35px; height: 35px; }
 
-/* Dropcap for text */
+.deco-float {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+.top-right-float { top: -15px; right: -10px; width: 45px; }
+.top-left-float { top: -10px; left: -10px; width: 30px; }
+.bottom-right-float { bottom: -10px; right: -5px; width: 35px; }
+.bottom-left-float { bottom: -5px; left: -10px; width: 30px; }
+
+.deco-corner {
+    position: absolute;
+    width: 40px;
+    z-index: 5;
+    pointer-events: none;
+}
+.top-left { top: 0; left: 0; }
+.top-right { top: 0; right: 0; }
+.bottom-right { bottom: 0; right: 0; }
+
+/* =========================================================
+   INTERNAL PANEL CONTENT
+   ========================================================= */
 .dropcap {
     float: left;
     font-family: "UnifrakturMaguntia", cursive;
-    font-size: 50px;
+    font-size: 45px;
     line-height: 0.8;
-    padding-right: 8px;
-    color: var(--antique-gold);
-    text-shadow: 1px 1px 0 var(--wine);
+    padding-right: 6px;
+    color: var(--rose);
 }
 
-/* Framed Images */
-.framed-image {
-    border: 3px double var(--antique-gold);
+.dense-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--blush);
+    padding: 6px 10px;
     border-radius: var(--radius-small);
-    padding: 4px;
-    background: var(--dark-parchment);
+    border: 1px dashed var(--rose);
+    margin-top: 10px;
+}
+.update-ticker { margin: 0; font-size: 13px; }
+
+/* Images & Polaroids */
+.framed-image {
+    border: 3px double var(--wine);
+    border-radius: var(--radius-small);
+    padding: 3px;
+    background: var(--blush);
+    position: relative;
 }
 
 .framed-image img {
     width: 100%;
-    border-radius: var(--radius-small);
+    border-radius: 2px;
     display: block;
-    transition: transform 0.4s ease;
 }
 
-.framed-image:hover img {
-    transform: scale(1.03);
-}
-
-/* Scrapbook Polaroids & Tilts */
-.tilt-1 { transform: rotate(-1.5deg); }
-.tilt-2 { transform: rotate(1.5deg); }
+.tilt-1 { transform: rotate(-1deg); }
+.tilt-2 { transform: rotate(1deg); }
 
 .polaroid {
     background: #fff;
-    padding: 8px 8px 25px 8px;
+    padding: 6px 6px 20px 6px;
     border-radius: var(--radius-small);
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
-    border: 1px solid #ddd;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #d4a74e;
 }
+.polaroid img { width: 100%; border-radius: 2px; }
+.polaroid-caption { font-size: 13px; text-align: center; margin-top: 6px; color: var(--wine); }
 
-.polaroid img {
-    width: 100%;
-    border-radius: 2px;
-}
+/* Lists & Badges */
+.tight-list { padding-left: 20px; margin: 8px 0 0; font-size: 13px; }
+.tight-list li { margin-bottom: 2px; }
 
-.polaroid-caption {
-    font-family: "Caveat", cursive; /* Optional: handwriting font */
-    font-size: 14px;
-    text-align: center;
-    color: #333;
-    margin-top: 8px;
-}
-
-/* Badges / Tags */
 .badge-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
 }
 
 .cute-badge {
-    background-color: var(--dark-parchment);
-    border: 1px solid var(--dusty-rose);
-    padding: 4px 10px;
-    border-radius: 12px; /* A bit more rounded for badges */
-    font-size: 13px;
+    background-color: var(--blush);
+    border: 1px solid var(--rose);
+    padding: 4px 8px;
+    border-radius: var(--radius-small);
+    font-size: 12px;
     color: var(--wine);
-    cursor: default;
-    transition: background 0.2s;
+    display: flex;
+    align-items: center;
 }
 
-.cute-badge:hover {
-    background-color: var(--antique-gold);
-    color: white;
-}
-
-/* Music Widget */
+/* Music & Status */
 .music-widget {
     display: flex;
     align-items: center;
-    gap: 15px;
-    background: var(--dark-parchment);
-    padding: 10px;
-    border-radius: var(--radius-medium);
-    border: 1px dashed var(--dusty-rose);
-}
-
-.album-art {
-    width: 60px;
-    height: 60px;
+    gap: 10px;
+    background: var(--blush);
+    padding: 8px;
     border-radius: var(--radius-small);
-    border: 2px solid var(--wine);
+    border: 1px dashed var(--rose);
 }
+.album-wrapper { position: relative; }
+.album-art { width: 55px; height: 55px; border-radius: 2px; border: 2px solid var(--wine); }
+.track-info strong { display: block; color: var(--wine); font-size: 14px; }
+.track-info span { font-size: 12px; color: var(--forest); }
+.audio-wave { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
 
-.track-info strong { display: block; color: var(--wine); }
-.track-info span { font-size: 13px; color: var(--dark-brown); }
-
-/* Floating Decorative GIFs */
-.floating-gif {
-    position: absolute;
-    width: 35px;
-    pointer-events: none;
-    opacity: 0.8;
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-style: italic;
 }
-.float-bottom-right { bottom: -10px; right: -10px; transform: rotate(-10deg); }
+.status-indicator p { margin: 0; }
+
+/* Sticky Note */
+.sticky-note {
+    background-color: var(--blush);
+    border-color: var(--rose);
+}
+.handwritten { font-size: 14px; margin: 5px 0 0; color: var(--ink); }
 
 /* =========================================================
-   FOOTER & SECRET EGG
+   FOOTER 
    ========================================================= */
 .realm-footer {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid var(--antique-gold);
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--bright-gold);
     position: relative;
+}
+
+.stamps-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .stamps-row img {
     height: 31px;
-    margin: 0 4px;
-    border: 1px solid var(--dusty-rose);
+    border: 1px solid var(--bright-gold);
     border-radius: 2px;
 }
 
-/* The Easter Egg */
+.realm-footer p { font-size: 13px; color: var(--wine); margin: 10px 0 0; font-family: "MedievalSharp", cursive; }
+
 .hidden-star-link {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 18px;
+    bottom: 5px;
+    right: 5px;
+    font-size: 16px;
     text-decoration: none;
-    opacity: 0.2;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.hidden-star-link:hover {
-    opacity: 1;
-    transform: scale(1.5) rotate(15deg);
-    text-shadow: 0 0 10px var(--bright-gold);
+    opacity: 0.3;
 }
