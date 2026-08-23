@@ -19,7 +19,7 @@
 }
 
 /* =========================================================
-   BASE RESET & BACKGROUND
+   BASE RESET & GIF BACKGROUND
    ========================================================= */
 
 * {
@@ -34,15 +34,21 @@ body {
     margin: 0;
     padding: 30px 15px;
     min-height: 100vh;
-    background-color: var(--forest);
+    
+    /* ADD YOUR GIF BACKGROUND HERE */
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(212,167,78,0.12), transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(110,45,62,0.25), transparent 50%);
+        linear-gradient(rgba(35, 55, 44, 0.82), rgba(22, 36, 28, 0.88)), 
+        url('your-background-animation.gif'); /* Replace with your actual gif file name or link */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the GIF still as you scroll through the castle */
+
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
     line-height: 1.6;
 }
-
 /* Floating Whimsical Background Stars */
 .star-float {
     position: fixed;
