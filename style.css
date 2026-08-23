@@ -1,252 +1,201 @@
 /* =========================================================
-   MONICA'S LITTLE KINGDOM - MODERN MEDIEVAL THEME
+   MONICA'S LITTLE KINGDOM - ONE-PAGE NO-SCROLL THEME
    ========================================================= */
 
 :root {
-    --forest: #263d31;
-    --deep-forest: #1d2d25;
-    --wine: #713747;
-    --deep-wine: #4d2633;
-    --rose: #b96d7a;
-    --soft-pink: #edc1c5;
-    --pale-pink: #f5dfe0;
-    --sage: #788b71;
-    --light-sage: #dce5d6;
-    --parchment: #f5ead8;
-    --light-parchment: #fff7e9;
-    --dark-parchment: #e4cfb1;
-    --gold: #bd9147;
-    --bright-gold: #d8b263;
-    --ink: #38272b;
+    --midnight: #100b12;
+    --deep-wine: #2d131f;
+    --cardinal: #6b2238;
+    --soft-rose: #a85871;
+    --pale-blush: #e3bdc6;
+    --cream: #f4eae1;
+    --bright-gold: #e2b761;
+    --dark-gold: #9e7b34;
+    --ink: #2b1820;
 }
 
 /* =========================================================
-   RESET & BASE STYLES
+   RESET & ABSOLUTE NO-SCROLL VIEWPORT FIX
    ========================================================= */
 
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
+html, body {
     margin: 0;
-    min-height: 100vh;
-    color: var(--ink);
-    font-family: "IM Fell English", Georgia, serif;
-    background-color: var(--forest);
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Locks page to prevent any scrolling */
+    background-color: var(--midnight);
     background-image: 
-        radial-gradient(ellipse at 15% 20%, rgba(255,255,255,.06), transparent 30%),
-        radial-gradient(ellipse at 85% 80%, rgba(0,0,0,.3), transparent 35%);
-    overflow-x: hidden;
+        radial-gradient(ellipse at 20% 20%, rgba(107,34,56,.15), transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(226,183,97,.08), transparent 40%);
+    font-family: "IM Fell English", Georgia, serif;
+    color: var(--ink);
 }
 
 /* =========================================================
-   OUTER CASTLE CONTAINER
+   COMPACT CASTLE FRAME (FITS ENTIRE SCREEN)
    ========================================================= */
 
 .castle {
-    width: min(1200px, 94%);
-    margin: 40px auto;
-    padding: 30px 40px;
-    background-color: var(--parchment);
-    border: 9px double var(--gold);
-    outline: 2px solid var(--wine);
-    box-shadow: 0 0 0 6px var(--forest), 0 20px 60px rgba(0,0,0,.5);
-    position: relative;
+    position: absolute;
+    inset: 12px;
+    padding: 12px 20px;
+    background-color: var(--cream);
+    border: 6px double var(--bright-gold);
+    outline: 2px solid var(--cardinal);
+    box-shadow: 0 0 0 4px var(--midnight), 0 10px 30px rgba(0,0,0,.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Old Paper Texture Overlay */
+/* Paper Texture Effect */
 .castle::before {
     content: "";
     position: absolute;
-    inset: 12px;
+    inset: 6px;
     pointer-events: none;
-    border: 1px solid rgba(189,145,71,.5);
-    background-image: radial-gradient(rgba(100,60,40,.07) 1px, transparent 1px);
-    background-size: 15px 15px;
-    opacity: .7;
+    border: 1px solid rgba(158,123,52,.4);
+    background-image: radial-gradient(rgba(107,34,56,.05) 1px, transparent 1px);
+    background-size: 12px 12px;
+    opacity: .6;
 }
 
 /* =========================================================
-   HEADER & NAVIGATION
+   HEADER (COMPACT)
    ========================================================= */
 
 .castle-header {
     text-align: center;
     position: relative;
     z-index: 3;
-    padding-bottom: 25px;
-    border-bottom: 2px dashed rgba(189,145,71,.4);
-    margin-bottom: 30px;
-}
-
-.header-ornament {
-    color: var(--gold);
-    font-size: 16px;
-    letter-spacing: 6px;
-    margin: 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed rgba(158,123,52,.5);
 }
 
 .crown {
-    color: var(--gold);
-    font-size: 38px;
-    margin: 10px 0 5px;
+    color: var(--bright-gold);
+    font-size: 22px;
+    margin: 0;
     animation: crownGlow 4s ease-in-out infinite;
 }
 
-.eyebrow {
-    margin: 5px 0;
-    color: var(--wine);
-    font-family: "Cinzel Decorative", serif;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-
 h1 {
-    margin: 10px 0;
-    color: var(--wine);
+    margin: 2px 0;
+    color: var(--cardinal);
     font-family: "UnifrakturMaguntia", serif;
-    font-size: clamp(70px, 9vw, 110px);
+    font-size: clamp(38px, 5vw, 55px);
     font-weight: normal;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 0 rgba(113,55,71,.1);
+    line-height: 1;
+    text-shadow: 1px 1px 0 var(--bright-gold);
 }
 
 .subtitle {
-    margin: 5px 0 20px;
-    color: var(--sage);
-    font-size: 18px;
+    margin: 0 0 6px;
+    color: var(--soft-rose);
+    font-size: 12px;
     font-style: italic;
+    letter-spacing: 1px;
 }
 
-/* Navigation Doors */
+/* Micro Navigation Doors */
 .main-nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 8px;
 }
 
 .nav-door {
-    min-width: 100px;
-    padding: 10px 16px;
+    padding: 3px 12px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 4px;
     text-decoration: none;
-    color: var(--wine);
-    background-color: var(--light-parchment);
-    border: 1px solid var(--gold);
-    box-shadow: inset 0 0 0 2px rgba(255,255,255,.5);
-    transition: all 0.3s ease;
+    color: var(--cardinal);
+    background-color: #fff9f5;
+    border: 1px solid var(--dark-gold);
+    font-size: 11px;
+    transition: all 0.2s ease;
 }
 
 .nav-door span {
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .nav-door b {
     font-family: "MedievalSharp", serif;
-    font-size: 12px;
     font-weight: normal;
 }
 
-.nav-door:hover {
-    transform: translateY(-5px);
-    color: var(--deep-wine);
-    background-color: var(--soft-pink);
-    box-shadow: 0 8px 18px rgba(113,55,71,.2), inset 0 -3px 0 var(--gold);
-}
-
-.nav-door.active {
-    background-color: var(--pale-pink);
-    border-color: var(--rose);
+.nav-door:hover, .nav-door.active {
+    background-color: var(--pale-blush);
+    transform: translateY(-2px);
+    border-color: var(--cardinal);
 }
 
 /* =========================================================
-   ROOMS & GRID LAYOUTS
+   MAIN VIEWPORT GRID SYSTEM
    ========================================================= */
 
-.intro-area {
+.main-viewport {
     display: grid;
-    grid-template-columns: 240px minmax(320px, 1fr) 240px;
-    gap: 20px;
-    margin-bottom: 35px;
+    grid-template-columns: 210px 1fr 210px;
+    gap: 12px;
+    flex-grow: 1;
+    align-items: center;
+    z-index: 2;
 }
 
 .room {
+    background-color: #fffaf5;
+    border: 1px solid var(--dark-gold);
+    padding: 10px 12px;
     position: relative;
-    padding: 24px;
-    background-color: var(--light-parchment);
-    border: 2px solid var(--gold);
-    box-shadow: inset 0 0 0 4px rgba(255,255,255,.4), 0 5px 15px rgba(56,39,43,.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.room:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(56,39,43,.14), inset 0 0 0 4px rgba(255,255,255,.6);
-}
-
-/* Medieval Decorative Corners */
-.room::before {
-    content: "❦";
-    position: absolute;
-    top: 8px;
-    left: 10px;
-    color: var(--gold);
-    font-size: 12px;
-}
-
-.room::after {
-    content: "❦";
-    position: absolute;
-    right: 10px;
-    bottom: 8px;
-    color: var(--gold);
-    font-size: 12px;
+    box-shadow: 0 3px 10px rgba(43,24,32,.05);
 }
 
 .room-title {
-    padding-bottom: 10px;
-    margin-bottom: 15px;
     text-align: center;
-    color: var(--wine);
+    color: var(--cardinal);
     font-family: "Cinzel Decorative", serif;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    border-bottom: 1px dotted var(--gold);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+    border-bottom: 1px dotted var(--dark-gold);
 }
 
 /* =========================================================
-   INDIVIDUAL SECTIONS (Portrait, Welcome, Currently)
+   SIDEBAR 1: PORTRAIT & STATUS
    ========================================================= */
 
-.portrait-room {
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    justify-content: center;
+}
+
+.portrait-box {
     text-align: center;
-    background-color: var(--pale-pink);
+    background-color: var(--pale-blush);
 }
 
 .portrait-frame {
-    width: 150px;
-    height: 180px;
-    margin: 15px auto;
-    padding: 6px;
-    background-color: var(--light-parchment);
-    border: 4px double var(--gold);
-    outline: 1px solid var(--wine);
-    box-shadow: 0 6px 14px rgba(0,0,0,.15);
+    width: 75px;
+    height: 90px;
+    margin: 4px auto;
+    background-color: #fff;
+    border: 2px double var(--dark-gold);
+    overflow: hidden;
 }
 
-.portrait-frame img, .portrait-frame iframe {
+.portrait-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -258,426 +207,218 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--soft-pink);
-    color: var(--wine);
+    color: var(--cardinal);
+    font-size: 10px;
 }
 
 .photo-placeholder span {
-    font-size: 40px;
+    font-size: 20px;
 }
 
-.portrait-room h2 {
-    margin: 8px 0 4px;
-    color: var(--wine);
+.portrait-box h2 {
+    margin: 2px 0 0;
     font-family: "MedievalSharp", serif;
+    font-size: 15px;
+    color: var(--cardinal);
     font-weight: normal;
-    font-size: 22px;
 }
 
 .tiny-text {
     margin: 0;
-    color: var(--sage);
-    font-size: 12px;
+    font-size: 9px;
+    color: var(--soft-rose);
     font-style: italic;
 }
 
-/* Welcome Room */
-.welcome-room {
-    background-color: var(--light-parchment);
+.status-box {
+    background-color: #f7ecde;
 }
 
-.welcome-content p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 14px 0;
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px;
 }
 
-.dropcap {
-    float: left;
-    color: var(--rose);
-    font-family: "UnifrakturMaguntia", serif;
-    font-size: 65px;
-    line-height: .75;
-    padding-right: 8px;
-}
-
-.manuscript-note {
-    margin-top: 20px !important;
-    padding: 12px;
-    text-align: center;
-    color: var(--wine);
-    background-color: var(--pale-pink);
-    border: 1px solid var(--gold);
-    font-style: italic;
-}
-
-/* Currently Room */
-.currently-room {
-    background-color: var(--light-sage);
-    border-color: var(--sage);
-}
-
-.current {
+.status-item {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 10px 4px;
-    border-bottom: 1px dotted rgba(38,61,49,.3);
+    gap: 6px;
 }
 
-.current:last-child {
-    border-bottom: none;
+.status-item span {
+    color: var(--dark-gold);
+    font-size: 12px;
 }
 
-.current > span {
-    color: var(--gold);
-    font-size: 22px;
-    transition: transform 0.3s ease;
-}
-
-.current:hover > span {
-    transform: rotate(15deg) scale(1.25);
-}
-
-.current strong {
-    display: block;
-    color: var(--forest);
+.status-item strong {
     font-family: "MedievalSharp", serif;
-    font-size: 12px;
+    color: var(--cardinal);
     font-weight: normal;
-}
-
-.current em {
-    display: block;
-    color: #4b5a48;
-    font-size: 12px;
 }
 
 /* =========================================================
-   KINGDOM ROOMS GRID
+   CENTER PANEL: KINGDOM ROOM CARDS (COMPACT GRID)
    ========================================================= */
 
-.kingdom-section {
-    margin: 40px 0;
-}
-
-.section-heading {
+.center-panel {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 22px;
 }
 
-.section-heading span {
-    color: var(--gold);
-    font-size: 20px;
-}
-
-.section-heading h2 {
-    margin: 0;
-    color: var(--wine);
-    font-family: "Cinzel Decorative", serif;
-    font-size: 18px;
-    font-weight: normal;
-}
-
-.rooms {
+.rooms-mini-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 8px;
 }
 
 .castle-room {
-    min-height: 220px;
-    padding: 24px 18px;
+    padding: 10px 8px;
+    background-color: #fff9f5;
+    border: 1px solid var(--dark-gold);
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: var(--ink);
-    text-decoration: none;
-    border: 2px solid var(--gold);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* Unique Room Background Tints */
-.art-room { background-color: var(--pale-pink); }
-.music-room { background-color: var(--light-sage); }
-.blog-room { background-color: #f1dfc8; }
-.favorite-room { background-color: #edd0d1; }
-.fun-room { background-color: #dbe4d5; }
-.scrapbook-room { background-color: #f3dfcf; }
-
-.castle-room::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(189,145,71,.5);
-    pointer-events: none;
+    transition: all 0.2s ease;
 }
 
 .castle-room:hover {
-    transform: translateY(-8px) rotate(-0.5deg);
-    box-shadow: 0 15px 30px rgba(56,39,43,.18), 0 0 0 2px var(--rose);
+    transform: translateY(-3px);
+    background-color: var(--pale-blush);
+    box-shadow: 0 4px 12px rgba(107,34,56,.15);
 }
 
 .room-icon {
-    font-size: 42px;
-    margin-bottom: 10px;
-    transition: transform 0.35s ease;
-}
-
-.castle-room:hover .room-icon {
-    transform: scale(1.25) rotate(8deg);
+    font-size: 20px;
+    margin-bottom: 2px;
 }
 
 .castle-room h3 {
-    margin: 6px 0;
-    color: var(--wine);
+    margin: 2px 0;
     font-family: "MedievalSharp", serif;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: normal;
+    color: var(--cardinal);
 }
 
 .castle-room p {
-    max-width: 200px;
-    margin: 6px auto;
-    color: #5b4a4d;
-    font-size: 13px;
-    line-height: 1.45;
+    margin: 0;
+    font-size: 9px;
+    color: #6b515a;
+    line-height: 1.15;
 }
 
-.enter {
-    margin-top: 14px;
-    color: var(--wine);
+.welcome-banner {
+    background-color: var(--pale-blush);
+    text-align: center;
+    padding: 8px 12px;
+}
+
+.welcome-banner p {
+    margin: 0;
     font-size: 11px;
-    letter-spacing: 1px;
-    opacity: 0.75;
-    transition: opacity 0.25s ease;
-}
-
-.castle-room:hover .enter {
-    opacity: 1;
+    color: var(--cardinal);
+    line-height: 1.3;
 }
 
 /* =========================================================
-   PERSONAL INTERACTIVE AREA & GIF SPACES
+   SIDEBAR 2: GIF TREASURES & QUICK LIST
    ========================================================= */
 
-.personal-area {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
-    gap: 18px;
-    margin-top: 40px;
-}
-
-.art-display {
-    text-align: center;
-    background-color: var(--light-parchment);
-}
-
-.art-placeholder {
-    width: 100%;
-    height: 140px;
-    margin: 15px auto;
+.right-sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--dark-parchment);
-    border: 5px double var(--gold);
-    outline: 1px solid var(--wine);
-    overflow: hidden;
-}
-
-.art-placeholder img {
-    width: 100%;
+    gap: 8px;
     height: 100%;
-    object-fit: cover;
+    justify-content: center;
 }
 
-.art-display p {
-    font-size: 13px;
-    line-height: 1.5;
+.treasures-box {
+    background-color: #f5e3d7;
 }
 
-.art-display a {
-    color: var(--wine);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.art-display a:hover {
-    color: var(--rose);
-}
-
-/* Treasures Grid (Optimized for GIFs & Pixel Art) */
-.treasure-display {
-    text-align: center;
-    background-color: var(--pale-pink);
-}
-
-.treasure-grid {
+.mini-gif-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 15px 0;
+    gap: 4px;
 }
 
-.treasure {
-    padding: 10px;
-    background-color: var(--light-parchment);
-    border: 1px solid var(--gold);
-    min-height: 80px;
+.gif-slot {
+    background-color: #fff9f5;
+    border: 1px solid var(--dark-gold);
+    height: 35px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-size: 14px;
+    transition: transform 0.2s ease;
 }
 
-.treasure img {
-    width: 48px;
-    height: 48px;
+.gif-slot:hover {
+    transform: scale(1.08);
+}
+
+.gif-slot img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
-.treasure:hover {
-    transform: translateY(-5px) rotate(2deg);
-    box-shadow: 0 5px 15px rgba(113,55,71,.2);
+.quick-favorites {
+    background-color: #fffaf5;
 }
 
-.treasure span {
-    font-size: 26px;
-}
-
-.treasure small {
-    color: var(--wine);
+.quick-favorites ul {
+    margin: 0;
+    padding-left: 14px;
     font-size: 10px;
-    margin-top: 4px;
+    color: var(--cardinal);
 }
 
-.treasure-display > p {
-    margin: 10px 0 0;
-    color: var(--wine);
-    font-size: 12px;
-    font-style: italic;
-}
-
-/* Interactive Favorites List */
-.favorites-display {
-    background-color: var(--light-sage);
-}
-
-.favorites-display ul {
-    margin: 10px 0;
-    padding: 0;
-    list-style: none;
-}
-
-.favorites-display li {
-    padding: 8px 10px;
-    color: var(--forest);
-    border-bottom: 1px dotted var(--sage);
-    transition: padding-left 0.25s ease, color 0.25s ease, background 0.25s ease;
-    cursor: default;
-}
-
-.favorites-display li::before {
-    content: "✦ ";
-    color: var(--gold);
-}
-
-.favorites-display li:hover {
-    padding-left: 18px;
-    color: var(--wine);
-    background-color: rgba(255,255,255,.4);
+.quick-favorites li {
+    margin-bottom: 2px;
 }
 
 /* =========================================================
-   FOOTER & FLOATING BACKGROUND DECORATIONS
+   FOOTER (MICRO)
    ========================================================= */
 
 footer {
-    margin-top: 35px;
     text-align: center;
-    color: var(--wine);
-    border-top: 1px solid var(--gold);
-    padding-top: 20px;
-}
-
-.footer-ornament {
-    color: var(--gold);
-    letter-spacing: 5px;
+    border-top: 1px solid rgba(158,123,52,.4);
+    padding-top: 3px;
+    z-index: 3;
 }
 
 footer p {
-    margin: 8px;
-    font-size: 13px;
+    margin: 0;
+    font-size: 10px;
+    color: var(--cardinal);
 }
-
-footer small {
-    color: var(--sage);
-    font-size: 11px;
-}
-
-/* Floating Elements */
-.background-decoration {
-    position: fixed;
-    z-index: -1;
-    color: var(--rose);
-    opacity: .35;
-    font-size: 90px;
-    pointer-events: none;
-}
-
-.rose-left { left: 1%; top: 15%; transform: rotate(-20deg); }
-.rose-right { right: 1%; bottom: 12%; transform: rotate(20deg); }
-
-.floating-star {
-    position: fixed;
-    z-index: -1;
-    color: var(--bright-gold);
-    opacity: .5;
-    pointer-events: none;
-}
-
-.star-one { top: 20%; left: 5%; animation: sparkle 3s infinite; }
-.star-two { top: 55%; right: 4%; animation: sparkle 4s infinite .8s; }
-.star-three { bottom: 15%; left: 7%; animation: sparkle 3.5s infinite 1s; }
 
 /* =========================================================
    ANIMATIONS
    ========================================================= */
 
-@keyframes sparkle {
-    0%, 100% { opacity: .25; transform: scale(.8) rotate(0); }
-    50% { opacity: 1; transform: scale(1.25) rotate(20deg); }
-}
-
 @keyframes crownGlow {
     0%, 100% { text-shadow: 0 0 0 transparent; }
-    50% { text-shadow: 0 0 14px rgba(216,178,99,.5); }
+    50% { text-shadow: 0 0 8px rgba(226,183,97,.7); }
 }
 
 /* =========================================================
-   MOBILE RESPONSIVENESS
+   RESPONSIVE OVERRIDES FOR SMALL SCREENS
    ========================================================= */
 
-@media (max-width: 900px) {
-    .castle { width: 95%; padding: 20px; }
-    .intro-area, .personal-area { grid-template-columns: 1fr; }
-    .rooms { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-    .rooms { grid-template-columns: 1fr; }
-    .main-nav { gap: 6px; }
-    .nav-door { min-width: 75px; padding: 8px; }
-    h1 { font-size: 65px; }
+@media (max-width: 850px) {
+    html, body { overflow: auto; height: auto; }
+    .castle { position: relative; inset: auto; width: 95%; margin: 10px auto; }
+    .main-viewport { grid-template-columns: 1fr; }
 }
