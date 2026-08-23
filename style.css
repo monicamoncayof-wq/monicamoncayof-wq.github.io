@@ -569,10 +569,6 @@ footer small {
     width: 0.8em; /* Scales perfectly with the font size */
     height: 0.85em;
     object-fit: cover;
-    border: 3px double var(--bright-gold);
-    outline: 2px solid var(--wine);
-    border-radius: 4px;
-    margin-right: 2px;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
