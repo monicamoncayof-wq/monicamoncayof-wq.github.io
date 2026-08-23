@@ -1,6 +1,6 @@
 /* =========================================================
-   JUDITH'S WHIMSICAL MEDIEVAL KINGDOM
-   Palette: Sage Forest, Rose Wine, Gold & Antique Parchment
+   JUDITH'S ILLUMINATED MEDIEVAL SHRINE
+   Palette: Sage Forest, Rose Wine, Gold & Textured Parchment
    ========================================================= */
 
 :root {
@@ -31,40 +31,50 @@ body {
     padding: 20px 10px;
     background-color: var(--forest);
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(212,167,78,0.12), transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(110,45,62,0.25), transparent 50%);
+        radial-gradient(circle at 15% 15%, rgba(212,167,78,0.15), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(110,45,62,0.3), transparent 50%);
     font-family: "IM Fell English", Georgia, serif;
     color: var(--ink);
     line-height: 1.5;
 }
 
-/* =========================================================
-   MAIN CONTAINER (Packed & Horizontal)
-   ========================================================= */
+/* SHRINE CONTAINER */
 .shrine-wrapper {
     max-width: 1100px;
     margin: 0 auto;
     background-color: var(--parchment);
+    background-image: url('panel-bg-parchment.jpg');
+    background-size: cover;
     border: 4px solid var(--bright-gold);
     border-radius: var(--radius-large);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(158,117,41,0.15);
-    padding: 20px; /* Reduced padding so it feels tighter */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(158,117,41,0.2);
+    padding: 22px;
     position: relative;
     outline: 2px solid var(--wine);
     outline-offset: -8px;
 }
 
-/* =========================================================
-   HEADER & BANNER 
-   ========================================================= */
+/* OUTER CORNER EMBLEMS */
+.outer-corner {
+    position: absolute;
+    width: 45px;
+    z-index: 100;
+    pointer-events: none;
+}
+.top-left-outer { top: -6px; left: -6px; }
+.top-right-outer { top: -6px; right: -6px; transform: rotate(90deg); }
+.bottom-left-outer { bottom: -6px; left: -6px; transform: rotate(-90deg); }
+.bottom-right-outer { bottom: -6px; right: -6px; transform: rotate(180deg); }
+
+/* HEADER & BANNER */
 .realm-header {
     text-align: center;
-    margin-bottom: 15px; /* Tighter */
+    margin-bottom: 15px;
 }
 
 .banner-container {
     width: 100%;
-    height: 140px; 
+    height: 160px; 
     border: 2px solid var(--wine);
     border-radius: var(--radius-medium);
     overflow: hidden;
@@ -80,11 +90,22 @@ body {
     object-position: center 30%;
 }
 
+.banner-vines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    object-fit: cover;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
 .title-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .grand-title {
@@ -97,8 +118,8 @@ body {
 }
 
 .title-ornament {
-    width: 25px;
-    height: 25px;
+    width: 32px;
+    height: 32px;
 }
 
 .subtitle {
@@ -114,14 +135,12 @@ body {
     gap: 8px;
 }
 
-/* =========================================================
-   NAVIGATION (Tightly Packed)
-   ========================================================= */
+/* NAVIGATION TABS */
 .medieval-nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px; /* Very close together */
+    gap: 6px;
     margin-top: 10px;
     padding-bottom: 15px;
     border-bottom: 2px dashed var(--bright-gold);
@@ -129,6 +148,7 @@ body {
 
 .nav-tab {
     background-color: var(--warm-parchment);
+    background-image: url('panel-bg-parchment.jpg');
     border: 2px solid var(--bright-gold);
     color: var(--wine);
     padding: 6px 12px;
@@ -142,19 +162,18 @@ body {
 
 .nav-tab:hover, .nav-tab.active {
     background-color: var(--blush);
+    background-image: url('panel-bg-blush.jpg');
     border-color: var(--wine);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(110,45,62,0.25);
 }
 
-/* =========================================================
-   VERY DENSE SCRAPBOOK GRID
-   ========================================================= */
+/* DENSE SCRAPBOOK GRID */
 .scrapbook-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: auto;
-    gap: 12px; /* Super tight spacing! No huge blank gaps */
+    gap: 12px;
     align-items: start;
 }
 
@@ -164,19 +183,38 @@ body {
 }
 
 .panel {
-    background-color: var(--warm-parchment);
     border: 1px solid var(--bright-gold);
     border-radius: var(--radius-medium);
-    padding: 12px; /* Very packed padding */
+    padding: 12px;
     position: relative;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* PANEL TEXTURE BACKGROUNDS */
+.bg-parchment {
+    background-color: var(--warm-parchment);
+    background-image: url('panel-bg-parchment.jpg');
+    background-size: cover;
+}
+
+.bg-blush {
+    background-color: var(--blush);
+    background-image: url('panel-bg-blush.jpg');
+    background-size: cover;
+}
+
+.bg-forest {
+    background-color: var(--forest);
+    background-image: url('panel-bg-forest.jpg');
+    background-size: cover;
+    color: var(--parchment);
 }
 
 .panel:hover {
     transform: translateY(-1px);
     border-color: var(--wine);
-    box-shadow: 0 6px 15px rgba(110,45,62,0.12);
+    box-shadow: 0 6px 15px rgba(110,45,62,0.15);
 }
 
 .panel-heading {
@@ -189,50 +227,61 @@ body {
     margin-bottom: 10px;
 }
 
-/* =========================================================
-   DECORATIVE GIFS & POSITIONING (Fills blank space)
-   ========================================================= */
+.light-heading {
+    color: var(--bright-gold);
+    border-bottom-color: var(--rose);
+}
+
+/* MANUSCRIPT DETAILS */
+.welcome-text-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.drop-letter {
+    width: 42px;
+    height: 42px;
+    margin-right: 6px;
+    margin-top: 2px;
+}
+
+.manuscript-body {
+    margin: 0;
+}
+
+/* DECORATIVE FLOATS & ICONS */
 .tiny-icon { width: 16px; height: 16px; vertical-align: middle; }
 .tiny-inline { width: 14px; height: 14px; vertical-align: baseline; margin-right: 3px; }
-.medium-icon { width: 35px; height: 35px; }
+.medium-icon { width: 32px; height: 32px; }
+.candle-icon { width: 28px; height: 38px; }
 
 .deco-float {
     position: absolute;
     z-index: 10;
     pointer-events: none;
 }
-.top-right-float { top: -15px; right: -10px; width: 45px; }
-.top-left-float { top: -10px; left: -10px; width: 30px; }
-.bottom-right-float { bottom: -10px; right: -5px; width: 35px; }
-.bottom-left-float { bottom: -5px; left: -10px; width: 30px; }
+.top-right-float { top: -10px; right: -5px; }
+.bottom-right-float { bottom: -10px; right: -5px; }
+.bottom-left-float { bottom: -5px; left: -10px; }
 
-.deco-corner {
+.wax-seal-img { width: 40px; }
+.medieval-cat-size { width: 45px; }
+.tiny-vial { width: 25px; }
+.tiny-lute { width: 30px; }
+.tiny-rose-gif { width: 28px; }
+
+.card-corner {
     position: absolute;
-    width: 40px;
-    z-index: 5;
+    width: 20px;
     pointer-events: none;
 }
-.top-left { top: 0; left: 0; }
-.top-right { top: 0; right: 0; }
-.bottom-right { bottom: 0; right: 0; }
-
-/* =========================================================
-   INTERNAL PANEL CONTENT
-   ========================================================= */
-.dropcap {
-    float: left;
-    font-family: "UnifrakturMaguntia", cursive;
-    font-size: 45px;
-    line-height: 0.8;
-    padding-right: 6px;
-    color: var(--rose);
-}
+.card-corner.top-right { top: 2px; right: 2px; transform: rotate(90deg); }
 
 .dense-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--blush);
+    background-color: rgba(244, 220, 211, 0.6);
     padding: 6px 10px;
     border-radius: var(--radius-small);
     border: 1px dashed var(--rose);
@@ -240,13 +289,19 @@ body {
 }
 .update-ticker { margin: 0; font-size: 13px; }
 
-/* Images & Polaroids */
+.panel-divider {
+    width: 100%;
+    height: 8px;
+    margin-top: 10px;
+    object-fit: contain;
+}
+
+/* GALLERY & POLAROIDS */
 .framed-image {
     border: 3px double var(--wine);
     border-radius: var(--radius-small);
     padding: 3px;
     background: var(--blush);
-    position: relative;
 }
 
 .framed-image img {
@@ -255,20 +310,25 @@ body {
     display: block;
 }
 
+.mini-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
 .tilt-1 { transform: rotate(-1deg); }
 .tilt-2 { transform: rotate(1deg); }
 
 .polaroid {
     background: #fff;
-    padding: 6px 6px 20px 6px;
+    padding: 5px;
     border-radius: var(--radius-small);
-    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
-    border: 1px solid #d4a74e;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.12);
+    border: 1px solid var(--bright-gold);
 }
-.polaroid img { width: 100%; border-radius: 2px; }
-.polaroid-caption { font-size: 13px; text-align: center; margin-top: 6px; color: var(--wine); }
+.polaroid img { width: 100%; height: 95px; object-fit: cover; border-radius: 2px; }
 
-/* Lists & Badges */
+/* LISTS & BADGES */
 .tight-list { padding-left: 20px; margin: 8px 0 0; font-size: 13px; }
 .tight-list li { margin-bottom: 2px; }
 
@@ -279,31 +339,29 @@ body {
 }
 
 .cute-badge {
-    background-color: var(--blush);
+    background-color: rgba(244, 220, 211, 0.7);
     border: 1px solid var(--rose);
     padding: 4px 8px;
     border-radius: var(--radius-small);
     font-size: 12px;
     color: var(--wine);
-    display: flex;
-    align-items: center;
 }
 
-/* Music & Status */
+/* MUSIC & STATUS */
 .music-widget {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: var(--blush);
+    background: rgba(22, 36, 28, 0.6);
     padding: 8px;
     border-radius: var(--radius-small);
-    border: 1px dashed var(--rose);
+    border: 1px dashed var(--bright-gold);
 }
-.album-wrapper { position: relative; }
-.album-art { width: 55px; height: 55px; border-radius: 2px; border: 2px solid var(--wine); }
-.track-info strong { display: block; color: var(--wine); font-size: 14px; }
-.track-info span { font-size: 12px; color: var(--forest); }
+.album-art { width: 55px; height: 55px; border-radius: 2px; border: 2px solid var(--bright-gold); object-fit: cover; }
+.track-info strong { display: block; color: var(--bright-gold); font-size: 14px; }
+.track-info span { font-size: 12px; color: var(--parchment); }
 .audio-wave { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+.music-text { font-size: 11px; font-style: italic; color: var(--soft-rose); }
 
 .status-indicator {
     display: flex;
@@ -314,22 +372,25 @@ body {
 }
 .status-indicator p { margin: 0; }
 
-/* Sticky Note */
 .sticky-note {
-    background-color: var(--blush);
     border-color: var(--rose);
 }
 .handwritten { font-size: 14px; margin: 5px 0 0; color: var(--ink); }
 
-/* =========================================================
-   FOOTER 
-   ========================================================= */
+/* FOOTER & STAMPS */
 .realm-footer {
     text-align: center;
     margin-top: 25px;
     padding-top: 15px;
     border-top: 2px dashed var(--bright-gold);
     position: relative;
+}
+
+.footer-divider-gold {
+    max-width: 100%;
+    height: 12px;
+    margin-bottom: 10px;
+    object-fit: contain;
 }
 
 .stamps-row {
