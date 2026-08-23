@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judith's Realm</title>
+    <title>Judith's Shrine</title>
     <link rel="stylesheet" href="style.css">
     
     <!-- Medieval & Antique Typography -->
@@ -13,38 +13,48 @@
 </head>
 <body>
 
-        <!-- BANNER & HEADER -->
+    <!-- MAIN BIG BOX -->
+    <div class="shrine-wrapper">
+        
+        <!-- ULTRA NARROW BANNER -->
+        <div class="banner-container">
+            <img src="banner.gif" alt="Realm Banner" class="banner-img">
+            <img src="border-vine.gif" alt="vines" class="banner-vines">
+        </div>
+
+        <!-- HEADER & TITLE SECTION -->
         <header class="realm-header">
-            <div class="banner-container">
-                <img src="banner.gif" alt="Realm Banner" class="banner-img">
-                <img src="border-vine.gif" alt="vines" class="banner-vines">
-            </div>
-            
             <div class="title-section">
                 <img src="sun-gold.gif" alt="gold sun" class="title-ornament">
-                <h1 class="grand-title">Judith</h1>
+                <h1 class="grand-title">
+                    <img src="illuminated-j.gif" alt="J" class="interactive-j-letter">udith
+                </h1>
                 <img src="sun-gold.gif" alt="gold sun" class="title-ornament">
             </div>
-            <p class="subtitle">
-                <img src="rose-icon.gif" alt="rose" class="tiny-icon">
-                A digital manuscript of art, melodies & curiosities
-                <img src="rose-icon.gif" alt="rose" class="tiny-icon">
-            </p>
 
-            <!-- NAVIGATION TABS -->
+            <!-- WHITE SUBTITLE BOX -->
+            <div class="subtitle-card">
+                <p class="subtitle">
+                    <img src="rose-icon.gif" alt="rose" class="tiny-icon">
+                    A digital manuscript of art, melodies, sciences & curiosities
+                    <img src="rose-icon.gif" alt="rose" class="tiny-icon">
+                </p>
+            </div>
+
+            <!-- CUSTOM DATED NAV TABS -->
             <nav class="medieval-nav">
                 <a href="index.html" class="nav-tab active">♜ Home</a>
-                <a href="about.html" class="nav-tab">👑 About</a>
-                <a href="art.html" class="nav-tab">🎨 Art</a>
-                <a href="music.html" class="nav-tab">♫ Music</a>
-                <a href="blog.html" class="nav-tab">📜 Blog</a>
-                <a href="scrapbook.html" class="nav-tab">🌹 Scrapbook</a>
-                <a href="fun.html" class="nav-tab">♞ Fun</a>
-                <a href="secret.html" class="nav-tab cryptic-tab">👁️‍🗨️ Secret</a>
+                <a href="about.html" class="nav-tab nav-about">👑 About</a>
+                <a href="art.html" class="nav-tab nav-art">🎨 Art</a>
+                <a href="music.html" class="nav-tab nav-music">♫ Music</a>
+                <a href="blog.html" class="nav-tab nav-blog">📜 Blog</a>
+                <a href="scrapbook.html" class="nav-tab nav-scrapbook">🌹 Scrapbook</a>
+                <a href="fun.html" class="nav-tab nav-fun">♞ Fun</a>
+                <a href="secret.html" class="nav-tab nav-secret">👁️‍🗨️ Secret</a>
             </nav>
         </header>
 
-        <!-- DENSE ILLUMINATED SCRAPBOOK GRID -->
+        <!-- NEOCITIES CARD SCRAPBOOK GRID -->
         <main class="scrapbook-grid">
 
             <!-- Welcome Scroll -->
@@ -53,31 +63,31 @@
                 <h2 class="panel-heading">✦ Greetings, Traveler ✦</h2>
                 <div class="welcome-text-wrapper">
                     <img src="illuminated-j.gif" alt="J" class="drop-letter">
-                    <p class="manuscript-body">elcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
+                    <p class="manuscript-body">Welcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
                 </div>
                 
                 <div class="dense-row">
                     <img src="quill-inkwell.gif" alt="quill" class="medium-icon">
-                    <p class="update-ticker"><strong>Latest Scroll:</strong> <i>Finished the golden layers on The Kiss replica.</i></p>
+                    <p class="update-ticker"><strong>Latest Scroll:</strong> Finished the golden layers on <i>The Kiss</i> replica.</p>
                     <img src="star-sparkle.gif" alt="sparkle" class="tiny-icon">
                 </div>
             </section>
 
-            <!-- Profile Panel -->
-            <section class="panel panel-small tilt-1 bg-parchment">
-                <img src="corner-gothic.png" alt="corner" class="card-corner top-right">
-                <h2 class="panel-heading">The Lady</h2>
-                <div class="framed-image">
+            <!-- Me / Profile Card (No image border) -->
+            <section class="panel panel-small card-me bg-parchment">
+                <h2 class="panel-heading">Me <img src="cat-sticker.gif" alt="cat" class="tiny-inline"></h2>
+                <div class="borderless-portrait">
                     <img src="avatar.jpg" alt="Judith Portrait">
                 </div>
-                <ul class="trait-list tight-list">
-                    <li><strong>Realm:</strong> Ecuador</li>
-                    <li><strong>Class:</strong> Student & Artist</li>
-                    <li><strong>Companions:</strong> 3 Cats <img src="cat-sticker.gif" alt="cat" class="tiny-inline"></li>
-                </ul>
+                <p class="bio-text">Student & artist wandering through Ecuador. Accompanied by 3 cats, oil paints, and classical melodies.</p>
+                <div class="mini-decorations">
+                    <img src="rose-icon.gif" alt="rose" class="tiny-icon">
+                    <img src="star-sparkle.gif" alt="sparkle" class="tiny-icon">
+                    <img src="candle-gothic.gif" alt="candle" class="candle-icon">
+                </div>
             </section>
 
-            <!-- Gallery Showcase -->
+            <!-- Gallery Showcase (Uncropped Photos) -->
             <section class="panel panel-large art-panel bg-parchment">
                 <img src="medieval-cat.gif" alt="medieval cat" class="deco-float top-right-float medieval-cat-size">
                 <h2 class="panel-heading">🎨 Gallery & Easel</h2>
@@ -98,11 +108,11 @@
                 <img src="divider-gold.png" alt="gold line" class="panel-divider">
             </section>
 
-            <!-- Currently Playing Music -->
+            <!-- Music Room -->
             <section class="panel panel-medium music-panel bg-forest">
                 <h2 class="panel-heading light-heading">♫ Music Room</h2>
                 <div class="music-widget">
-                    <div class="album-wrapper tilt-2">
+                    <div class="album-wrapper">
                         <img src="letter-j.jpg" alt="Music Cover" class="album-art">
                         <img src="lute-acoustic.gif" alt="lute" class="deco-float bottom-left-float tiny-lute">
                     </div>
@@ -117,15 +127,15 @@
                 </div>
             </section>
 
-            <!-- Science & Pinned Note -->
-            <section class="panel panel-small sticky-note tilt-2 bg-blush">
+            <!-- Science / Biology Note -->
+            <section class="panel panel-small sticky-note bg-blush">
                 <img src="alchemy-vial.gif" alt="alchemy vial" class="deco-float top-right-float tiny-vial">
                 <h2 class="panel-heading" style="border: none; padding-bottom: 0;">Pinned Note 📌</h2>
                 <p class="handwritten">Don't forget to review biology notes on follicular selection!</p>
                 <img src="rose.gif" alt="rose" class="deco-float bottom-right-float tiny-rose-gif">
             </section>
 
-            <!-- Favorites & Obsessions -->
+            <!-- Current Obsessions -->
             <section class="panel panel-medium favorites-panel bg-parchment">
                 <h2 class="panel-heading">Current Obsessions</h2>
                 <div class="badge-grid">
@@ -168,6 +178,5 @@
 
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
