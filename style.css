@@ -1,318 +1,335 @@
 /* =========================================================
-   JUDITH'S WHIMSICAL NEOCITIES / TUMBLR SHRINE
-   Palette: Vintage Floral, Sage Green, Rose Wine & Gold
+   JUDITH'S MEDIEVAL SHRINE
+   Palette: Dusty Rose, Antique Gold, Parchment, Wine
    ========================================================= */
 
 :root {
-    --forest: #23372c;
-    --wine: #6e2d3e;
-    --rose: #b15b6c;
-    --soft-rose: #df9ba7;
-    --blush: #f4dcd3;
-    --parchment: #f6ebd9;
-    --warm-parchment: #fff7eb;
-    --dark-parchment: #e3d2b8;
-    --bright-gold: #d4a74e;
-    --ink: #332025;
+    --parchment: #f4ebd8;
+    --dark-parchment: #e3d3b6;
+    --wine: #5e2129;
+    --dusty-rose: #b47a82;
+    --soft-pink: #e8d3d6;
+    --antique-gold: #c5a059;
+    --bright-gold: #dfba6b;
+    --dark-brown: #2c1e16;
+    
+    --radius-large: 14px;
+    --radius-medium: 8px;
+    --radius-small: 4px;
 }
 
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
-    padding: 20px 10px;
-    min-height: 100vh;
-    /* Matches your vintage floral wallpaper background */
-    background-color: var(--forest);
+    padding: 40px 20px;
+    background-color: var(--dark-brown);
+    background-image: 
+        radial-gradient(circle at center, rgba(180, 122, 130, 0.1) 0%, transparent 70%),
+        url('images/background-texture.jpg'); /* Upload a subtle old paper or floral pattern */
+    background-blend-mode: multiply;
     font-family: "IM Fell English", Georgia, serif;
-    color: var(--ink);
-    line-height: 1.5;
+    color: var(--dark-brown);
+    line-height: 1.6;
 }
 
 /* =========================================================
-   MAIN SHRINE CONTAINER (The Board)
+   MAIN CONTAINER (Wide, Horizontal, Soft Corners)
    ========================================================= */
-
-.shrine-container {
-    max-width: 1050px;
+.shrine-wrapper {
+    max-width: 1150px;
     margin: 0 auto;
     background-color: var(--parchment);
-    border: 4px solid var(--rose);
-    outline: 3px double var(--bright-gold);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    padding: 15px;
+    border: 3px solid var(--antique-gold);
+    border-radius: var(--radius-large);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(197, 160, 89, 0.15);
+    padding: 30px;
+    position: relative;
 }
 
 /* =========================================================
-   TOP MARQUEE & BANNER
+   HEADER & BANNER (Wide, Short, Impactful)
    ========================================================= */
-
-.marquee-bar {
-    background-color: var(--blush);
-    border: 1px solid var(--soft-rose);
-    padding: 6px 10px;
-    font-family: "MedievalSharp", cursive;
-    font-size: 13px;
-    color: var(--wine);
+.realm-header {
     text-align: center;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
+    margin-bottom: 30px;
 }
 
-.banner-box {
+.banner-container {
     width: 100%;
-    height: 180px;
-    border: 3px double var(--bright-gold);
+    height: 160px; /* Shorter, wider */
+    border: 2px solid var(--wine);
+    border-radius: var(--radius-medium);
     overflow: hidden;
-    margin-bottom: 12px;
-    background-color: var(--warm-parchment);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.banner-box img {
+.banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%; /* Adjust to keep faces visible */
 }
 
-/* Navigation Menu Bar */
-.nav-bar {
+/* BIG NAME TYPOGRAPHY */
+.title-section {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 6px;
-    background-color: var(--blush);
-    border: 1px solid var(--soft-rose);
-    padding: 8px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.nav-btn {
-    background-color: var(--warm-parchment);
-    border: 1px solid var(--bright-gold);
+.grand-title {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: clamp(55px, 8vw, 85px);
     color: var(--wine);
-    padding: 5px 12px;
-    font-family: "MedievalSharp", cursive;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.2s ease;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 2px 2px 0 var(--bright-gold), 4px 4px 5px rgba(94, 33, 41, 0.2);
 }
 
-.nav-btn:hover {
-    background-color: var(--rose);
-    color: white;
-    border-color: var(--wine);
+.title-ornament {
+    width: 30px;
+    height: 30px;
+}
+
+.subtitle {
+    font-family: "Cinzel Decorative", serif;
+    color: var(--dusty-rose);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-top: 5px;
 }
 
 /* =========================================================
-   DASHBOARD GRID LAYOUT (3 COLUMNS)
+   NAVIGATION (Medieval Tabs, Interactive)
    ========================================================= */
+.medieval-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--antique-gold);
+}
 
-.dashboard-grid {
+.nav-tab {
+    background-color: var(--soft-pink);
+    border: 2px solid var(--dusty-rose);
+    color: var(--wine);
+    padding: 8px 16px;
+    border-radius: var(--radius-medium);
+    font-family: "MedievalSharp", cursive;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.nav-tab:hover, .nav-tab.active {
+    background-color: var(--wine);
+    color: var(--parchment);
+    border-color: var(--antique-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(94, 33, 41, 0.25);
+}
+
+.cryptic-tab {
+    opacity: 0.7;
+    border-style: dotted;
+}
+
+/* =========================================================
+   DENSE SCRAPBOOK GRID (Information Rich)
+   ========================================================= */
+.scrapbook-grid {
     display: grid;
-    grid-template-columns: 240px 1fr 260px;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px; /* Moderate spacing, not cramped, not floating away */
     align-items: start;
 }
 
-@media (max-width: 900px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
+/* Panel Sizing overrides for Masonry feel */
+.panel-large { grid-column: span 2; }
+@media (max-width: 800px) {
+    .panel-large { grid-column: span 1; }
 }
 
-/* Widget Box Styles */
-.widget-box {
-    background-color: var(--warm-parchment);
-    border: 2px solid var(--bright-gold);
-    padding: 12px;
-    margin-bottom: 15px;
-    box-shadow: 2px 2px 0px rgba(110,45,62,0.1);
+/* Panel Base Styles */
+.panel {
+    background-color: var(--soft-pink);
+    border: 1px solid var(--antique-gold);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.widget-title {
-    background-color: var(--blush);
-    border-bottom: 2px dashed var(--rose);
+.panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(94, 33, 41, 0.12);
+    border-color: var(--wine);
+}
+
+.panel-heading {
     font-family: "Cinzel Decorative", serif;
+    font-size: 16px;
     color: var(--wine);
-    font-size: 13px;
-    text-align: center;
-    padding: 5px;
-    margin: -12px -12px 10px -12px;
-    letter-spacing: 1px;
-}
-
-/* =========================================================
-   LEFT COLUMN: PROFILE & STATS
-   ========================================================= */
-
-.profile-avatar {
-    width: 100%;
-    height: 180px;
-    border: 2px solid var(--wine);
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.profile-info {
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.profile-info p {
-    margin: 4px 0;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.social-icon-btn {
-    background-color: var(--parchment);
-    border: 1px solid var(--bright-gold);
-    padding: 4px 8px;
-    font-size: 12px;
-    color: var(--wine);
-    text-decoration: none;
-    font-family: "MedievalSharp", cursive;
-}
-
-.social-icon-btn:hover {
-    background-color: var(--blush);
-}
-
-/* =========================================================
-   MIDDLE COLUMN: WELCOME, UPDATES & GALLERY
-   ========================================================= */
-
-.welcome-text {
-    font-size: 15px;
+    border-bottom: 1px solid var(--antique-gold);
+    padding-bottom: 5px;
     margin-top: 0;
+    margin-bottom: 15px;
 }
 
-.dropcap-custom {
+/* =========================================================
+   CUSTOM COMPONENT STYLES
+   ========================================================= */
+
+/* Dropcap for text */
+.dropcap {
     float: left;
     font-family: "UnifrakturMaguntia", cursive;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 0.8;
     padding-right: 8px;
-    color: var(--rose);
+    color: var(--antique-gold);
+    text-shadow: 1px 1px 0 var(--wine);
 }
 
-.update-entry {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 13px;
-    padding: 6px 0;
-    border-bottom: 1px dotted var(--dark-parchment);
+/* Framed Images */
+.framed-image {
+    border: 3px double var(--antique-gold);
+    border-radius: var(--radius-small);
+    padding: 4px;
+    background: var(--dark-parchment);
 }
 
-.update-date {
-    font-size: 11px;
-    color: var(--rose);
-    font-family: monospace;
-    white-space: nowrap;
-}
-
-/* Mini Gallery Grid */
-.mini-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.gallery-img-box {
-    height: 110px;
-    border: 1px solid var(--bright-gold);
-    background-color: var(--parchment);
-    overflow: hidden;
-}
-
-.gallery-img-box img {
+.framed-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-small);
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.gallery-img-box img:hover {
-    transform: scale(1.08);
+.framed-image:hover img {
+    transform: scale(1.03);
 }
 
-/* =========================================================
-   RIGHT COLUMN: MUSIC, STATUS & GUESTBOOK
-   ========================================================= */
+/* Scrapbook Polaroids & Tilts */
+.tilt-1 { transform: rotate(-1.5deg); }
+.tilt-2 { transform: rotate(1.5deg); }
 
-.status-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    margin-bottom: 8px;
+.polaroid {
+    background: #fff;
+    padding: 8px 8px 25px 8px;
+    border-radius: var(--radius-small);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
 }
 
-.status-row img {
-    width: 24px;
-    height: 24px;
+.polaroid img {
+    width: 100%;
+    border-radius: 2px;
 }
 
-.guestbook-box {
-    background-color: var(--parchment);
-    border: 1px dashed var(--rose);
-    padding: 8px;
-    font-size: 12px;
-    max-height: 120px;
-    overflow-y: auto;
-}
-
-.guestbook-msg {
-    margin-bottom: 6px;
-    padding-bottom: 6px;
-    border-bottom: 1px dotted var(--dark-parchment);
-}
-
-.guestbook-msg strong {
-    color: var(--wine);
-}
-
-/* =========================================================
-   BOTTOM STAMPS & FOOTER ROW
-   ========================================================= */
-
-.stamps-footer-section {
-    margin-top: 15px;
-    background-color: var(--warm-parchment);
-    border: 2px solid var(--bright-gold);
-    padding: 12px;
+.polaroid-caption {
+    font-family: "Caveat", cursive; /* Optional: handwriting font */
+    font-size: 14px;
     text-align: center;
+    color: #333;
+    margin-top: 8px;
 }
 
-.stamps-container {
+/* Badges / Tags */
+.badge-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-    margin-bottom: 10px;
+    gap: 8px;
 }
 
-.stamps-container img {
-    height: 31px; /* Standard 88x31 pixel button height */
-    border: 1px solid var(--dark-parchment);
-}
-
-.footer-credits {
-    font-size: 12px;
+.cute-badge {
+    background-color: var(--dark-parchment);
+    border: 1px solid var(--dusty-rose);
+    padding: 4px 10px;
+    border-radius: 12px; /* A bit more rounded for badges */
+    font-size: 13px;
     color: var(--wine);
-    font-family: "MedievalSharp", cursive;
-    margin: 0;
+    cursor: default;
+    transition: background 0.2s;
+}
+
+.cute-badge:hover {
+    background-color: var(--antique-gold);
+    color: white;
+}
+
+/* Music Widget */
+.music-widget {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--dark-parchment);
+    padding: 10px;
+    border-radius: var(--radius-medium);
+    border: 1px dashed var(--dusty-rose);
+}
+
+.album-art {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-small);
+    border: 2px solid var(--wine);
+}
+
+.track-info strong { display: block; color: var(--wine); }
+.track-info span { font-size: 13px; color: var(--dark-brown); }
+
+/* Floating Decorative GIFs */
+.floating-gif {
+    position: absolute;
+    width: 35px;
+    pointer-events: none;
+    opacity: 0.8;
+}
+.float-bottom-right { bottom: -10px; right: -10px; transform: rotate(-10deg); }
+
+/* =========================================================
+   FOOTER & SECRET EGG
+   ========================================================= */
+.realm-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--antique-gold);
+    position: relative;
+}
+
+.stamps-row img {
+    height: 31px;
+    margin: 0 4px;
+    border: 1px solid var(--dusty-rose);
+    border-radius: 2px;
+}
+
+/* The Easter Egg */
+.hidden-star-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    opacity: 0.2;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.hidden-star-link:hover {
+    opacity: 1;
+    transform: scale(1.5) rotate(15deg);
+    text-shadow: 0 0 10px var(--bright-gold);
 }
