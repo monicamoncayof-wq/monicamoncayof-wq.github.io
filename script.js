@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Add a tiny sparkle effect to navigation clicks
     const navTabs = document.querySelectorAll('.nav-tab');
     
     navTabs.forEach(tab => {
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Create a tiny floating medieval sparkle
     function createSparkle(x, y) {
         const sparkle = document.createElement('div');
         sparkle.innerText = '✦';
@@ -26,13 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
         document.body.appendChild(sparkle);
         
-        // Animate floating up and fading out
         setTimeout(() => {
             sparkle.style.transform = 'translateY(-30px) rotate(45deg) scale(1.5)';
             sparkle.style.opacity = '0';
         }, 10);
         
-        // Clean up
         setTimeout(() => {
             sparkle.remove();
         }, 600);
