@@ -6,33 +6,34 @@
     <title>Judith's Realm</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Medieval & Antique Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Sparkle Container for JS Effects -->
     <div id="sparkle-container"></div>
 
     <div class="shrine-wrapper">
         
-        <!-- WIDE, SHORT BANNER -->
         <header class="realm-header">
             <div class="banner-container">
-                <!-- Upload a wide, short medieval landscape or floral banner here -->
                 <img src="images/banner-wide.gif" alt="Realm Banner" class="banner-img">
+                <img src="images/gifs/corner-ribbon.gif" alt="ribbon" class="deco-corner top-left">
+                <img src="images/gifs/corner-ribbon.gif" alt="ribbon" class="deco-corner top-right">
             </div>
             
             <div class="title-section">
-                <img src="images/gifs/decoration-star.gif" alt="star" class="title-ornament">
+                <img src="images/gifs/sparkle-cluster.gif" alt="sparkles" class="title-ornament">
                 <h1 class="grand-title">Judith</h1>
-                <img src="images/gifs/decoration-star.gif" alt="star" class="title-ornament">
+                <img src="images/gifs/sparkle-cluster.gif" alt="sparkles" class="title-ornament">
             </div>
-            <p class="subtitle">A digital manuscript of art, melodies & curiosities</p>
+            <p class="subtitle">
+                <img src="images/gifs/tiny-rose.gif" alt="rose" class="tiny-icon">
+                A digital manuscript of art, melodies & curiosities
+                <img src="images/gifs/tiny-rose.gif" alt="rose" class="tiny-icon">
+            </p>
 
-            <!-- MEDIEVAL NAVIGATION TABS -->
             <nav class="medieval-nav">
                 <a href="index.html" class="nav-tab active">♜ Home</a>
                 <a href="about.html" class="nav-tab">👑 About</a>
@@ -41,99 +42,101 @@
                 <a href="blog.html" class="nav-tab">📜 Blog</a>
                 <a href="scrapbook.html" class="nav-tab">🌹 Scrapbook</a>
                 <a href="fun.html" class="nav-tab">♞ Fun</a>
-                <!-- The obvious secret link -->
                 <a href="secret.html" class="nav-tab cryptic-tab">👁️‍🗨️ Secret</a>
             </nav>
         </header>
 
-        <!-- DENSE SCRAPBOOK GRID (Information Rich!) -->
         <main class="scrapbook-grid">
 
-            <!-- Welcome Scroll -->
             <section class="panel panel-large welcome-panel">
+                <img src="images/gifs/cat-sleeping.gif" alt="sleeping cat" class="deco-float top-right-float">
                 <h2 class="panel-heading">✦ Greetings, Traveler ✦</h2>
                 <p><span class="dropcap">W</span>elcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
-                <div class="ornamental-divider"></div>
-                <p class="update-ticker"><strong>Latest Scroll:</strong> <i>Finished the golden layers on The Kiss replica.</i></p>
+                
+                <div class="dense-row">
+                    <img src="images/gifs/quill.gif" alt="quill" class="medium-icon">
+                    <p class="update-ticker"><strong>Latest Scroll:</strong> <i>Finished the golden layers on The Kiss replica.</i></p>
+                </div>
             </section>
 
-            <!-- Mini Profile -->
             <section class="panel panel-small tilt-1">
                 <h2 class="panel-heading">The Lady</h2>
                 <div class="framed-image">
                     <img src="images/portrait.jpg" alt="Judith Portrait">
+                    <img src="images/gifs/sparkle-single.gif" alt="sparkle" class="deco-float bottom-left-float">
                 </div>
-                <ul class="trait-list">
+                <ul class="trait-list tight-list">
                     <li><strong>Realm:</strong> Ecuador</li>
                     <li><strong>Class:</strong> Student & Artist</li>
-                    <li><strong>Companions:</strong> 3 Felines (Black, Orange, White)</li>
+                    <li><strong>Companions:</strong> 3 Cats <img src="images/gifs/tiny-cat.gif" alt="cat" class="tiny-inline"></li>
                 </ul>
             </section>
 
-            <!-- Currently Playing -->
             <section class="panel panel-medium music-panel">
                 <h2 class="panel-heading">♫ Now Playing</h2>
                 <div class="music-widget">
-                    <img src="images/music/fleetwood-mac.jpg" alt="Album Cover" class="album-art tilt-2">
+                    <div class="album-wrapper tilt-2">
+                        <img src="images/music/fleetwood-mac.jpg" alt="Album Cover" class="album-art">
+                        <img src="images/gifs/music-notes.gif" alt="notes" class="deco-float top-left-float">
+                    </div>
                     <div class="track-info">
                         <strong>Say You Love Me</strong>
                         <span>Fleetwood Mac</span>
                         <div class="audio-wave">
                             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <img src="images/gifs/vinyl-spin.gif" alt="vinyl" class="tiny-icon">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Latest Art Piece -->
             <section class="panel panel-medium art-panel">
+                <img src="images/gifs/frame-corner.gif" alt="corner" class="deco-corner bottom-right">
                 <h2 class="panel-heading">🎨 On the Easel</h2>
                 <div class="polaroid tilt-1">
                     <img src="images/art/klimt-kiss.jpg" alt="The Kiss Acrylics">
-                    <div class="polaroid-caption">Burnt sienna & mustard yellow.</div>
+                    <div class="polaroid-caption">Burnt sienna & mustard yellow. <img src="images/gifs/paint-palette.gif" alt="palette" class="tiny-icon"></div>
                 </div>
             </section>
 
-            <!-- Scrapbook Notes -->
             <section class="panel panel-small sticky-note tilt-2">
-                <h2 class="panel-heading" style="border: none;">Pinned Note 📌</h2>
-                <p class="handwritten">Don't forget to review the biology notes on follicular selection for the new animated script!</p>
-                <img src="images/gifs/butterfly.gif" alt="butterfly" class="floating-gif float-bottom-right">
+                <h2 class="panel-heading" style="border: none; padding-bottom: 0;">Pinned Note 📌</h2>
+                <p class="handwritten">Don't forget to review the biology notes on follicular selection for the new animated script! <img src="images/gifs/dna.gif" alt="dna" class="tiny-inline"></p>
+                <img src="images/gifs/butterfly.gif" alt="butterfly" class="deco-float bottom-right-float">
             </section>
 
-            <!-- Favorites & Obsessions -->
             <section class="panel panel-medium favorites-panel">
                 <h2 class="panel-heading">Current Obsessions</h2>
                 <div class="badge-grid">
-                    <span class="cute-badge">🧶 Knitting</span>
-                    <span class="cute-badge">🎹 Piano</span>
-                    <span class="cute-badge">🍓 Fruit Salad</span>
-                    <span class="cute-badge">🧪 Chemistry</span>
-                    <span class="cute-badge">💛 Yellow</span>
+                    <span class="cute-badge"><img src="images/gifs/yarn.gif" class="tiny-inline"> Knitting</span>
+                    <span class="cute-badge"><img src="images/gifs/piano.gif" class="tiny-inline"> Piano</span>
+                    <span class="cute-badge"><img src="images/gifs/strawberry.gif" class="tiny-inline"> Fruit Salad</span>
+                    <span class="cute-badge"><img src="images/gifs/potion.gif" class="tiny-inline"> Chemistry</span>
+                    <span class="cute-badge"><img src="images/gifs/star.gif" class="tiny-inline"> Yellow</span>
+                    <span class="cute-badge"><img src="images/gifs/book.gif" class="tiny-inline"> Old Books</span>
                 </div>
             </section>
 
-            <!-- Status / Mood -->
             <section class="panel panel-small mood-panel">
                 <h2 class="panel-heading">Atmosphere</h2>
                 <div class="status-indicator">
-                    <img src="images/gifs/candle.gif" alt="candle">
+                    <img src="images/gifs/candle.gif" alt="candle" class="medium-icon tilt-1">
                     <p>Cozy, studying, and brewing tea.</p>
                 </div>
             </section>
             
         </main>
 
-        <!-- FOOTER & HIDDEN SECRET -->
         <footer class="realm-footer">
             <img src="images/gifs/ornamental-divider.gif" alt="divider" class="footer-divider">
             <div class="stamps-row">
                 <img src="images/gifs/stamp-art.gif" alt="Art Stamp">
                 <img src="images/gifs/stamp-cat.gif" alt="Cat Stamp">
+                <img src="images/gifs/stamp-music.gif" alt="Music Stamp">
                 <img src="images/gifs/stamp-html.gif" alt="Made with HTML">
+                <img src="images/gifs/stamp-tea.gif" alt="Tea Stamp">
             </div>
             <p>Handcrafted by Judith in the year 2026.</p>
-            <!-- EASTER EGG HIDDEN LINK -->
             <a href="secret.html" class="hidden-star-link" title="A secret passage...">✨</a>
         </footer>
 
