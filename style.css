@@ -37,7 +37,6 @@ body {
     margin: 0;
     padding: 20px 10px;
     background-image: url('a4787d5b75e37154c1bf46cddf1b93ae.jpg');
-    background-repeat: repeat; /* Tiles the image seamlessly across the screen */
     background-attachment: fixed; /* Keeps the background still while scrolling */
     background-position: center;
     font-family: "IM Fell English", Georgia, serif;
