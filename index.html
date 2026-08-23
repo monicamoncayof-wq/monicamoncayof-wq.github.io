@@ -6,6 +6,7 @@
     <title>Judith's Realm</title>
     <link rel="stylesheet" href="style.css">
     
+    <!-- Medieval & Antique Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
@@ -15,25 +16,30 @@
     <div id="sparkle-container"></div>
 
     <div class="shrine-wrapper">
+        <img src="corner-gothic.png" alt="frame corner" class="outer-corner top-left-outer">
+        <img src="corner-gothic.png" alt="frame corner" class="outer-corner top-right-outer">
+        <img src="corner-gothic.png" alt="frame corner" class="outer-corner bottom-left-outer">
+        <img src="corner-gothic.png" alt="frame corner" class="outer-corner bottom-right-outer">
         
+        <!-- BANNER & HEADER -->
         <header class="realm-header">
             <div class="banner-container">
-                <img src="images/banner.gif" alt="Realm Banner" class="banner-img">
-                <img src="images/gifs/corner-ribbon.gif" alt="ribbon" class="deco-corner top-left">
-                <img src="images/gifs/corner-ribbon.gif" alt="ribbon" class="deco-corner top-right">
+                <img src="banner.gif" alt="Realm Banner" class="banner-img">
+                <img src="border-vine.gif" alt="vines" class="banner-vines">
             </div>
             
             <div class="title-section">
-                <img src="images/gifs/sparkle-cluster.gif" alt="sparkles" class="title-ornament">
+                <img src="sun-gold.gif" alt="gold sun" class="title-ornament">
                 <h1 class="grand-title">Judith</h1>
-                <img src="images/gifs/sparkle-cluster.gif" alt="sparkles" class="title-ornament">
+                <img src="sun-gold.gif" alt="gold sun" class="title-ornament">
             </div>
             <p class="subtitle">
-                <img src="images/gifs/tiny-rose.gif" alt="rose" class="tiny-icon">
+                <img src="rose-icon.gif" alt="rose" class="tiny-icon">
                 A digital manuscript of art, melodies & curiosities
-                <img src="images/gifs/tiny-rose.gif" alt="rose" class="tiny-icon">
+                <img src="rose-icon.gif" alt="rose" class="tiny-icon">
             </p>
 
+            <!-- NAVIGATION TABS -->
             <nav class="medieval-nav">
                 <a href="index.html" class="nav-tab active">♜ Home</a>
                 <a href="about.html" class="nav-tab">👑 About</a>
@@ -46,95 +52,123 @@
             </nav>
         </header>
 
+        <!-- DENSE ILLUMINATED SCRAPBOOK GRID -->
         <main class="scrapbook-grid">
 
-            <section class="panel panel-large welcome-panel">
-                <img src="images/gifs/cat-sleeping.gif" alt="sleeping cat" class="deco-float top-right-float">
+            <!-- Welcome Scroll -->
+            <section class="panel panel-large welcome-panel bg-parchment">
+                <img src="wax-seal.png" alt="wax seal" class="deco-float top-right-float wax-seal-img">
                 <h2 class="panel-heading">✦ Greetings, Traveler ✦</h2>
-                <p><span class="dropcap">W</span>elcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
+                <div class="welcome-text-wrapper">
+                    <img src="illuminated-j.gif" alt="J" class="drop-letter">
+                    <p class="manuscript-body">elcome to my personal corner of the web. This shrine is a handmade collection of my acrylic canvases, late-night code, acoustic guitar melodies, and scattered thoughts. Warm yourself by the fire, take a look around, and enjoy the quiet atmosphere of the castle.</p>
+                </div>
                 
                 <div class="dense-row">
-                    <img src="images/gifs/quill.gif" alt="quill" class="medium-icon">
+                    <img src="quill-inkwell.gif" alt="quill" class="medium-icon">
                     <p class="update-ticker"><strong>Latest Scroll:</strong> <i>Finished the golden layers on The Kiss replica.</i></p>
+                    <img src="star-sparkle.gif" alt="sparkle" class="tiny-icon">
                 </div>
             </section>
 
-            <section class="panel panel-small tilt-1">
+            <!-- Profile Panel -->
+            <section class="panel panel-small tilt-1 bg-parchment">
+                <img src="corner-gothic.png" alt="corner" class="card-corner top-right">
                 <h2 class="panel-heading">The Lady</h2>
                 <div class="framed-image">
-                    <img src="images/portrait.jpg" alt="Judith Portrait">
-                    <img src="images/gifs/sparkle-single.gif" alt="sparkle" class="deco-float bottom-left-float">
+                    <img src="avatar.jpg" alt="Judith Portrait">
                 </div>
                 <ul class="trait-list tight-list">
                     <li><strong>Realm:</strong> Ecuador</li>
                     <li><strong>Class:</strong> Student & Artist</li>
-                    <li><strong>Companions:</strong> 3 Cats <img src="images/gifs/tiny-cat.gif" alt="cat" class="tiny-inline"></li>
+                    <li><strong>Companions:</strong> 3 Cats <img src="cat-sticker.gif" alt="cat" class="tiny-inline"></li>
                 </ul>
             </section>
 
-            <section class="panel panel-medium music-panel">
-                <h2 class="panel-heading">♫ Now Playing</h2>
+            <!-- Gallery Showcase -->
+            <section class="panel panel-large art-panel bg-parchment">
+                <img src="medieval-cat.gif" alt="medieval cat" class="deco-float top-right-float medieval-cat-size">
+                <h2 class="panel-heading">🎨 Gallery & Easel</h2>
+                <div class="mini-gallery-grid">
+                    <div class="polaroid tilt-1">
+                        <img src="gallery-1.jpg" alt="Art 1">
+                    </div>
+                    <div class="polaroid tilt-2">
+                        <img src="gallery-2.jpg" alt="Art 2">
+                    </div>
+                    <div class="polaroid tilt-1">
+                        <img src="gallery-3.jpg" alt="Art 3">
+                    </div>
+                    <div class="polaroid tilt-2">
+                        <img src="gallery-4.jpg" alt="Art 4">
+                    </div>
+                </div>
+                <img src="divider-gold.png" alt="gold line" class="panel-divider">
+            </section>
+
+            <!-- Currently Playing Music -->
+            <section class="panel panel-medium music-panel bg-forest">
+                <h2 class="panel-heading light-heading">♫ Music Room</h2>
                 <div class="music-widget">
                     <div class="album-wrapper tilt-2">
-                        <img src="images/music/fleetwood-mac.jpg" alt="Album Cover" class="album-art">
-                        <img src="images/gifs/music-notes.gif" alt="notes" class="deco-float top-left-float">
+                        <img src="letter-j.jpg" alt="Music Cover" class="album-art">
+                        <img src="lute-acoustic.gif" alt="lute" class="deco-float bottom-left-float tiny-lute">
                     </div>
                     <div class="track-info">
                         <strong>Say You Love Me</strong>
                         <span>Fleetwood Mac</span>
                         <div class="audio-wave">
-                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                            <img src="images/gifs/vinyl-spin.gif" alt="vinyl" class="tiny-icon">
+                            <img src="rose-icon.gif" alt="rose" class="tiny-icon">
+                            <span class="music-text">Acoustic & Vinyl...</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="panel panel-medium art-panel">
-                <img src="images/gifs/frame-corner.gif" alt="corner" class="deco-corner bottom-right">
-                <h2 class="panel-heading">🎨 On the Easel</h2>
-                <div class="polaroid tilt-1">
-                    <img src="images/art/klimt-kiss.jpg" alt="The Kiss Acrylics">
-                    <div class="polaroid-caption">Burnt sienna & mustard yellow. <img src="images/gifs/paint-palette.gif" alt="palette" class="tiny-icon"></div>
-                </div>
-            </section>
-
-            <section class="panel panel-small sticky-note tilt-2">
+            <!-- Science & Pinned Note -->
+            <section class="panel panel-small sticky-note tilt-2 bg-blush">
+                <img src="alchemy-vial.gif" alt="alchemy vial" class="deco-float top-right-float tiny-vial">
                 <h2 class="panel-heading" style="border: none; padding-bottom: 0;">Pinned Note 📌</h2>
-                <p class="handwritten">Don't forget to review the biology notes on follicular selection for the new animated script! <img src="images/gifs/dna.gif" alt="dna" class="tiny-inline"></p>
-                <img src="images/gifs/butterfly.gif" alt="butterfly" class="deco-float bottom-right-float">
+                <p class="handwritten">Don't forget to review biology notes on follicular selection!</p>
+                <img src="rose.gif" alt="rose" class="deco-float bottom-right-float tiny-rose-gif">
             </section>
 
-            <section class="panel panel-medium favorites-panel">
+            <!-- Favorites & Obsessions -->
+            <section class="panel panel-medium favorites-panel bg-parchment">
                 <h2 class="panel-heading">Current Obsessions</h2>
                 <div class="badge-grid">
-                    <span class="cute-badge"><img src="images/gifs/yarn.gif" class="tiny-inline"> Knitting</span>
-                    <span class="cute-badge"><img src="images/gifs/piano.gif" class="tiny-inline"> Piano</span>
-                    <span class="cute-badge"><img src="images/gifs/strawberry.gif" class="tiny-inline"> Fruit Salad</span>
-                    <span class="cute-badge"><img src="images/gifs/potion.gif" class="tiny-inline"> Chemistry</span>
-                    <span class="cute-badge"><img src="images/gifs/star.gif" class="tiny-inline"> Yellow</span>
-                    <span class="cute-badge"><img src="images/gifs/book.gif" class="tiny-inline"> Old Books</span>
+                    <span class="cute-badge"><img src="rose-icon.gif" class="tiny-inline"> Knitting</span>
+                    <span class="cute-badge"><img src="star-sparkle.gif" class="tiny-inline"> Piano</span>
+                    <span class="cute-badge"><img src="rose-icon.gif" class="tiny-inline"> Fruit Salad</span>
+                    <span class="cute-badge"><img src="alchemy-vial.gif" class="tiny-inline"> Chemistry</span>
+                    <span class="cute-badge"><img src="sun-gold.gif" class="tiny-inline"> Yellow</span>
+                    <span class="cute-badge"><img src="quill-inkwell.gif" class="tiny-inline"> Old Manuscripts</span>
                 </div>
             </section>
 
-            <section class="panel panel-small mood-panel">
+            <!-- Atmosphere / Status -->
+            <section class="panel panel-small mood-panel bg-parchment">
                 <h2 class="panel-heading">Atmosphere</h2>
                 <div class="status-indicator">
-                    <img src="images/gifs/candle.gif" alt="candle" class="medium-icon tilt-1">
+                    <img src="candle-gothic.gif" alt="candle" class="candle-icon">
                     <p>Cozy, studying, and brewing tea.</p>
                 </div>
             </section>
             
         </main>
 
+        <!-- STAMPS & FOOTER -->
         <footer class="realm-footer">
-            <img src="images/gifs/ornamental-divider.gif" alt="divider" class="footer-divider">
+            <img src="divider-gold.png" alt="divider" class="footer-divider-gold">
             <div class="stamps-row">
-                <img src="images/gifs/stamp-art.gif" alt="Art Stamp">
-                <img src="images/gifs/stamp-cat.gif" alt="Cat Stamp">
-                <img src="images/gifs/stamp-music.gif" alt="Music Stamp">
-                <img src="images/gifs/stamp-html.gif" alt="Made with HTML">
-                <img src="images/gifs/stamp-tea.gif" alt="Tea Stamp">
+                <img src="stamp-art.gif" alt="Art Stamp">
+                <img src="stamp-kitty.gif" alt="Kitty Stamp">
+                <img src="stamp-music.gif" alt="Music Stamp">
+                <img src="stamp-retro.gif" alt="Retro Stamp">
+                <img src="stamp-tumblr.gif" alt="Tumblr Stamp">
+                <img src="stamp-castle.gif" alt="Castle Stamp">
+                <img src="stamp-rose.gif" alt="Rose Stamp">
+                <img src="stamp-quill.gif" alt="Quill Stamp">
             </div>
             <p>Handcrafted by Judith in the year 2026.</p>
             <a href="secret.html" class="hidden-star-link" title="A secret passage...">✨</a>
