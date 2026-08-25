@@ -1,15 +1,16 @@
-/* Color Palette & Custom Light Tones */
+/* Color Palette Variables */
 :root {
-  --color-olive: #868228;
-  --color-bronze-spice: #C85310;
-  --color-burgundy: #861823;
-  --color-bronze: #D7832B;
-  --color-bubblegum-pink: #EC596B;
+  /* New Main Palette */
+  --color-camel: #998756;
+  --color-pearl-beige: #EBD7B3;
+  --color-sweet-salmon: #DC9781;
+  --color-brandy: #7A2914;
 
-  /* Lighter custom variations for soft fills and gold trims */
-  --color-bubblegum-pink-light: #f7a8b4; 
-  --color-gold-light: #f3d078;            
+  /* Gold Trims & Pink Accent */
+  --color-bubblegum-pink: #EC596B;
+  --color-gold-light: #f3d078;
 }
+
 /* Base Reset */
 * {
   box-sizing: border-box;
@@ -17,52 +18,44 @@
   padding: 0;
 }
 
-/* Full-Screen Seamless Background */
+/* Full-Screen Background */
 body {
   min-height: 100vh;
-  
-  /* Path to your uploaded background image */
   background-image: url('../assets/images/background.jpg');
-  
-  /* Fits the image across the entire screen with no blank space on the sides */
-   background-size: auto;
-  background-repeat: repeat;
+  background-size: 100% 100%;
   background-position: center center;
-  
-  /* Keeps the background fixed while content scrolls over it */
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  
-  /* Fallback color */
-  background-color: var(--color-bubblegum-pink);
-  color: #ffffff;
+  background-color: var(--color-brandy);
+  color: var(--color-brandy);
   font-family: sans-serif;
 }
 
 /* Main Central Container Box */
 .main-container {
-  /* Spacing: small margin top/bottom, wider distance on the sides */
+  /* Spacing: smaller top/bottom margin, wider space on the sides */
   width: 88%;
   max-width: 1100px;
-  min-height: 85vh; /* Sets a starting size, but allows it to expand down naturally */
+  min-height: 85vh; /* Expands vertically as you add more content */
   margin: 2vh auto;
 
-  /* Inner space for content */
+  /* Inner spacing */
   padding: 35px 25px;
 
-  /* Solid Lighter Bubblegum Pink Background (No Transparency) */
-  background-color: var(--color-bubblegum-pink-light);
-  color: var(--color-burgundy);
+  /* Solid Sweet Salmon Pink Background */
+  background-color: var(--color-sweet-salmon);
+  color: var(--color-brandy);
 
-  /* Double Decorative Border: Outer Light Gold & Inner Soft Pink */
+  /* Double Royal Border: Outer Light Gold with Inner Bubblegum Pink Frame */
   border: 7px double var(--color-gold-light);
   outline: 3px solid var(--color-bubblegum-pink);
   outline-offset: -10px;
   border-radius: 28px;
 
-  /* Subtle drop shadow to give depth against the background */
+  /* Soft shadow for depth */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 
-  /* Layout alignment */
+  /* Alignment setup */
   display: flex;
   flex-direction: column;
   align-items: center;
