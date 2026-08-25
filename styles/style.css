@@ -647,3 +647,76 @@ body {
   transform: translateY(1px);
   box-shadow: 0 1px 0px var(--color-brandy);
 }
+/* ==========================================
+   DIGITAL CAMERA VERTICAL GALLERY & INTERACTION
+   ========================================== */
+
+.cam-gallery-box {
+  width: 100%;
+  padding: 14px 10px;
+  background-color: var(--color-pearl-beige);
+  border: 3px double var(--color-brandy);
+  border-radius: 18px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cam-gallery-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 1.05rem;
+  color: var(--color-brandy);
+}
+
+.cam-gallery-viewport {
+  width: 100%;
+  height: 420px;
+  border: 2px solid var(--color-sweet-salmon);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-sweet-salmon-light);
+}
+
+.cam-gallery-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 8px;
+  animation: scroll-vertical 85s linear infinite;
+  will-change: transform;
+}
+
+/* Pause vertical loop on hover */
+.cam-gallery-viewport:hover .cam-gallery-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.digicam-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-brandy);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.25s ease;
+}
+
+.digicam-img:hover {
+  filter: brightness(1.08) contrast(1.05);
+}
+
+.cam-gallery-hint {
+  font-family: 'Fredoka', cursive;
+  font-size: 0.72rem;
+  color: var(--color-brandy);
+  opacity: 0.8;
+}
