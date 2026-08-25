@@ -1192,3 +1192,25 @@ body {
   transform: scale(1.18) rotate(0deg) !important;
   z-index: 10;
 }
+/* ==========================================
+   CENTER COLUMN BORDERLESS GIF DIVIDER
+   ========================================== */
+
+.center-divider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 25px 0;
+  padding: 0 5px;
+}
+
+.center-divider-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* Soft drop shadow so transparent PNG elements pop off the background */
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.08));
+}
