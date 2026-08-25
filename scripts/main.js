@@ -1,14 +1,13 @@
-// Photo Swapper Function
+// 10-Photo Swapper Loop
 let currentPhotoIndex = 1;
+const totalPhotos = 10;
 
 function swapPhoto() {
   const photo = document.getElementById('interactive-photo');
   
-  if (currentPhotoIndex === 1) {
-    photo.src = 'assets/images/photo2.jpg'; // Path to your second photo
-    currentPhotoIndex = 2;
-  } else {
-    photo.src = 'assets/images/photo1.jpg'; // Path back to your first photo
-    currentPhotoIndex = 1;
-  }
+  // Advance to the next photo, or loop back to 1 after reaching 10
+  currentPhotoIndex = (currentPhotoIndex % totalPhotos) + 1;
+  
+  // Update photo source dynamically
+  photo.src = `assets/images/photo${currentPhotoIndex}.jpg`;
 }
