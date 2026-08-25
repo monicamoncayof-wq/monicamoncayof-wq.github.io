@@ -129,3 +129,49 @@ function renderCalendar() {
 
 // Run calendar builder when DOM content loads
 document.addEventListener('DOMContentLoaded', renderCalendar);
+
+/* ==========================================
+   KITTY CORNER PET COUNTER & LOVE METER JS
+   ========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  let petCount = 0;
+  const countDisplay = document.getElementById("pet-count");
+  const meterFill = document.getElementById("love-meter-fill");
+  const catStickers = document.querySelectorAll(".cat-sticker");
+
+  catStickers.forEach((cat) => {
+    cat.addEventListener("click", (e) => {
+      petCount++;
+      if (countDisplay) countDisplay.textContent = petCount;
+
+      // Fill love meter (maxes out at 20 pets)
+      const fillPercentage = Math.min((petCount / 20) * 100, 100);
+      if (meterFill) meterFill.style.height = `${fillPercentage}%`;
+
+      // Floating heart particle animation on click
+      createFloatingHeart(e.clientX, e.clientY);
+    });
+  });
+
+  function createFloatingHeart(x, y) {
+    const heart = document.createElement("span");
+    heart.textContent = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = `${x - 10}px`;
+    heart.style.top = `${y - 10}px`;
+    heart.style.fontSize = "1.2rem";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "9999";
+    heart.style.transition = "transform 0.8s ease-out, opacity 0.8s ease-out";
+    
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.style.transform = `translateY(-35px) scale(1.3)`;
+      heart.style.opacity = "0";
+    }, 20);
+
+    setTimeout(() => heart.remove(), 850);
+  }
+});
