@@ -61,3 +61,94 @@ body {
   flex-direction: column;
   align-items: center;
 }
+/* Custom Leafy Green Tone for Thought Bubble */
+:root {
+  --color-leafy-green: #6b7d42;      /* Cozy medieval olive-leaf green */
+  --color-leafy-green-light: #e8eee0;/* Very light soft green fill */
+}
+
+/* Adjust Main Box Padding so the Banner touches the top/right edges cleanly */
+.main-container {
+  padding: 0; /* Clears top padding so banner flush fits */
+  overflow: hidden; /* Clips children nicely to the main box's rounded corners */
+}
+
+/* Top Header Row Layout */
+.top-header-row {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-bottom: 4px double var(--color-gold-light);
+}
+
+/* --- Left Side: Pet & Thought Box --- */
+.pet-thought-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 320px;
+  gap: 12px;
+}
+
+.pet-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pet-gif {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.pet-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-brandy);
+  background-color: var(--color-pearl-beige);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 2px solid var(--color-camel);
+}
+
+/* Leafy Green Thought Bubble */
+.thought-bubble {
+  position: relative;
+  background-color: var(--color-leafy-green-light);
+  border: 2px solid var(--color-leafy-green);
+  color: var(--color-brandy);
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Small Tail on Thought Bubble pointing up to Juno */
+.thought-bubble::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border-width: 0 8px 10px 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--color-leafy-green) transparent;
+}
+
+/* --- Right Side: Horizontal Banner --- */
+.banner-container {
+  flex: 1;
+  display: flex;
+  border-left: 4px double var(--color-gold-light);
+}
+
+.header-banner-gif {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  object-fit: cover; /* Ensures zero blank spaces on top, right, or bottom */
+  display: block;
+}
