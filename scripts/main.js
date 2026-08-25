@@ -175,3 +175,57 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => heart.remove(), 850);
   }
 });
+/* ==========================================
+   FORTUNE COOKIE JAR JS INTERACTION
+   ========================================== */
+
+const fortunes = [
+  "🥠 Great inspiration awaits you today!",
+  "✨ A lucky artistic moment is coming!",
+  "🌸 Rest well and stay soft.",
+  "🎀 Small steps lead to big dreams!",
+  "⭐ Your creativity is glowing!",
+  "🎧 Good tunes and sweet vibes today!"
+];
+
+function getCookieFortune(event) {
+  const fortuneText = document.getElementById("fortune-text");
+  if (!fortuneText) return;
+
+  // Pick a random fortune
+  const randomIndex = Math.floor(Math.random() * fortunes.length);
+  fortuneText.textContent = fortunes[randomIndex];
+
+  // Show fortune bubble
+  fortuneText.classList.add("show");
+
+  // Spawn floating cookie sticker
+  createFloatingCookie(event.clientX, event.clientY);
+
+  // Hide message after 3.5 seconds
+  setTimeout(() => {
+    fortuneText.classList.remove("show");
+  }, 3500);
+}
+
+function createFloatingCookie(x, y) {
+  const cookie = document.createElement("img");
+  cookie.src = "assets/images/cookie-sticker.png"; // Your cookie PNG!
+  cookie.style.position = "fixed";
+  cookie.style.left = `${x - 15}px`;
+  cookie.style.top = `${y - 15}px`;
+  cookie.style.width = "30px";
+  cookie.style.height = "auto";
+  cookie.style.pointerEvents = "none";
+  cookie.style.zIndex = "9999";
+  cookie.style.transition = "transform 0.8s ease-out, opacity 0.8s ease-out";
+  
+  document.body.appendChild(cookie);
+
+  setTimeout(() => {
+    cookie.style.transform = `translateY(-45px) rotate(20deg) scale(1.2)`;
+    cookie.style.opacity = "0";
+  }, 20);
+
+  setTimeout(() => cookie.remove(), 850);
+}
