@@ -79,29 +79,31 @@ body {
    ========================================== */
 .top-header-row {
   width: 100%;
+  height: 130px; /* Controls total header height */
   display: flex;
-  align-items: stretch; /* Stretches the banner flush to top and bottom */
+  align-items: stretch;
   justify-content: space-between;
-  padding: 0 0 15px 15px; /* Set top padding to 0 so the banner touches the top */
+  padding: 0;
   gap: 15px;
 }
-
 /* --- Left: Animal Crossing Style Speech Layout --- */
 .speech-layout {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   flex-shrink: 0;
-  padding-top: 15px; /* Adds neat spacing above the pet and bubble since top padding was cleared */
+  padding-left: 15px;
 }
 
 .pet-gif {
-  width: 95px;         /* Increased width from 70px */
-  height: 115px;       /* Increased height from 85px */
+  width: 65px;
+  height: 65px;
   object-fit: contain;
-  flex-shrink: 0;      /* Keeps the cat crisp without squishing */
-} 
-
+  flex-shrink: 0;
+  /* Zooms directly into the kitten image to fill transparent space */
+  transform: scale(1.8); 
+  transform-origin: center;
+}
 /* Leafy Green Speech Box */
 .thought-bubble {
   position: relative;
@@ -155,15 +157,21 @@ body {
 /* --- Right: Banner GIF (Sweet Salmon Border) --- */
 .banner-container {
   flex: 1;
+  height: 100%;
   display: flex;
   align-items: center;
-
-  /* Sweet Salmon border on top, left, bottom */
-  border: 4px solid var(--color-sweet-salmon);
+  border: 3px solid var(--color-sweet-salmon);
   border-right: none;
-  border-top: none; /* Touches top border flush */
-  border-radius: 0 0 0 14px;
+  border-top: none;
+  border-radius: 0 0 0 12px;
   overflow: hidden;
+}
+
+.header-banner-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image cleanly inside 130px height */
+  display: block;
 }
   /* Sweet Salmon border on top, left, bottom */
   border: 4px solid var(--color-sweet-salmon);
