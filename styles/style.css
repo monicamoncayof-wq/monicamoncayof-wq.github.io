@@ -822,3 +822,89 @@ body {
     transform: scale(1.2) rotate(18deg) translateY(-3px);
   }
 }
+/* ==========================================
+   1940s VINTAGE CALENDAR WIDGET
+   ========================================== */
+
+.vintage-calendar-box {
+  width: 100%;
+  padding: 12px;
+  background-color: #fcf8f2; /* Vintage parchment background */
+  border: 3px double #784b38; /* Warm 40s brown frame */
+  border-radius: 16px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Vintage Dashed Header Frame */
+.calendar-header-frame {
+  width: 100%;
+  padding: 6px 10px;
+  border: 2px dashed #784b38;
+  border-radius: 10px;
+  background-color: #f7eee3;
+  text-align: center;
+}
+
+.calendar-month-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #a64b63; /* Rose tint */
+  letter-spacing: 0.5px;
+}
+
+/* 7-Column Calendar Grid Layout */
+.calendar-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+/* Weekday Labels */
+.day-header {
+  font-family: 'Courier Prime', monospace;
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: #5c3c2e;
+  background-color: #eedecf;
+  border: 1px solid #d4bda9;
+  border-radius: 6px;
+  padding: 4px 0;
+}
+
+.day-header.weekend {
+  background-color: #e2f0e9; /* Muted vintage sage green for weekends */
+  border-color: #b5d6c5;
+}
+
+/* Date Cells */
+.day {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.85rem;
+  color: #3b2820;
+  background-color: #faf5ed;
+  border-radius: 6px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day.empty {
+  background-color: transparent;
+}
+
+/* Current Day Highlight (25th) */
+.day.active-day {
+  background-color: #f2c4ce; /* Dusty rose tint */
+  color: #8c253e;
+  font-weight: bold;
+  border: 1px solid #d991a1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
