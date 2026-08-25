@@ -246,3 +246,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* ==========================================
+   Y2K AVATAR CYCLER (NO BACK-TO-BACK ROBLOX)
+   ========================================== */
+
+// Explicitly ordered list: 1st monica-monica, 2nd duolingo, then non-repeating mix
+const avatarList = [
+  { src: "assets/images/monica-monica.jpg", label: "✦ real me ✦" },
+  { src: "assets/images/duolingo-monica.png", label: "✦ duolingo ✦" },
+  { src: "assets/images/ponytown-monica.png", label: "✦ ponytown ✦" },
+  { src: "assets/images/roblox-main-monica.jpg", label: "✦ roblox main ✦" },
+  { src: "assets/images/vintage-monica.png", label: "✦ vintage ✦" },
+  { src: "assets/images/roblox-gredl-monica.png", label: "✦ roblox gredl ✦" },
+  { src: "assets/images/hyperpigmentation-monica.jpg", label: "✦ polaroid ✦" },
+  { src: "assets/images/roblox-keyli-monica.png", label: "✦ roblox keyli ✦" },
+  { src: "assets/images/P1080090.JPG", label: "✦ lumix photo ✦" },
+  { src: "assets/images/roblox-monica-monica.png", label: "✦ roblox monica ✦" },
+  { src: "assets/images/P1080359.JPG", label: "✦ lumix memory ✦" }
+];
+
+let currentAvatarIndex = 0;
+
+function cycleY2KAvatar() {
+  const avatarImg = document.getElementById("y2k-avatar-img");
+  const avatarLabel = document.getElementById("avatar-label-tag");
+  if (!avatarImg) return;
+
+  // Next index
+  currentAvatarIndex = (currentAvatarIndex + 1) % avatarList.length;
+  const current = avatarList[currentAvatarIndex];
+
+  // Smooth bounce animation
+  avatarImg.style.transform = "scale(0.8) rotate(10deg)";
+  avatarImg.style.opacity = "0.4";
+
+  setTimeout(() => {
+    avatarImg.src = current.src;
+    if (avatarLabel) avatarLabel.textContent = current.label;
+    avatarImg.style.transform = "scale(1) rotate(0deg)";
+    avatarImg.style.opacity = "1";
+  }, 150);
+}
