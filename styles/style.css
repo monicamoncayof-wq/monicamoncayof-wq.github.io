@@ -945,3 +945,117 @@ body {
   height: auto;
   display: block;
 }
+/* ==========================================
+   CUTE KITTY CORNER WIDGET
+   ========================================== */
+
+.kitty-corner-box {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #ffffff;
+  border: 3px double #d4a5b8;
+  border-radius: 16px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.kitty-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.kitty-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 1rem;
+  color: #ff6b9d;
+}
+
+.kitty-counter-display {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #885068;
+}
+
+/* Inner Layout with Stickers & Right-Side Meter */
+.kitty-content-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #fff9fb;
+  border: 1.5px dashed #f2c4ce;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+/* 3-Column Scrollable Grid for 20 Stickers */
+.kitty-grid {
+  flex: 1;
+  max-height: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.kitty-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.kitty-grid::-webkit-scrollbar-thumb {
+  background: #f2c4ce;
+  border-radius: 10px;
+}
+
+/* Interactive Cat Stickers */
+.cat-sticker {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.cat-sticker:hover {
+  transform: scale(1.18) rotate(-4deg);
+}
+
+.cat-sticker:active {
+  transform: scale(0.9) rotate(6deg);
+}
+
+/* Rainbow Meter Track Inspired by Reference */
+.love-meter-track {
+  width: 12px;
+  height: 140px;
+  background: #f0f0f0;
+  border: 1.5px solid #ff9ebb;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.love-meter-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to top, #ff9a9e, #fecfef, #a1c4fd);
+  transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.kitty-hint {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.72rem;
+  color: #ba7b93;
+}
