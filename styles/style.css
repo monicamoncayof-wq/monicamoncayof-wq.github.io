@@ -1059,3 +1059,62 @@ body {
   font-size: 0.72rem;
   color: #ba7b93;
 }
+/* ==========================================
+   BORDERLESS FORTUNE COOKIE JAR WIDGET
+   ========================================== */
+
+.cookie-jar-wrapper {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#cookie-jar-img {
+  width: 90px; /* Adjust size based on your PNG */
+  height: auto;
+  cursor: pointer;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#cookie-jar-img:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+#cookie-jar-img:active {
+  transform: scale(0.95) rotate(3deg);
+}
+
+.cookie-hint {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.72rem;
+  color: #ba7b93;
+  margin-top: 4px;
+}
+
+/* Floating Fortune Bubble */
+.fortune-popover {
+  position: absolute;
+  top: -35px;
+  background-color: #fff8f0;
+  border: 1.5px dashed #e8b4b8;
+  color: #7a4659;
+  font-family: 'Fredoka', cursive;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.fortune-popover.show {
+  opacity: 1;
+  transform: translateY(0);
+}
