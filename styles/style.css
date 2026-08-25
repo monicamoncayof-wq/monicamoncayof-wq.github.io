@@ -26,6 +26,47 @@
   margin: 0;
   padding: 0;
 }
+/* ==========================================
+   GIF SHOWCASE BOX
+   ========================================== */
+
+.gif-showcase-box {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-pearl-beige);
+  border: 3px double var(--color-brandy);
+  border-radius: 18px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gif-box-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 0.95rem;
+  color: var(--color-brandy);
+}
+
+.gif-frame {
+  width: 100%;
+  border: 2px solid var(--color-sweet-salmon);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-sweet-salmon-light);
+  padding: 8px;
+}
+
+.showcase-gif {
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  display: block;
+}
 
 body {
   min-height: 100vh;
