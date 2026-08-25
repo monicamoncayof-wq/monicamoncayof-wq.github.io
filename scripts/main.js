@@ -70,3 +70,62 @@ document.addEventListener("DOMContentLoaded", () => {
     track.appendChild(img);
   });
 });
+function renderCalendar() {
+  const monthTitle = document.getElementById('calendar-month-title');
+  const calendarGrid = document.getElementById('calendar-grid');
+  
+  if (!monthTitle || !calendarGrid) return;
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+  const currentDate = today.getDate();
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  // Set header text
+  monthTitle.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+  // Clear existing cells
+  calendarGrid.innerHTML = '';
+
+  // Render Day Headers
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  daysOfWeek.forEach((day, index) => {
+    const headerEl = document.createElement('span');
+    headerEl.className = `day-header ${index === 0 || index === 6 ? 'weekend' : ''}`;
+    headerEl.textContent = day;
+    calendarGrid.appendChild(headerEl);
+  });
+
+  // Calculate day offsets
+  const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+  const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  // Add empty leading spaces
+  for (let i = 0; i < firstDayIndex; i++) {
+    const emptyCell = document.createElement('span');
+    emptyCell.className = 'day empty';
+    calendarGrid.appendChild(emptyCell);
+  }
+
+  // Populate actual month days
+  for (let dayNum = 1; dayNum <= totalDays; dayNum++) {
+    const dayCell = document.createElement('span');
+    dayCell.className = 'day';
+    dayCell.textContent = dayNum;
+
+    // Highlight active date automatically
+    if (dayNum === currentDate) {
+      dayCell.classList.add('active-day');
+    }
+
+    calendarGrid.appendChild(dayCell);
+  }
+}
+
+// Run calendar builder when DOM content loads
+document.addEventListener('DOMContentLoaded', renderCalendar);
