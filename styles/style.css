@@ -927,3 +927,42 @@ body {
   object-fit: cover; /* Crops cleanly like a banner without distorting */
   display: block;
 }
+
+/* ==========================================
+   FLAG COUNTER WIDGET
+   ========================================== */
+
+.flag-counter-box {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--color-pearl-beige);
+  border: 3px double var(--color-brandy);
+  border-radius: 18px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 0.95rem;
+  color: var(--color-brandy);
+}
+
+.flag-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.flag-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
