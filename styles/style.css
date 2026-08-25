@@ -17,14 +17,14 @@
 /* Full-Screen Seamless Background */
 body {
   min-height: 100vh;
-  /* Temporary placeholder background image path */
+
+  /* Change 'your-image-name.jpg' to the exact name of the file in assets/images/ */
   background-image: url('../assets/images/background.jpg');
+
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
-  /* Fallback color while image loads */
   background-color: var(--color-burgundy);
   color: #ffffff;
   font-family: sans-serif;
