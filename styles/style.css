@@ -192,13 +192,13 @@ body {
 .marquee-divider {
   width: 100%;
   height: 38px;
-  background-color: var(--color-pearl-beige);
+  background-color: #000000; /* Solid black background */
   border-top: 3px solid var(--color-gold-light);
   border-bottom: 3px solid var(--color-gold-light);
   overflow: hidden;
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .marquee-track {
@@ -221,16 +221,16 @@ body {
   letter-spacing: 1px;
   padding-right: 10px;
   
-  /* Creates smooth gradient text fill */
+  /* Glowing vibrant pastel gradient for black background */
   background: linear-gradient(
     90deg, 
-    #ffa1a1, 
-    #ffd59e, 
-    #ffffa1, 
-    #b2ffa1, 
-    #a1eaff, 
-    #cca1ff, 
-    #ffa1a1
+    #ff8080, 
+    #ffca80, 
+    #ffff80, 
+    #80ff80, 
+    #80e5ff, 
+    #b380ff, 
+    #ff8080
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
