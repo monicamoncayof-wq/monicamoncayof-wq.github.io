@@ -1,1 +1,31 @@
+/* Color Palette Variables */
+:root {
+  --color-olive: #868228;
+  --color-bronze-spice: #C85310;
+  --color-burgundy: #861823;
+  --color-bronze: #D7832B;
+  --color-bubblegum-pink: #EC596B;
+}
 
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-Screen Seamless Background */
+body {
+  min-height: 100vh;
+  /* Temporary placeholder background image path */
+  background-image: url('../assets/images/background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  /* Fallback color while image loads */
+  background-color: var(--color-burgundy);
+  color: #ffffff;
+  font-family: sans-serif;
+}
