@@ -1,4 +1,6 @@
-/* Color Palette Variables */
+/* ==========================================
+   COLOR PALETTE & VARIABLES
+   ========================================== */
 :root {
   /* Main Palette */
   --color-camel: #998756;
@@ -6,149 +8,165 @@
   --color-sweet-salmon: #DC9781;
   --color-brandy: #7A2914;
 
-  /* Custom Light Tones & Accents */
-  --color-sweet-salmon-light: #F3CBBF; /* Much lighter, soft pink fill */
+  /* Accent & Light Tones */
+  --color-sweet-salmon-light: #F3CBBF; /* Lighter soft pink fill */
   --color-bubblegum-pink: #EC596B;
   --color-gold-light: #f3d078;
+
+  /* Leafy Green Speech Bubble */
+  --color-leafy-green: #6b7d42;
+  --color-leafy-green-light: #e8eee0;
 }
 
-/* Base Reset */
+/* ==========================================
+   BASE RESET & TYPOGRAPHY
+   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Full-Screen Background */
 body {
   min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  
+  /* Background Image Settings */
   background-image: url('../assets/images/background.jpg');
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
+  /* Fallback color */
   background-color: var(--color-brandy);
   color: var(--color-brandy);
-  font-family: sans-serif;
 }
 
-/* Main Central Container Box */
+/* ==========================================
+   MAIN CENTRAL CONTAINER BOX
+   ========================================== */
 .main-container {
-  /* Spacing: smaller top/bottom margin, wider space on the sides */
   width: 88%;
   max-width: 1100px;
-  min-height: 85vh; /* Expands vertically as content is added */
+  min-height: 85vh; /* Expands down naturally as content is added */
   margin: 2vh auto;
 
-  /* Inner spacing */
-  padding: 35px 25px;
+  /* Padding cleared at root to allow header flush layout */
+  padding: 0;
+  overflow: hidden;
 
-  /* Solid Lighter Soft Pink Fill */
+  /* Background & Typography */
   background-color: var(--color-sweet-salmon-light);
   color: var(--color-brandy);
 
-  /* Gold - Pink - Gold Triple Border Frame */
+  /* Gold - Pink - Gold Frame */
   border: 10px double var(--color-gold-light);
   outline: 4px solid var(--color-sweet-salmon);
   outline-offset: -14px;
   border-radius: 28px;
 
-  /* Tight, defined shadow with minimal spread */
+  /* Tight defined shadow */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 
-  /* Alignment setup */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* Custom Leafy Green Tone for Thought Bubble */
-:root {
-  --color-leafy-green: #6b7d42;      /* Cozy medieval olive-leaf green */
-  --color-leafy-green-light: #e8eee0;/* Very light soft green fill */
-}
 
-/* Adjust Main Box Padding so the Banner touches the top/right edges cleanly */
-.main-container {
-  padding: 0; /* Clears top padding so banner flush fits */
-  overflow: hidden; /* Clips children nicely to the main box's rounded corners */
-}
-
-/* Top Header Row Layout */
+/* ==========================================
+   TOP HEADER ROW
+   ========================================== */
 .top-header-row {
   width: 100%;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 4px double var(--color-gold-light);
+  padding: 15px 0 15px 15px; /* Touches right edge cleanly */
+  gap: 15px;
 }
 
-/* --- Left Side: Pet & Thought Box --- */
-.pet-thought-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  max-width: 320px;
-  gap: 12px;
-}
-
-.pet-badge-row {
+/* --- Left: Animal Crossing Style Speech Layout --- */
+.speech-layout {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .pet-gif {
-  width: 45px;
-  height: 45px;
+  width: 70px;
+  height: 85px;
   object-fit: contain;
 }
 
-.pet-name {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--color-brandy);
-  background-color: var(--color-pearl-beige);
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 2px solid var(--color-camel);
-}
-
-/* Leafy Green Thought Bubble */
+/* Leafy Green Speech Box */
 .thought-bubble {
   position: relative;
   background-color: var(--color-leafy-green-light);
   border: 2px solid var(--color-leafy-green);
-  color: var(--color-brandy);
-  padding: 12px 16px;
-  border-radius: 16px;
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.35;
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  padding: 10px 16px;
+  max-width: 340px;
+  box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* Small Tail on Thought Bubble pointing up to Juno */
+/* Bubble Tail pointing left towards the pet */
 .thought-bubble::before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: 20px;
-  border-width: 0 8px 10px 8px;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 7px 10px 7px 0;
   border-style: solid;
-  border-color: transparent transparent var(--color-leafy-green) transparent;
+  border-color: transparent var(--color-leafy-green) transparent transparent;
 }
 
-/* --- Right Side: Horizontal Banner --- */
+.speech-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-family: 'Fredoka', cursive;
+}
+
+.pet-name {
+  color: var(--color-bubblegum-pink);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.site-title {
+  color: var(--color-brandy);
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.speech-text {
+  color: var(--color-brandy);
+  font-family: 'Fredoka', cursive;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+/* --- Right: Banner GIF (Sweet Salmon Border) --- */
 .banner-container {
   flex: 1;
+  height: 100px; /* Matches pet and speech bubble height */
   display: flex;
-  border-left: 4px double var(--color-gold-light);
+  align-items: center;
+
+  /* Sweet Salmon border on top, left, bottom */
+  border: 4px solid var(--color-sweet-salmon);
+  border-right: none;
+  border-radius: 14px 0 0 14px;
+  overflow: hidden;
 }
 
 .header-banner-gif {
   width: 100%;
   height: 100%;
-  min-height: 140px;
-  object-fit: cover; /* Ensures zero blank spaces on top, right, or bottom */
+  object-fit: cover;
   display: block;
 }
