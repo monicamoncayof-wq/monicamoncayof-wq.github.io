@@ -589,3 +589,61 @@ body {
   color: var(--color-brandy);
   padding-top: 4px;
 }
+/* ==========================================
+   GUESTBOOK WIDGET (RIGHT COLUMN)
+   ========================================== */
+
+.guestbook-box {
+  width: 100%;
+  padding: 16px 14px;
+  background-color: var(--color-pearl-beige);
+  border: 3px double var(--color-brandy);
+  border-radius: 18px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.guestbook-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 1.05rem;
+  color: var(--color-brandy);
+}
+
+.guestbook-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-brandy);
+  opacity: 0.9;
+}
+
+/* Guestbook Button */
+.guestbook-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-family: 'Fredoka', cursive;
+  font-size: 0.9rem;
+  color: var(--color-brandy);
+  background-color: var(--color-sweet-salmon-light);
+  border: 2px solid var(--color-brandy);
+  border-radius: 12px;
+  box-shadow: 0 2px 0px var(--color-brandy);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.guestbook-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-pearl-beige);
+  color: var(--color-bubblegum-pink);
+  box-shadow: 0 4px 0px var(--color-brandy);
+}
+
+.guestbook-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0px var(--color-brandy);
+}
