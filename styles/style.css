@@ -1,12 +1,13 @@
 /* Color Palette Variables */
 :root {
-  /* New Main Palette */
+  /* Main Palette */
   --color-camel: #998756;
   --color-pearl-beige: #EBD7B3;
   --color-sweet-salmon: #DC9781;
   --color-brandy: #7A2914;
 
-  /* Gold Trims & Pink Accent */
+  /* Custom Light Tones & Accents */
+  --color-sweet-salmon-light: #F3CBBF; /* Much lighter, soft pink fill */
   --color-bubblegum-pink: #EC596B;
   --color-gold-light: #f3d078;
 }
@@ -36,24 +37,24 @@ body {
   /* Spacing: smaller top/bottom margin, wider space on the sides */
   width: 88%;
   max-width: 1100px;
-  min-height: 85vh; /* Expands vertically as you add more content */
+  min-height: 85vh; /* Expands vertically as content is added */
   margin: 2vh auto;
 
   /* Inner spacing */
   padding: 35px 25px;
 
-  /* Solid Sweet Salmon Pink Background */
-  background-color: var(--color-sweet-salmon);
+  /* Solid Lighter Soft Pink Fill */
+  background-color: var(--color-sweet-salmon-light);
   color: var(--color-brandy);
 
-  /* Double Royal Border: Outer Light Gold with Inner Bubblegum Pink Frame */
-  border: 7px double var(--color-gold-light);
-  outline: 3px solid var(--color-bubblegum-pink);
-  outline-offset: -10px;
+  /* Gold - Pink - Gold Triple Border Frame */
+  border: 10px double var(--color-gold-light);
+  outline: 4px solid var(--color-sweet-salmon);
+  outline-offset: -14px;
   border-radius: 28px;
 
-  /* Soft shadow for depth */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  /* Tight, defined shadow with minimal spread */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 
   /* Alignment setup */
   display: flex;
