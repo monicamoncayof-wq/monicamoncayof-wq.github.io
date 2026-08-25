@@ -908,3 +908,22 @@ body {
   border: 1px solid #d991a1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+/* ==========================================
+   HORIZONTAL GIF DIVIDER BANNER
+   ========================================== */
+
+.gif-divider-container {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gif-divider-img {
+  width: 100%;
+  height: 45px; /* Adjust height if you want it thicker or thinner */
+  object-fit: cover; /* Crops cleanly like a banner without distorting */
+  display: block;
+}
