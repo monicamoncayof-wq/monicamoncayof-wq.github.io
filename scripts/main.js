@@ -229,3 +229,20 @@ function createFloatingCookie(x, y) {
 
   setTimeout(() => cookie.remove(), 850);
 }
+/* ==========================================
+   Y2K MAGAZINE TITLE RANDOM TILT EFFECT
+   ========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const magLetters = document.querySelectorAll(".mag-letter");
+
+  magLetters.forEach((letter) => {
+    letter.addEventListener("click", () => {
+      const randomAngle = (Math.random() * 20 - 10).toFixed(1);
+      letter.style.transform = `scale(1.2) rotate(${randomAngle}deg)`;
+      setTimeout(() => {
+        letter.style.transform = "";
+      }, 400);
+    });
+  });
+});
