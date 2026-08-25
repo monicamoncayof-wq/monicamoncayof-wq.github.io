@@ -17,17 +17,20 @@
 /* Full-Screen Seamless Background */
 body {
   min-height: 100vh;
+  
   /* Path to your uploaded background image */
   background-image: url('../assets/images/background.jpg');
-  /* Keeps the image centered and prevents tiling */
+  
+  /* Fits the image across the entire screen with no blank space on the sides */
+  background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  /* Fits the entire image within the window without zooming/cropping */
-  background-size: contain;
+  
   /* Keeps the background fixed while content scrolls over it */
   background-attachment: fixed;
-  /* Warm Burgundy fill for any space around the image */
-  background-color: var(--color-burgundy);
+  
+  /* Fallback color */
+  background-color: var(--color-bubblegum-pink);
   color: #ffffff;
   font-family: sans-serif;
 }
