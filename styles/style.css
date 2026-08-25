@@ -22,9 +22,9 @@ body {
   background-image: url('../assets/images/background.jpg');
   
   /* Fits the image across the entire screen with no blank space on the sides */
-  background-size: 100% 100%;
+   background-size: auto;
+  background-repeat: repeat;
   background-position: center center;
-  background-repeat: no-repeat;
   
   /* Keeps the background fixed while content scrolls over it */
   background-attachment: fixed;
