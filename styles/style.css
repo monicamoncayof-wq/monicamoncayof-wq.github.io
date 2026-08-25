@@ -243,3 +243,41 @@ body {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
 }
+/* ==========================================
+   3-COLUMN LAYOUT STRUCTURE
+   ========================================== */
+.content-columns {
+  width: 100%;
+  min-height: 500px; /* Gives the layout initial height before adding content */
+  display: flex;
+  align-items: stretch;
+}
+
+/* Left Column - Smallest */
+.left-column {
+  width: 20%;
+  padding: 15px;
+  border-right: 4px solid var(--color-sweet-salmon);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Center Column - Biggest */
+.center-column {
+  width: 52%;
+  padding: 15px;
+  border-right: 4px solid var(--color-sweet-salmon);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Right Column - Medium */
+.right-column {
+  width: 28%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
