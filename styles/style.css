@@ -186,3 +186,60 @@ body {
   object-fit: cover;
   display: block;
 }
+/* ==========================================
+   MARQUEE DIVIDER TICKER
+   ========================================== */
+.marquee-divider {
+  width: 100%;
+  height: 38px;
+  background-color: var(--color-pearl-beige);
+  border-top: 3px solid var(--color-gold-light);
+  border-bottom: 3px solid var(--color-gold-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.08);
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Scrolling Animation Loop */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Rainbow Pastel Text Effect */
+.marquee-track span {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding-right: 10px;
+  
+  /* Creates smooth gradient text fill */
+  background: linear-gradient(
+    90deg, 
+    #ffa1a1, 
+    #ffd59e, 
+    #ffffa1, 
+    #b2ffa1, 
+    #a1eaff, 
+    #cca1ff, 
+    #ffa1a1
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 4s linear infinite;
+}
+
+/* Shifting Rainbow Colors Animation */
+@keyframes rainbow-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
