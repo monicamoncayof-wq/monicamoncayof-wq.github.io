@@ -726,7 +726,7 @@ body {
 
 .stamps-box {
   width: 100%;
-  padding: 12px 10px;
+  padding: 10px;
   background-color: var(--color-pearl-beige);
   border: 3px double var(--color-brandy);
   border-radius: 18px;
@@ -734,20 +734,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 
-.stamps-title {
-  font-family: 'Fredoka', cursive;
-  font-size: 1.05rem;
-  color: var(--color-brandy);
-}
-
+/* Reduced height viewport (~160px) */
 .stamps-viewport {
   width: 100%;
-  max-height: 220px;
-  padding: 10px 8px;
-  background-color: #d8f0ff; /* Soft pastel blue background matching reference */
+  max-height: 160px;
+  padding: 8px;
+  background-color: #d8f0ff; /* Soft pastel blue */
   border: 2px solid var(--color-brandy);
   border-radius: 12px;
   display: flex;
@@ -773,16 +767,58 @@ body {
   border-radius: 10px;
 }
 
+/* Stamp Wrapper for Glitter Effects */
+.stamp-item {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
 /* Individual horizontal stamp images */
 .stamp-img {
   width: 100%;
-  max-width: 200px;
   height: auto;
   display: block;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.stamp-img:hover {
-  transform: scale(1.03);
+.stamp-item:hover .stamp-img {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+/* Glitter Burst Elements */
+.glitter {
+  position: absolute;
+  font-size: 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.4s ease;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.g1 { top: -6px; left: 10px; }
+.g2 { bottom: -6px; right: 10px; }
+
+/* Glitter burst animation on hover */
+.stamp-item:hover .glitter {
+  opacity: 1;
+  animation: glitter-sparkle 0.8s ease-in-out infinite alternate;
+}
+
+.g2 {
+  animation-delay: 0.3s !important;
+}
+
+@keyframes glitter-sparkle {
+  0% {
+    transform: scale(0.6) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(18deg) translateY(-3px);
+  }
 }
