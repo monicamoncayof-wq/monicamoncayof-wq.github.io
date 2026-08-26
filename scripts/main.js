@@ -311,3 +311,11 @@ function cycleY2KAvatar() {
   }, 150);
 }
 
+function playPicnicAudio(audioPath) {
+    const player = document.getElementById('picnic-player');
+    const source = document.getElementById('picnic-source');
+    
+    source.src = audioPath;
+    player.load();
+    player.play();
+}
