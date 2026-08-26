@@ -1331,11 +1331,11 @@ body {
    ========================================== */
 
 .center-subdivider-container {
-  width: calc(100% + 32px); /* Extends width to touch side borders */
-  margin-left: -16px;       /* Cancels out left column padding */
-  margin-right: -16px;      /* Cancels out right column padding */
-  margin-top: -20px;        /* Pulls banner higher up toward the Y2K intro box */
-  margin-bottom: 8px;       /* Tight distance for upcoming content below */
+  width: calc(100% + 32px); 
+  margin-left: -16px;        
+  margin-right: -16px;      
+  margin-top: 12px;         /* Adjusted to prevent overlapping y2k-intro-box */
+  margin-bottom: 12px;      /* Clean spacing before the TV/Info row */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1345,10 +1345,11 @@ body {
 .center-subdivider-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* Zooms/crops slightly to ensure full edge-to-edge coverage */
+  object-fit: cover;        
   display: block;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
+
 /* ==========================================
    SIDE-BY-SIDE CONTAINER & INFO BOX FIXES
    ========================================== */
@@ -1359,7 +1360,7 @@ body {
   gap: 12px;
   align-items: flex-start;
   width: 100%;
-  margin: -10px 0 20px 0;
+  margin: 0 0 20px 0;      /* Fixed from -10px to 0 to stop overlapping */
   box-sizing: border-box;
 }
 
