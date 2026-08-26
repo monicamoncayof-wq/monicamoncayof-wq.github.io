@@ -311,7 +311,7 @@ function cycleY2KAvatar() {
   }, 150);
 }
 /* ==========================================
-   RETRO TV CHANNEL SWITCHER WITH CRT FLICKER
+   RETRO TV CHANNEL SWITCHER (CLICK ONLY)
    ========================================== */
 
 const tvChannels = [
@@ -333,15 +333,15 @@ function nextTvChannel() {
   const tvDisplay = document.getElementById("tv-photo-display");
   if (!tvDisplay) return;
 
-  // Trigger CRT Flicker
+  // Trigger CRT Flicker strictly during channel click transition
   tvDisplay.classList.add("crt-flicker");
 
   setTimeout(() => {
     currentChannelIndex = (currentChannelIndex + 1) % tvChannels.length;
     tvDisplay.src = tvChannels[currentChannelIndex];
-  }, 100);
+  }, 90);
 
   setTimeout(() => {
     tvDisplay.classList.remove("crt-flicker");
-  }, 220);
+  }, 200);
 }
