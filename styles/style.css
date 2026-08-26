@@ -1350,27 +1350,35 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   RETRO TV WIDGET (TIGHT SPACING & NO CAPTION)
+   SIDE-BY-SIDE FLEX ROW (TV + BRAINSTORM BOX)
    ========================================== */
 
+.tv-brainstorm-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  margin: -10px 0 20px 0;
+}
+
+/* TV Container Adjustments for Flex Layout */
 .retro-tv-container {
-  width: 280px;
-  margin: -10px 0 15px 0; /* Negative top margin pulls title close to the divider */
+  width: 230px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Y2K Title - Zeroed margins keep it snug between divider & TV */
+/* Y2K Title - Tightened Spacing */
 .tv-latin-title {
   font-family: 'Comic Sans MS', 'Impact', cursive, sans-serif;
-  font-size: 1.15rem;
+  font-size: 0.98rem;
   font-weight: 900;
   color: #ff2a6d;
   text-shadow: 2px 2px 0px #ffc93c, 4px 4px 0px #005662;
-  letter-spacing: 1px;
   margin-top: 0;
-  margin-bottom: -6px; /* Negative margin pulls the TV right up to the title */
+  margin-bottom: -4px;
   text-align: center;
   transform: rotate(-1.5deg);
   z-index: 5;
@@ -1430,9 +1438,132 @@ body {
   filter: brightness(2.5) contrast(2) grayscale(1) !important;
 }
 
-.tv-channel-hint {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 0.7rem;
-  color: #9c6c82;
-  margin-top: 4px;
+/* Brainstorm Outer Box with Nature Background */
+.brainstorm-outer-card {
+  flex: 1;
+  position: relative;
+  background: url('../images/bg_infobox.jpg') center/cover no-repeat;
+  border: 3px double #8da874;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 3px 4px 10px rgba(70, 90, 50, 0.25);
+  height: 235px; /* Matches height of the retro TV set */
+}
+
+/* Scrollable Inner Area */
+.brainstorm-scroll-area {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif;
+  color: #2e3b23;
+}
+
+/* Custom Nature Scrollbar */
+.brainstorm-scroll-area::-webkit-scrollbar {
+  width: 7px;
+}
+.brainstorm-scroll-area::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+.brainstorm-scroll-area::-webkit-scrollbar-thumb {
+  background: #a4c285;
+  border-radius: 10px;
+  border: 1px solid #728c56;
+}
+
+/* Main Title inside Box */
+.brainstorm-main-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d15828;
+  text-align: center;
+  margin: 0 0 8px 0;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+/* Inner Content Sub-Cards */
+.mini-info-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1.5px dashed #b1c997;
+  border-radius: 12px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.mini-info-card h3 {
+  font-size: 0.88rem;
+  color: #e0632b;
+  margin: 0 0 4px 0;
+  border-bottom: 1px dotted #a0ba85;
+  padding-bottom: 2px;
+}
+
+.mini-info-card p {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin: 0 0 4px 0;
+}
+
+.mini-info-card ul {
+  margin: 4px 0;
+  padding-left: 16px;
+  font-size: 0.76rem;
+}
+
+.mini-info-card li {
+  margin-bottom: 2px;
+  color: #3b4e2d;
+}
+
+.card-note {
+  font-style: italic;
+  color: #8c5332;
+  font-size: 0.74rem !important;
+}
+
+/* ASCII Art Card */
+.ascii-card pre {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #4a6336;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Decorative Rocking Frog PNG with Polaroid White Border & Shadow */
+.rock-frog-deco {
+  position: absolute;
+  bottom: -12px;
+  right: -10px;
+  height: 110px;
+  width: auto;
+  background-color: #ffffff;
+  padding: 4px 4px 12px 4px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Rock & Roll Guitar Strumming Hover Animation */
+.rock-frog-deco:hover {
+  animation: rockStrum 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes rockStrum {
+  0% {
+    transform: rotate(-6deg) scale(1.08) translateY(-2px);
+  }
+  50% {
+    transform: rotate(8deg) scale(1.12) translateY(2px);
+  }
+  100% {
+    transform: rotate(-4deg) scale(1.08) translateY(-1px);
+  }
 }
