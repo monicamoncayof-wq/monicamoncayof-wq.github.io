@@ -254,15 +254,20 @@
     <!-- Flex Container wrapping both TV and Info Card -->
     <div class="tv-brainstorm-row">
         
-        <!-- Left: TV Card Container -->
-        <div class="tv-card-wrapper">
-            <h3 class="tv-latin-title">★ PHOTOS OF THE MONTH ★</h3>
-            <div class="tv-viewport" onclick="nextTvChannel()">
-                <img id="tv-photo-display" src="assets/images/un_poeta.jpg" alt="Photo of the month">
-                <img src="assets/gifs/CRT-Scanline.gif" alt="CRT Overlay" class="crt-scanline-overlay">
-                <img src="assets/images/tv-retro.png" alt="Retro TV Frame" class="tv-frame-img">
-            </div>
+        <<!-- Left: TV Card Container -->
+<div class="tv-card-wrapper">
+    <h3 class="tv-latin-title">★PHOTOS OF THE MONTH★</h3>
+    
+    <div class="tv-viewport" onclick="nextTvChannel()">
+        <!-- Screen Content Container -->
+        <div class="tv-screen-area">
+            <img id="tv-photo-display" src="assets/images/un_poeta.jpg" alt="Photo of the month" class="tv-photo">
+            <img src="assets/gifs/CRT-Scanline.gif" alt="CRT Overlay" class="crt-scanline-overlay">
         </div>
+        <!-- Retro Frame Placed on Top -->
+        <img src="assets/images/tv-retro.png" alt="Retro TV Frame" class="tv-frame-img">
+    </div>
+</div>
 
         <!-- Right: Scrollable Website Information Box -->
         <div class="brainstorm-outer-card" id="info-bg-card">
