@@ -1,18 +1,10 @@
-// 10-Photo Swapper Loop
-let currentPhotoIndex = 1;
-const totalPhotos = 10;
+/* ==========================================
+   DIGICAM PHOTO GALLERY & CLICK SWAPPER
+   ========================================== */
 
-function swapPhoto() {
-  const photo = document.getElementById('interactive-photo');
-  
-  // Advance to the next photo, or loop back to 1 after reaching 10
-  currentPhotoIndex = (currentPhotoIndex % totalPhotos) + 1;
-  
-  // Update photo source dynamically
-  photo.src = `assets/images/photo${currentPhotoIndex}.jpg`;
-}
-// Digicam Photo Array
+// Complete Master List of ALL Digicam Photos (Old + 37 New)
 const digicamPhotos = [
+  // Original Photos
   "P1070928.JPG", "P1070929.JPG", "P1070967.JPG", "P1070982.JPG", "P1070992.JPG",
   "P1070993.JPG", "P1080005.JPG", "P1080014.JPG", "P1080021.JPG", "P1080026.JPG",
   "P1080054.JPG", "P1080058.JPG", "P1080059.JPG", "P1080061.JPG", "P1080090.JPG",
@@ -25,10 +17,44 @@ const digicamPhotos = [
   "P1080356.JPG", "P1080357.JPG", "P1080359.JPG", "P1080362.JPG", "P1080363.JPG",
   "P1080390.JPG", "P1080392.JPG", "P1080394.JPG", "P1080430.JPG", "P1080434.JPG",
   "P1080440.JPG", "P1080443.JPG", "P1080444.JPG", "P1080446.JPG", "P1080448.JPG",
-  "P1080451.JPG", "P1080459.JPG", "P1080463.JPG", "P1080480.JPG", "P1080483.JPG"
+  "P1080451.JPG", "P1080459.JPG", "P1080463.JPG", "P1080480.JPG", "P1080483.JPG",
+  
+  // New Photos Added
+  "P1080484.JPG", "P1080485.JPG", "P1080486.JPG", "P1080488.JPG", "P1080492.JPG",
+  "P1080496.JPG", "P1080498.JPG", "P1080502.JPG", "P1080504.JPG", "P1080505.JPG",
+  "P1080506.JPG", "P1080508.JPG", "P1080509.JPG", "P1080510.JPG", "P1080511.JPG",
+  "P1080512.JPG", "P1080513.JPG", "P1080515.JPG", "P1080517.JPG", "P1080521.JPG",
+  "P1080522.JPG", "P1080523.JPG", "P1080525.JPG", "P1080534.JPG", "P1080541.JPG",
+  "P1080542.JPG", "P1080543.JPG", "P1080544.JPG", "P1080547.JPG", "P1080548.JPG",
+  "P1080553.JPG", "P1080555.JPG", "P1080559.JPG", "P1080563.JPG", "P1080568.JPG",
+  "P1080570.JPG", "P1080571.JPG"
 ];
 
-// Shuffle array randomly
+let lastPhotoIndex = -1;
+
+// Click Swapper using the Full Combined Array
+function swapPhoto() {
+  const photo = document.getElementById("interactive-photo");
+  if (!photo) return;
+
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * digicamPhotos.length);
+  } while (randomIndex === lastPhotoIndex && digicamPhotos.length > 1);
+
+  lastPhotoIndex = randomIndex;
+
+  photo.style.opacity = "0.3";
+  photo.style.transform = "scale(0.92) rotate(-3deg)";
+
+  setTimeout(() => {
+    photo.src = `assets/images/${digicamPhotos[randomIndex]}`;
+    photo.style.opacity = "1";
+    photo.style.transform = "scale(1) rotate(0deg)";
+  }, 180);
+}
+
+// Shuffle Utility Function
 function shuffleArray(array) {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -38,14 +64,12 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-// Build Vertical Infinite Scroll Track
+// Infinite Scroll Track Generator
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("cam-gallery-track");
   if (!track) return;
 
   const shuffledList = shuffleArray(digicamPhotos);
-  
-  // Duplicate list to create continuous infinite loop
   const fullList = [...shuffledList, ...shuffledList];
 
   fullList.forEach((filename) => {
@@ -54,14 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     img.alt = "Digicam Photograph";
     img.className = "digicam-img";
 
-    // Interactive Random Tilt & Bounce Effect on Click
     img.addEventListener("click", () => {
       const angles = [-12, -8, -5, 5, 8, 12];
       const randomAngle = angles[Math.floor(Math.random() * angles.length)];
       const randomScale = 1.05 + Math.random() * 0.08;
-      
+
       img.style.transform = `rotate(${randomAngle}deg) scale(${randomScale})`;
-      
+
       setTimeout(() => {
         img.style.transform = "rotate(0deg) scale(1)";
       }, 1200);
