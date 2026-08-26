@@ -333,7 +333,7 @@ function nextTvChannel() {
   const tvDisplay = document.getElementById("tv-photo-display");
   if (!tvDisplay) return;
 
-  // Trigger CRT Flicker strictly during channel click transition
+  // Trigger CRT Flicker strictly on click
   tvDisplay.classList.add("crt-flicker");
 
   setTimeout(() => {
