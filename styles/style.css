@@ -1350,31 +1350,31 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   RETRO LATIN AMERICAN TV WIDGET
+   RETRO TV WIDGET (CENTER COLUMN - LEFT SIDE)
    ========================================== */
 
 .retro-tv-container {
   width: 280px;
-  margin: 10px 0 20px 0;
+  margin: 0 0 20px 0; /* Tight top margin to bring title up close */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Latin American Vintage Typography Header */
+/* Y2K English Title - Tightened Distance */
 .tv-latin-title {
   font-family: 'Comic Sans MS', 'Impact', cursive, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 900;
   color: #ff2a6d;
   text-shadow: 2px 2px 0px #ffc93c, 4px 4px 0px #005662;
   letter-spacing: 1px;
-  margin-bottom: 6px;
+  margin-bottom: 2px; /* Decreased gap to keep title very close */
   text-align: center;
   transform: rotate(-1.5deg);
 }
 
-/* Master Aspect Container matching tv-retro.png proportions */
+/* Master Aspect Container matching tv-retro.png dimensions */
 .tv-viewport {
   position: relative;
   width: 100%;
@@ -1383,7 +1383,7 @@ body {
   overflow: hidden;
 }
 
-/* TV Frame PNG Layer (Top Layer) */
+/* TV Frame Layer (Front) */
 .tv-frame-img {
   position: absolute;
   top: 0;
@@ -1395,42 +1395,37 @@ body {
   pointer-events: none;
 }
 
-/* CRT Scanline GIF Overlay (Middle Layer) */
+/* CRT Scanline Overlay Layer */
 .crt-scanline-overlay {
   position: absolute;
-  top: 13%;
-  left: 10%;
-  width: 66%;
-  height: 58%;
+  top: 15%;
+  left: 13.5%;
+  width: 61.5%;
+  height: 53.5%;
   object-fit: cover;
   z-index: 2;
   opacity: 0.35;
   mix-blend-mode: screen;
   pointer-events: none;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
-/* Photo Display (Bottom Layer inside Screen Cutout) */
+/* Photo Layer - Precision Fitted Inside TV Screen Margins */
 #tv-photo-display {
   position: absolute;
-  top: 13%;
-  left: 10%;
-  width: 66%;
-  height: 58%;
+  top: 15%;
+  left: 13.5%;
+  width: 61.5%;
+  height: 53.5%;
   object-fit: cover;
   z-index: 1;
-  border-radius: 12px;
-  transition: opacity 0.15s ease, filter 0.15s ease;
+  border-radius: 14px;
 }
 
-.tv-viewport:hover #tv-photo-display {
-  filter: contrast(1.15) brightness(1.05);
-}
-
-/* CRT Flicker Transition Effect */
+/* CRT Flicker Animation (Triggered strictly on click) */
 .crt-flicker {
-  opacity: 0.1 !important;
-  filter: brightness(2) contrast(2) grayscale(1) !important;
+  opacity: 0.05 !important;
+  filter: brightness(2.5) contrast(2) grayscale(1) !important;
 }
 
 .tv-channel-hint {
