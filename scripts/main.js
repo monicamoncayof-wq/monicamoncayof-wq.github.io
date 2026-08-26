@@ -345,3 +345,26 @@ function nextTvChannel() {
     tvDisplay.classList.remove("crt-flicker");
   }, 200);
 }
+/* ==========================================
+   INFO BOX BACKGROUND TEXTURE MIXER
+   ========================================== */
+
+const infoBoxTextures = [
+  "assets/images/bg_infobox.jpg",
+  "assets/images/bg_infobox1.jpg",
+  "assets/images/bg_infobox2.jpg",
+  "assets/images/bg_infobox4.jpg"
+];
+
+let textureIndex = 0;
+
+function cycleInfoBoxBackground() {
+  const infoCard = document.getElementById("info-bg-card");
+  if (!infoCard) return;
+
+  textureIndex = (textureIndex + 1) % infoBoxTextures.length;
+  infoCard.style.backgroundImage = `url('${infoBoxTextures[textureIndex]}')`;
+}
+
+// Automatically transition background image every 12 seconds
+setInterval(cycleInfoBoxBackground, 12000);
