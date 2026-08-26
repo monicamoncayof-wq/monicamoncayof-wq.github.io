@@ -1325,3 +1325,25 @@ body {
 .txt-orange { color: #ff6600; font-weight: bold; }
 .txt-brown { color: #8b5a2b; font-weight: bold; }
 .txt-coral { color: #e64a19; font-weight: bold; }
+
+/* ==========================================
+   COMPACT HORIZONTAL SUB-DIVIDER BANNER
+   ========================================== */
+
+.center-subdivider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -10px 0 10px 0; /* Tight top and bottom spacing */
+  padding: 0;
+}
+
+.center-subdivider-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
+}
