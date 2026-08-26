@@ -1350,98 +1350,35 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   RETRO TV WIDGET (UNIFIED CARD & TIGHT FIT)
+   SIDE-BY-SIDE CONTAINER & INFO BOX FIXES
    ========================================== */
 
-/* Outer Unified Box containing both Title and TV */
+/* Enables side-by-side positioning */
+.tv-brainstorm-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  margin: -10px 0 20px 0;
+  box-sizing: border-box;
+}
+
+/* TV Wrapper Height Fix */
 .tv-card-wrapper {
   width: 230px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.5); /* Background box container */
+  background: rgba(255, 255, 255, 0.5);
   border: 2px dashed #b1c997;
   border-radius: 16px;
   padding: 6px;
   box-sizing: border-box;
-  height: 235px; /* Matches brainstorm outer card height */
+  height: 235px; /* Locked height */
 }
 
-/* Single-Line Compact Title */
-.tv-latin-title {
-  font-family: 'Comic Sans MS', 'Impact', cursive, sans-serif;
-  font-size: 0.8rem; /* Sized to guarantee single-line fit */
-  font-weight: 900;
-  color: #ff2a6d;
-  text-shadow: 1.5px 1.5px 0px #ffc93c, 3px 3px 0px #005662;
-  white-space: nowrap; /* Forces text onto one single line */
-  margin: 2px 0 0 0;
-  padding: 0;
-  text-align: center;
-}
-
-/* Master Aspect Container matching tv-retro.png dimensions */
-.tv-viewport {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
-  overflow: hidden;
-  margin-top: -6px; /* Removes gap between single-line title and TV */
-}
-
-/* TV Frame Layer (Front) */
-.tv-frame-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* CRT Scanline Overlay Layer */
-.crt-scanline-overlay {
-  position: absolute;
-  top: 15%;
-  left: 13.5%;
-  width: 63.5%; /* Expanded width to eliminate right-side gap */
-  height: 53.5%;
-  object-fit: cover;
-  z-index: 2;
-  opacity: 0.35;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  border-radius: 14px;
-}
-
-/* Photo Layer - Precision Fitted with No Right Gap */
-#tv-photo-display {
-  position: absolute;
-  top: 15%;
-  left: 13.5%;
-  width: 63.5%; /* Expanded width to eliminate right-side gap */
-  height: 53.5%;
-  object-fit: cover;
-  z-index: 1;
-  border-radius: 14px;
-}
-
-/* Quick CRT Flicker Animation (Triggered strictly on click) */
-.crt-flicker {
-  opacity: 0.05 !important;
-  filter: brightness(2.5) contrast(2) grayscale(1) !important;
-}
-
-
-/* ==========================================
-   WEBSITE INFORMATION BOX (GAEGU FONT & TEXTURE MIX)
-   ========================================== */
-
-/* Outer Box mixing the nature images with smooth crossfade */
+/* Outer Box - Fixed Height & Border Box */
 .brainstorm-outer-card {
   flex: 1;
   position: relative;
@@ -1451,22 +1388,26 @@ body {
   border: 2px dashed #8da874;
   border-radius: 16px;
   padding: 10px;
-  box-shadow: none; /* Shadow removed */
-  height: 235px;
+  box-shadow: none;
+  height: 235px; /* Matches TV height exactly */
+  box-sizing: border-box; /* Fixes height overflow caused by padding */
+  overflow: hidden; /* Prevents outer box from growing */
   transition: background-image 0.5s ease-in-out;
 }
 
-/* Inner Scrollable Area applying Gaegu font */
+/* Inner Scroll Area - Forces Internal Vertical Scroll */
 .brainstorm-scroll-area {
   height: 100%;
+  max-height: 100%;
   overflow-y: auto;
   padding-right: 6px;
+  box-sizing: border-box;
   font-family: 'Gaegu', cursive, sans-serif;
-  font-size: 1.05rem; /* Sized up slightly for clean reading in Gaegu */
+  font-size: 1.05rem;
   color: #2e3b23;
 }
 
-/* Custom Scrollbar */
+/* Custom Nature Scrollbar */
 .brainstorm-scroll-area::-webkit-scrollbar {
   width: 6px;
 }
@@ -1479,7 +1420,7 @@ body {
   border-radius: 10px;
 }
 
-/* Main Title inside Box */
+/* Title & Card Styles */
 .brainstorm-main-title {
   font-family: 'Gaegu', cursive, sans-serif;
   font-size: 1.45rem;
@@ -1490,7 +1431,6 @@ body {
   text-shadow: 1px 1px 0px #ffffff;
 }
 
-/* Sub-Cards with semi-transparent background to let textures show through */
 .mini-info-card {
   background-color: rgba(255, 255, 255, 0.82);
   border: 1px dashed #b1c997;
@@ -1528,7 +1468,6 @@ body {
   color: #8c5332;
 }
 
-/* ASCII Art Card */
 .ascii-card pre {
   font-family: monospace;
   font-size: 0.72rem;
@@ -1538,35 +1477,29 @@ body {
   line-height: 1.2;
 }
 
-/* Decorative Rocking Frog PNG (Border and Shadow Completely Removed) */
+/* Frog Deco Image */
 .rock-frog-deco {
   position: absolute;
   bottom: -6px;
   right: -4px;
   height: 105px;
   width: auto;
-  background: transparent; /* Removed white padding */
+  background: transparent;
   padding: 0;
-  border: none; /* Border removed */
-  box-shadow: none; /* Shadow removed */
+  border: none;
+  box-shadow: none;
   z-index: 10;
   cursor: pointer;
   transition: transform 0.2s ease;
+  pointer-events: auto;
 }
 
-/* Rock & Roll Guitar Strumming Hover Animation */
 .rock-frog-deco:hover {
   animation: rockStrum 0.4s infinite alternate ease-in-out;
 }
 
 @keyframes rockStrum {
-  0% {
-    transform: rotate(-6deg) scale(1.08) translateY(-2px);
-  }
-  50% {
-    transform: rotate(8deg) scale(1.12) translateY(2px);
-  }
-  100% {
-    transform: rotate(-4deg) scale(1.08) translateY(-1px);
-  }
+  0% { transform: rotate(-6deg) scale(1.08) translateY(-2px); }
+  50% { transform: rotate(8deg) scale(1.12) translateY(2px); }
+  100% { transform: rotate(-4deg) scale(1.08) translateY(-1px); }
 }
