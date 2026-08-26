@@ -1349,3 +1349,78 @@ body {
   display: block;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
+/* ==========================================
+   PICNIC BLANKET AUDIO WIDGET
+   ========================================== */
+
+.picnic-widget-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Align right side of center column */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.picnic-blanket {
+    width: 340px;
+    background-image: url('assets/images/lace_squared_red_pattern.png');
+    background-size: cover;
+    background-position: center;
+    padding: 24px 18px 18px 18px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4x3 Fruit Layout Grid */
+.fruit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.fruit-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+}
+
+.fruit-img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Playful Hover & Click Animations */
+.fruit-btn:hover {
+    transform: scale(1.2) rotate(6deg);
+    filter: drop-shadow(0px 6px 10px rgba(255, 105, 180, 0.4));
+}
+
+.fruit-btn:active {
+    transform: scale(0.95) rotate(-4deg);
+}
+
+/* Retro-styled Compact Audio Player Bar */
+.picnic-audio-bar {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+.picnic-audio-bar audio {
+    width: 100%;
+    height: 36px;
+    border-radius: 18px;
+    outline: none;
+}
