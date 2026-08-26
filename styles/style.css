@@ -1504,3 +1504,72 @@ body {
   50% { transform: rotate(8deg) scale(1.12) translateY(2px); }
   100% { transform: rotate(-4deg) scale(1.08) translateY(-1px); }
 }
+/* Container for the TV element */
+.tv-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.tv-latin-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: #ff6b81;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Relative positioning container for TV layers */
+.tv-viewport {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+/* TV Frame stays on top of screen content */
+.tv-frame-img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none; /* Allows clicks to pass through to tv-viewport */
+}
+
+/* Screen Area positioned behind the TV bezel */
+.tv-screen-area {
+  position: absolute;
+  top: 12%;    /* Adjust percentages if your specific TV frame opening varies */
+  left: 10%;
+  width: 72%;
+  height: 68%;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+/* Photo Image Scaling */
+.tv-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scanline GIF overlay sitting directly on top of the photo */
+.crt-scanline-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.35; /* Subtle CRT effect */
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
