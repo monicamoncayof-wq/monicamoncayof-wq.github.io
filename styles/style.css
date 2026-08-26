@@ -1439,30 +1439,38 @@ body {
 
 /-----------/
 
-/* Brainstorm Outer Box with Nature Background */
+/* ==========================================
+   WEBSITE INFORMATION BOX (GAEGU FONT & TEXTURE MIX)
+   ========================================== */
+
+/* Outer Box mixing the nature images with smooth crossfade */
 .brainstorm-outer-card {
   flex: 1;
   position: relative;
-  background: url('../images/bg_infobox.jpg') center/cover no-repeat;
-  border: 3px double #8da874;
+  background-image: url('../images/bg_infobox.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 2px dashed #8da874;
   border-radius: 16px;
   padding: 10px;
-  box-shadow: 3px 4px 10px rgba(70, 90, 50, 0.25);
-  height: 235px; /* Matches height of the retro TV set */
+  box-shadow: none; /* Shadow removed */
+  height: 235px;
+  transition: background-image 0.5s ease-in-out;
 }
 
-/* Scrollable Inner Area */
+/* Inner Scrollable Area applying Gaegu font */
 .brainstorm-scroll-area {
   height: 100%;
   overflow-y: auto;
   padding-right: 6px;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Fredoka', cursive, sans-serif;
+  font-family: 'Gaegu', cursive, sans-serif;
+  font-size: 1.05rem; /* Sized up slightly for clean reading in Gaegu */
   color: #2e3b23;
 }
 
-/* Custom Nature Scrollbar */
+/* Custom Scrollbar */
 .brainstorm-scroll-area::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 .brainstorm-scroll-area::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.4);
@@ -1471,47 +1479,45 @@ body {
 .brainstorm-scroll-area::-webkit-scrollbar-thumb {
   background: #a4c285;
   border-radius: 10px;
-  border: 1px solid #728c56;
 }
 
 /* Main Title inside Box */
 .brainstorm-main-title {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-family: 'Gaegu', cursive, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
   color: #d15828;
   text-align: center;
-  margin: 0 0 8px 0;
-  text-shadow: 1px 1px 0px #fff;
+  margin: 0 0 6px 0;
+  text-shadow: 1px 1px 0px #ffffff;
 }
 
-/* Inner Content Sub-Cards */
+/* Sub-Cards with semi-transparent background to let textures show through */
 .mini-info-card {
-  background-color: rgba(255, 255, 255, 0.88);
-  border: 1.5px dashed #b1c997;
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px dashed #b1c997;
   border-radius: 12px;
-  padding: 8px 10px;
+  padding: 6px 10px;
   margin-bottom: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .mini-info-card h3 {
-  font-size: 0.88rem;
+  font-family: 'Gaegu', cursive, sans-serif;
+  font-size: 1.15rem;
   color: #e0632b;
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
   border-bottom: 1px dotted #a0ba85;
   padding-bottom: 2px;
 }
 
 .mini-info-card p {
-  font-size: 0.78rem;
-  line-height: 1.35;
+  line-height: 1.25;
   margin: 0 0 4px 0;
 }
 
 .mini-info-card ul {
   margin: 4px 0;
-  padding-left: 16px;
-  font-size: 0.76rem;
+  padding-left: 18px;
 }
 
 .mini-info-card li {
@@ -1522,7 +1528,6 @@ body {
 .card-note {
   font-style: italic;
   color: #8c5332;
-  font-size: 0.74rem !important;
 }
 
 /* ASCII Art Card */
@@ -1535,18 +1540,17 @@ body {
   line-height: 1.2;
 }
 
-/* Decorative Rocking Frog PNG with Polaroid White Border & Shadow */
+/* Decorative Rocking Frog PNG (Border and Shadow Completely Removed) */
 .rock-frog-deco {
   position: absolute;
-  bottom: -12px;
-  right: -10px;
-  height: 110px;
+  bottom: -6px;
+  right: -4px;
+  height: 105px;
   width: auto;
-  background-color: #ffffff;
-  padding: 4px 4px 12px 4px;
-  border: 1px solid #dcdcdc;
-  border-radius: 6px;
-  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.25);
+  background: transparent; /* Removed white padding */
+  padding: 0;
+  border: none; /* Border removed */
+  box-shadow: none; /* Shadow removed */
   z-index: 10;
   cursor: pointer;
   transition: transform 0.2s ease;
