@@ -310,3 +310,38 @@ function cycleY2KAvatar() {
     avatarImg.style.opacity = "1";
   }, 150);
 }
+/* ==========================================
+   RETRO TV CHANNEL SWITCHER WITH CRT FLICKER
+   ========================================== */
+
+const tvChannels = [
+  "assets/images/un_poeta.jpg",
+  "assets/images/un_poeta1.jpg",
+  "assets/images/un_poeta2.jpg",
+  "assets/images/un_poeta3.jpg",
+  "assets/images/un_poeta4.jpg",
+  "assets/images/un_poeta5.jpg",
+  "assets/images/un_poeta6.jpg",
+  "assets/images/un_poeta7.jpg",
+  "assets/images/un_poeta8.jpg",
+  "assets/images/un_poeta9.jpg"
+];
+
+let currentChannelIndex = 0;
+
+function nextTvChannel() {
+  const tvDisplay = document.getElementById("tv-photo-display");
+  if (!tvDisplay) return;
+
+  // Trigger CRT Flicker
+  tvDisplay.classList.add("crt-flicker");
+
+  setTimeout(() => {
+    currentChannelIndex = (currentChannelIndex + 1) % tvChannels.length;
+    tvDisplay.src = tvChannels[currentChannelIndex];
+  }, 100);
+
+  setTimeout(() => {
+    tvDisplay.classList.remove("crt-flicker");
+  }, 220);
+}
