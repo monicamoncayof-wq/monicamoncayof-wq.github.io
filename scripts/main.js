@@ -30,25 +30,25 @@ const digicamPhotos = [
   "P1080570.JPG", "P1080571.JPG"
 ];
 
-let lastPhotoIndex = -1;
+/* ==========================================
+   LEFT COLUMN 10-PHOTO CLICK SWAPPER
+   ========================================== */
 
-// Click Swapper using the Full Combined Array
+let currentSidebarPhotoIndex = 1;
+const totalSidebarPhotos = 10;
+
 function swapPhoto() {
   const photo = document.getElementById("interactive-photo");
   if (!photo) return;
 
-  let randomIndex;
-  do {
-    randomIndex = Math.floor(Math.random() * digicamPhotos.length);
-  } while (randomIndex === lastPhotoIndex && digicamPhotos.length > 1);
-
-  lastPhotoIndex = randomIndex;
+  // Loop through photo1.jpg to photo10.jpg
+  currentSidebarPhotoIndex = (currentSidebarPhotoIndex % totalSidebarPhotos) + 1;
 
   photo.style.opacity = "0.3";
   photo.style.transform = "scale(0.92) rotate(-3deg)";
 
   setTimeout(() => {
-    photo.src = `assets/images/${digicamPhotos[randomIndex]}`;
+    photo.src = `assets/images/photo${currentSidebarPhotoIndex}.jpg`;
     photo.style.opacity = "1";
     photo.style.transform = "scale(1) rotate(0deg)";
   }, 180);
