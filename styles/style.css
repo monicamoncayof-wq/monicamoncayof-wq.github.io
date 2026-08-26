@@ -1350,38 +1350,35 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   SIDE-BY-SIDE FLEX ROW (TV + BRAINSTORM BOX)
+   RETRO TV WIDGET (UNIFIED CARD & TIGHT FIT)
    ========================================== */
 
-.tv-brainstorm-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  width: 100%;
-  margin: -10px 0 20px 0;
-}
-
-/* TV Container Adjustments for Flex Layout */
-.retro-tv-container {
+/* Outer Unified Box containing both Title and TV */
+.tv-card-wrapper {
   width: 230px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgba(255, 255, 255, 0.5); /* Background box container */
+  border: 2px dashed #b1c997;
+  border-radius: 16px;
+  padding: 6px;
+  box-sizing: border-box;
+  height: 235px; /* Matches brainstorm outer card height */
 }
 
-/* Y2K Title - Tightened Spacing */
+/* Single-Line Compact Title */
 .tv-latin-title {
   font-family: 'Comic Sans MS', 'Impact', cursive, sans-serif;
-  font-size: 0.98rem;
+  font-size: 0.8rem; /* Sized to guarantee single-line fit */
   font-weight: 900;
   color: #ff2a6d;
-  text-shadow: 2px 2px 0px #ffc93c, 4px 4px 0px #005662;
-  margin-top: 0;
-  margin-bottom: -4px;
+  text-shadow: 1.5px 1.5px 0px #ffc93c, 3px 3px 0px #005662;
+  white-space: nowrap; /* Forces text onto one single line */
+  margin: 2px 0 0 0;
+  padding: 0;
   text-align: center;
-  transform: rotate(-1.5deg);
-  z-index: 5;
 }
 
 /* Master Aspect Container matching tv-retro.png dimensions */
@@ -1391,6 +1388,7 @@ body {
   aspect-ratio: 1 / 1;
   cursor: pointer;
   overflow: hidden;
+  margin-top: -6px; /* Removes gap between single-line title and TV */
 }
 
 /* TV Frame Layer (Front) */
@@ -1410,7 +1408,7 @@ body {
   position: absolute;
   top: 15%;
   left: 13.5%;
-  width: 61.5%;
+  width: 63.5%; /* Expanded width to eliminate right-side gap */
   height: 53.5%;
   object-fit: cover;
   z-index: 2;
@@ -1420,23 +1418,26 @@ body {
   border-radius: 14px;
 }
 
-/* Photo Layer - Precision Fitted Inside TV Screen Margins */
+/* Photo Layer - Precision Fitted with No Right Gap */
 #tv-photo-display {
   position: absolute;
   top: 15%;
   left: 13.5%;
-  width: 61.5%;
+  width: 63.5%; /* Expanded width to eliminate right-side gap */
   height: 53.5%;
   object-fit: cover;
   z-index: 1;
   border-radius: 14px;
 }
 
-/* CRT Flicker Animation (Triggered strictly on click) */
+/* Quick CRT Flicker Animation (Triggered strictly on click) */
 .crt-flicker {
   opacity: 0.05 !important;
   filter: brightness(2.5) contrast(2) grayscale(1) !important;
 }
+
+
+/-----------/
 
 /* Brainstorm Outer Box with Nature Background */
 .brainstorm-outer-card {
