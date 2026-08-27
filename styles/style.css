@@ -1350,35 +1350,36 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   PICNIC BLANKET AUDIO WIDGET
+   PICNIC BASKET AUDIO WIDGET
    ========================================== */
 
 .picnic-widget-container {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    justify-content: center; /* Centers the basket horizontally in the main column */
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
-.picnic-blanket {
+.picnic-basket {
     position: relative;
-    width: 330px;
+    width: 100%;       /* Takes full width of center column */
+    max-width: 520px;  /* Prevents it from getting too massive */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Background Blanket Frame Image */
-.blanket-frame-img {
+/* Background Basket Image */
+.basket-frame-img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     object-fit: contain;
-    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.2));
 }
 
-/* Container layering content on top of blanket */
+/* Container layering content on top of basket */
 .picnic-content-wrapper {
     position: absolute;
     top: 0;
@@ -1386,7 +1387,8 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 30px 24px 20px 24px;
+    /* Pushes content inward to avoid overlapping the basket handles and woven edges */
+    padding: 12% 16% 12% 16%; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1394,14 +1396,32 @@ body {
     z-index: 2;
 }
 
+/* Song Title Box styling */
+#song-title-box {
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: rgba(255, 252, 245, 0.85); /* Slightly warm transparent white */
+    border: 2px dashed #dca394;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 14px;
+    color: #5c433c;
+    width: 80%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 6px;
+}
+
 /* 4 rows of 3 fruits layout */
 .fruit-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 8px 12px; /* Tighter gap to fit vertically inside basket */
     width: 100%;
     justify-items: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 .fruit-btn {
@@ -1414,15 +1434,15 @@ body {
 }
 
 .fruit-img {
-    width: 52px;
-    height: 52px;
+    width: 44px; /* Scaled down slightly to fit 4 rows nicely horizontally */
+    height: 44px;
     object-fit: contain;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.25));
 }
 
 .fruit-btn:hover {
     transform: scale(1.2) rotate(6deg);
-    filter: drop-shadow(0px 6px 10px rgba(255, 105, 180, 0.4));
+    filter: drop-shadow(0px 6px 8px rgba(255, 255, 255, 0.8));
 }
 
 .fruit-btn:active {
@@ -1433,11 +1453,12 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 6px;
 }
 
 .picnic-audio-bar audio {
-    width: 100%;
-    height: 32px;
-    border-radius: 16px;
+    width: 95%;
+    height: 30px; /* Slimmer retro look */
+    border-radius: 12px;
     outline: none;
 }
