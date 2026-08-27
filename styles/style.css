@@ -1350,33 +1350,60 @@ body {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06));
 }
 /* ==========================================
-   PICNIC BLANKET AUDIO WIDGET MODIFICATIONS
+   PICNIC BLANKET AUDIO WIDGET
    ========================================== */
 
+.picnic-widget-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .picnic-blanket {
-    width: 320px;
-    background-image: url('assets/images/lace_squared_red_pattern.png'), url('../images/lace_squared_red_pattern.png');
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: center;
-    padding: 24px 18px 18px 18px;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Blanket Frame Image */
+.blanket-frame-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Container layering content on top of blanket */
+.picnic-content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30px 24px 20px 24px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
 
 /* 4 rows of 3 fruits layout */
 .fruit-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns across */
-    gap: 16px 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     width: 100%;
     justify-items: center;
     align-items: center;
-    margin-bottom: 16px;
 }
+
 .fruit-btn {
     background: none;
     border: none;
@@ -1387,13 +1414,12 @@ body {
 }
 
 .fruit-img {
-    width: 58px;
-    height: 58px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
-/* Playful Hover & Click Animations */
 .fruit-btn:hover {
     transform: scale(1.2) rotate(6deg);
     filter: drop-shadow(0px 6px 10px rgba(255, 105, 180, 0.4));
@@ -1403,16 +1429,15 @@ body {
     transform: scale(0.95) rotate(-4deg);
 }
 
-/* Retro-styled Compact Audio Player Bar */
 .picnic-audio-bar {
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .picnic-audio-bar audio {
     width: 100%;
-    height: 36px;
-    border-radius: 18px;
+    height: 32px;
+    border-radius: 16px;
     outline: none;
 }
