@@ -251,49 +251,62 @@
         >
     </div> 
             
+<!-- Picnic Basket Audio Widget -->
+<div class="picnic-widget-container">
+    <div class="picnic-basket">
+        
+        <!-- Basket Background Layer -->
+        <img src="assets/images/Basket.png" alt="Picnic Basket" class="basket-frame-img">
+
+        <!-- Inner Content Overlay -->
+        <div class="picnic-content-wrapper">
+            
+            <!-- Dynamic Song Title Box -->
+            <div id="song-title-box">♪ Select a fruit to play! ♪</div>
+            
             <!-- Fruit Grid Overlay (4 rows of 3 fruits) -->
             <div class="fruit-grid">
                 <!-- Row 1 -->
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Scizzie_Aquatic_Ambience.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Scizzie_Aquatic_Ambience.mp3', 'Aquatic Ambience')">
                     <img src="assets/images/kiwi.png" alt="Kiwi" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Seeing Is Believing.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Seeing Is Believing.mp3', 'Seeing Is Believing')">
                     <img src="assets/images/dragonfruit.png" alt="Dragon Fruit" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/To the Fairies They Draw Near.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/To the Fairies They Draw Near.mp3', 'To the Fairies They Draw Near')">
                     <img src="assets/images/banana.png" alt="Banana" class="fruit-img">
                 </button>
 
                 <!-- Row 2 -->
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Adopt Me! - Roblox _ Music.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Adopt Me! - Roblox _ Music.mp3', 'Adopt Me! - Roblox Music')">
                     <img src="assets/images/blueberry.png" alt="Blueberry" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/childhood.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/childhood.mp3', 'Childhood')">
                     <img src="assets/images/lemon.png" alt="Lemon" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/After All.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/After All.mp3', 'After All')">
                     <img src="assets/images/pomegranete.png" alt="Pomegranate" class="fruit-img">
                 </button>
 
                 <!-- Row 3 -->
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Mira niñita- Los Jaivas (instrumental).mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Mira niñita- Los Jaivas (instrumental).mp3', 'Mira niñita')">
                     <img src="assets/images/orange.png" alt="Orange" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/navidad_sonido.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/tva.mp3', 'TVA')">
                     <img src="assets/images/pinneaple.png" alt="Pineapple" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/tears for fears - everybody wants to rule the world.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/tears for fears - everybody wants to rule the world.mp3', 'Everybody Wants to Rule the World')">
                     <img src="assets/images/berry_red.png" alt="Berry Red" class="fruit-img">
                 </button>
 
                 <!-- Row 4 -->
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Bloom.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Bloom.mp3', 'Bloom')">
                     <img src="assets/images/green_apple_sliced.png" alt="Sliced Green Apple" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Fireflies - Owl City (but it\'s played in another room).mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Fireflies - Owl City (but it\'s played in another room).mp3', 'Fireflies')">
                     <img src="assets/images/fruit.png" alt="Fruit" class="fruit-img">
                 </button>
-                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Rusted Root_Send Me On My Way.mp3')">
+                <button class="fruit-btn" onclick="playPicnicAudio('assets/audio/Rusted Root_Send Me On My Way.mp3', 'Send Me On My Way')">
                     <img src="assets/images/greelemon.png" alt="Green Lemon" class="fruit-img">
                 </button>
             </div>
@@ -310,6 +323,7 @@
 
     </div>
 </div>
+    
  </main>
             <!-- Right Column (Medium Width ~ 28%) -->
             <aside class="right-column">
