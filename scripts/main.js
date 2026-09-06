@@ -311,16 +311,24 @@ function cycleY2KAvatar() {
   }, 150);
 }
 
+/* ==========================================
+   PICNIC AUDIO PLAYER LOGIC
+   ========================================== */
+
 function playPicnicAudio(audioPath, songTitle) {
-    const player = document.getElementById('picnic-player');
-    const source = document.getElementById('picnic-source');
-    const titleBox = document.getElementById('song-title-box');
-    
-    // Update audio source and play
-    source.src = audioPath;
-    player.load();
-    player.play();
-    
-    // Update the song title box text
+  const player = document.getElementById('picnic-player');
+  const source = document.getElementById('picnic-source');
+  const titleBox = document.getElementById('song-title-box');
+
+  if (!player || !source) return;
+
+  // Swap audio source
+  source.src = audioPath;
+  player.load();
+  player.play();
+
+  // Update display label
+  if (titleBox) {
     titleBox.innerText = "♪ " + songTitle + " ♪";
+  }
 }
